@@ -1,4 +1,6 @@
 import localFont from "next/font/local";
+import { Lustria } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -11,6 +13,8 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const lustria = Lustria({ subsets: ["latin"], weight: "400" });
+const inter = Inter({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "SHIFA Clinic",
@@ -19,12 +23,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang={`en ${inter.className} ${lustria.className}`}>
+      <body className={`${lustria.className} antialiased`}>{children}</body>
     </html>
   );
 }

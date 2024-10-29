@@ -14,7 +14,7 @@ export default function DetailedTextBlock({
 
   // Component should accept the text for all the items including the button as parameters
   // It should also accept the width of the text block. Notice how the "Get Involved" text block is more narrow but follow the same format.
-  // Style in globals.css
+  // Style in DetailedTextBlock.module.css
 
   return <div></div>;
 }

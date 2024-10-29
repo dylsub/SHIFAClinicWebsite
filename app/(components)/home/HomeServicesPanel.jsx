@@ -6,6 +6,7 @@ export default function HomeServicesPanel({
   descripText,
   buttonText,
   colorCode,
+  buttonPath
 }) {
   // Ishaan Bhandari
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ButtonWhiteFilled({ children }) {
+export default function ButtonWhiteFilled({ children, path }) {
   // Faris + Devin
 
   // Create a button that resembles the white button with black text seen on the home page with text "View Services"
