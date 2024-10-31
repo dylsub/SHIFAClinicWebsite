@@ -10,25 +10,10 @@ import HomeHero from "./(components)/home/HomeHero";
 
 export default function Home() {
   return (
-    <div>
+    <div className="main">
       <NavBar></NavBar>
 
       <HomeHero></HomeHero>
-
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-
-      <ButtonWhiteTransparent path="/">
-        Button White Transparent
-      </ButtonWhiteTransparent>
-      <ButtonWhiteFilled path="/">Button White Filled</ButtonWhiteFilled>
-
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
 
       <DetailedTextBlock
         subtitleText={"Non-profit medical clinic"}
