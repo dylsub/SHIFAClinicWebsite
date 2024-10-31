@@ -1,0 +1,24 @@
+.stats {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 1200px;
+  padding: 150px 0;
+  /* background-color: lightblue; */
+}
+
+.stat {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat_title {
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+}
+
+.stat_description {
+  font-size: 17px;
+}

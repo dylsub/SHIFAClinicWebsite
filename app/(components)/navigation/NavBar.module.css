@@ -1,0 +1,37 @@
+/* styles/NavBar.module.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  background-color: #fff;
+  height: 60px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navLinks,
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.link,
+.button {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  font-family: "Inter";
+}
+
+.link:hover,
+.button:hover {
+  color: #e23809; /* Change to desired hover color */
+  text-decoration: underline;
+}

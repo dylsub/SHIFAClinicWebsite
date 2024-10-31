@@ -1,0 +1,39 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  border-top: 8px solid;
+  border-right: 8px solid;
+  /* border-radius: 8px; */
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 8px 0;
+  color: black;
+  font-size: 2.5em;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 12px;
+}
