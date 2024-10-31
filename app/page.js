@@ -3,16 +3,25 @@ import Statistics from "./(components)/home/statistics/Statistics";
 import Testimonial from "./(components)/home/testimonial/Testimonial";
 import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
 import NavBar from "./(components)/navigation/NavBar";
+import DetailedTextBlock from "./(components)/reusables/DetailedTextBlock";
 
 export default function Home() {
   return (
     <div>
       <NavBar></NavBar>
 
+      <DetailedTextBlock subtitleText = {"Non-profit medical clinic"}
+        headerText = {"Uplifting the Community with health services"}
+        bodyText = {"ICN SHIFA Clinic is a manifestation of a desire to serve humanity without any boundaries. ICN Free Clinic was started in its rudimentary form as a makeshift clinic in the hallways of Islamic Center of Naperville with a small team of passionate doctors. "}
+        buttonText = {"Who we are"}
+        width={700}
+        path="/">
+      </DetailedTextBlock>
+
       <Testimonial
         quoteText={
           '"The SHIFA Clinic provides patients with hope and empowerment. It\'s been a pleasure being part of this community and serving others."'
-        }
+        } 
         authorText="Jane Anderson"
         roleText="Nurse Practitioner"
       ></Testimonial>
