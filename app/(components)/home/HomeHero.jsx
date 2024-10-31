@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./HomeHero.module.css";
 
 export default function HomeHero() {
   // Ashlee Tran + Victor 
@@ -11,5 +12,14 @@ export default function HomeHero() {
 
   // Style in HomeHero.module.css for right now
 
-  return <div></div>;
+  return (
+    <div className={styles.heroContainer}>
+      <div className={styles.overlay}></div>
+      <h1 className={styles.heroHeader}>Sacred healing for all</h1>
+        <button className={styles.heroButton1}>Request appointment</button>
+        <button className={styles.heroButton2}>View services</button>
+      {/* <img src="./Control-V.png"></img> */}
+    </div>
+  );
+
 }
