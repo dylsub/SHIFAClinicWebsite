@@ -2,10 +2,13 @@ import Image from "next/image";
 import Statistics from "./(components)/home/statistics/Statistics";
 import Testimonial from "./(components)/home/testimonial/Testimonial";
 import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
+import NavBar from "./(components)/navigation/NavBar";
 
 export default function Home() {
   return (
     <div>
+      <NavBar></NavBar>
+
       <Testimonial
         quoteText={
           '"The SHIFA Clinic provides patients with hope and empowerment. It\'s been a pleasure being part of this community and serving others."'
