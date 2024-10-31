@@ -16,13 +16,9 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   margin: 0;
   padding: 0;
   background-color: #ececec;
-  width: 100vw;
 }
 
 h2,
