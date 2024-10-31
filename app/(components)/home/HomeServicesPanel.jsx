@@ -26,7 +26,7 @@ export default function HomeServicesPanel({
   return (
     <div className={styles.panel} style={{ borderColor: colorCode }}>
       <img src={src} alt={titleText} className={styles.icon} />
-      <h3 className={styles.title}>{titleText}</h3>
+      <h1 className={styles.title}>{titleText}</h1>
       <p className={styles.description}>{descripText}</p>
       <a
         href={buttonPath}

@@ -15,12 +15,12 @@ export default function Home() {
       ></Testimonial>
 
       <HomeServicesPanel
-        src="/StethoscopeImage.png"
+        src="/PiggyBank.png"
         titleText="Expert Led"
         descripText="We are a team of professionals with backgrounds, certifications, and experience in the medical world."
         buttonText="Our Team"
         colorCode="#FF0000"
-        buttonPath=""
+        buttonPath="/"
       ></HomeServicesPanel>
 
       <Statistics></Statistics>
