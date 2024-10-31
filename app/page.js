@@ -1,8 +1,18 @@
 import Image from "next/image";
+import Statistics from "./(components)/home/statistics/Statistics";
+import Testimonial from "./(components)/home/testimonial/Testimonial";
 
 export default function Home() {
   return (
     <div>
+      <Testimonial
+        quoteText={
+          '"The SHIFA Clinic provides patients with hope and empowerment. It\'s been a pleasure being part of this community and serving others."'
+        }
+        authorText={"Jane Anderson"}
+        roleText={"Nurse Practitioner"}
+      ></Testimonial>
+      <Statistics></Statistics>
       <h1>Header One - h1</h1>
       <h2>Header Two - h2</h2>
       <h3>Header Three - h3</h3>

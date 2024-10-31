@@ -1,0 +1,36 @@
+.testimonial {
+  display: flex;
+  width: 1200px;
+  margin: 100px 0;
+  /* background-color: lightblue; */
+}
+
+.text_box {
+  width: 600px;
+}
+
+.quote_text {
+  font-size: 45px;
+}
+
+.author_text_box {
+  width: 550px;
+  text-align: right;
+}
+
+.author_text {
+  font-family: "Lustria";
+  font-size: 30px;
+}
+
+.image_box {
+  width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 350px;
+  margin-left: 100px;
+}
