@@ -1,11 +1,23 @@
 import React from "react";
+import GridText from "./GridText";
+import GridImage from "./GridImage";
+import styles from './Grid.module.css'
 
 const Grid = () => {
-  // Ayush + Ryan
-  // Using the GridText and GridImage components, construct the mission/vision section in its entirety
-  // Make sure that it fills the whole width of the screen
-
-  return <div></div>;
+  return (
+    <div className={styles.container}>
+      <GridImage src="/doctors.jpg" alt="Doctors" />
+      <GridText
+        title="Mission"
+        text="ICN SHIFA Clinic aims to provide free quality healthcare to anyone without insurance or underinsured, regardless of race, religion, or political affiliation."
+      />
+      <GridText
+        title="Vision"
+        text="ICN SHIFA Clinic has a vision for a facility that will offer comprehensive healthcare services under one roof, including medical, mental, dental, optical, and specialty care. We aim to create a system where patients without health insurance benefit from cost-effective, patient-focused services."
+      />
+      <GridImage src="/doctors.jpg" alt="Doctors" />
+    </div>
+    );
 };
 
 export default Grid;
