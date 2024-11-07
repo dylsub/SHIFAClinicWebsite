@@ -7,6 +7,8 @@ import DetailedTextBlock from "./(components)/reusables/DetailedTextBlock";
 import ButtonWhiteTransparent from "./(components)/reusables/ButtonWhiteTransparent";
 import ButtonWhiteFilled from "./(components)/reusables/ButtonWhiteFilled";
 import HomeHero from "./(components)/home/HomeHero";
+import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
+import Grid from "./(components)/who-we-are/grid/Grid";
 
 export default function Home() {
   return (
@@ -54,7 +56,6 @@ export default function Home() {
       <h4>Header Four - h4</h4>
 
       <p>Paragraph</p>
-      <Grid></Grid>
     </div>
   );
 }

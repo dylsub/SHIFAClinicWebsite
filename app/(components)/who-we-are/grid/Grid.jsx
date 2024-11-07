@@ -1,7 +1,7 @@
 import React from "react";
 import GridText from "./GridText";
 import GridImage from "./GridImage";
-import styles from './Grid.module.css'
+import styles from "./Grid.module.css";
 
 const Grid = () => {
   return (
@@ -17,7 +17,7 @@ const Grid = () => {
       />
       <GridImage src="/doctors.jpg" alt="Doctors" />
     </div>
-    );
+  );
 };
 
 export default Grid;

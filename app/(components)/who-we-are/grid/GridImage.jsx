@@ -1,6 +1,5 @@
 import React from "react";
-import styles from "./Grid.module.css"
-
+import styles from "./Grid.module.css";
 
 const GridImage = ({ src, alt }) => {
   return (

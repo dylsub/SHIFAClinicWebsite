@@ -1,51 +1,51 @@
 /* Container for the entire page layout */
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* gap: 20px; */
-    padding: 20px;
-    justify-items: center;
-  }
-  
-  /* Styles for the text box */
-  .gridText {
-    width: 50vw;
-    height: 50vw;
-    background-color: #f8f8f8; /* Adjust to match Figma color */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    color: #333;
-    font-family: Arial, sans-serif;
-  }
-  
-  .gridText h1 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .gridText p {
-    font-size: 1em;
-    line-height: 1.5;
-  }
-  
-  /* Styles for the image box */
-  .gridImage {
-    width: 50vw;
-    height: 50vw;
-    overflow: hidden; /* Ensures image is cropped */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e0e0e0; /* Adjust to match Figma color */
-  }
-  
-  .gridImage img {
-    width: auto;
-    height: 100%; /* Ensures image fills the height, cropping the width */
-    object-fit: cover; /* Maintains aspect ratio without scaling */
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* gap: 20px; */
+  padding: 100px 0;
+  justify-items: center;
+}
+
+/* Styles for the text box */
+.gridText {
+  width: 50vw;
+  height: 40vw;
+  /* background-color: #ececec; */
+  background-color: #dcdcdc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 100px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.gridText h1 {
+  margin-bottom: 40px;
+  text-decoration-line: underline;
+  text-underline-offset: 25px;
+}
+
+.gridText p {
+  line-height: 1.5;
+}
+
+/* Styles for the image box */
+.gridImage {
+  width: 50vw;
+  height: 40vw;
+  overflow: hidden; /* Ensures image is cropped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+}
+
+.gridImage img {
+  width: auto;
+  height: 100%; /* Ensures image fills the height, cropping the width */
+  object-fit: cover; /* Maintains aspect ratio without scaling */
+}
