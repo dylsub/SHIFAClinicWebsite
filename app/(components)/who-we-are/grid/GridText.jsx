@@ -1,13 +1,13 @@
 import React from "react";
+import styles from "./Grid.module.css"
 
-const GridText = () => {
-  // Ayush + Ryan
-  // Look at the mission and vision section of the Who We Are page
-  // This will be a container holding the text with a width and height of 50vw (square)
-  // Make sure the text is centered in the box
-  // Give it a background color the same as the Figma
-
-  return <div></div>;
+const GridText = ({ title, text }) => {
+  return (
+    <div className={styles.gridText}>
+      <h1>{title}</h1>
+      <p>{text}</p>
+    </div>
+  );
 };
 
 export default GridText;
