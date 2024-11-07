@@ -1,7 +1,11 @@
-import Grid from "../(components)/who-we-are/grid"
+import React from "react";
 
-export default function WhoAreWe() {
-    return (
-        <div></div>
-    )
+const WhoWeAre = () => {
+  return (
+    <div>
+      <h1>This is the WHO WE ARE page.</h1>
+    </div>
+  );
 };
+
+export default WhoWeAre;

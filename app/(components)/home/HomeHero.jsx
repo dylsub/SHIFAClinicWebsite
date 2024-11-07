@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./HomeHero.module.css";
-import ButtonWhiteTransparent from "../reusables/ButtonWhiteTransparent";
-import ButtonWhiteFilled from "../reusables/ButtonWhiteFilled";
+import ButtonWhiteTransparent from "../reusables/buttons/ButtonWhiteTransparent";
+import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 
 export default function HomeHero() {
   // Ashlee Tran + Victor
