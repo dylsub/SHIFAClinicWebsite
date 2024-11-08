@@ -4,8 +4,11 @@ import Image from "next/image";
 import styles from "./NavBar.module.css";
 
 export default function NavBar() {
-  // Ayush Shastry + Ryan Gao
+  // Ayush Shastry
   // Fix formatting on Nav Bar
+  // Get it looking perfect
+  // Link to the correct pages now that they have been created
+  // Add the reusable button components
 
   return (
     <nav className={styles.navbar}>

@@ -4,9 +4,11 @@ import Testimonial from "./(components)/home/testimonial/Testimonial";
 import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
 import NavBar from "./(components)/navigation/NavBar";
 import DetailedTextBlock from "./(components)/reusables/DetailedTextBlock";
-import ButtonWhiteTransparent from "./(components)/reusables/ButtonWhiteTransparent";
-import ButtonWhiteFilled from "./(components)/reusables/ButtonWhiteFilled";
+import ButtonWhiteTransparent from "./(components)/reusables/buttons/ButtonWhiteTransparent";
+import ButtonWhiteFilled from "./(components)/reusables/buttons/ButtonWhiteFilled";
 import HomeHero from "./(components)/home/HomeHero";
+import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
+import Grid from "./(components)/who-we-are/grid/Grid";
 
 export default function Home() {
   return (
@@ -14,6 +16,10 @@ export default function Home() {
       <NavBar></NavBar>
 
 
+
+      <WWAAbout></WWAAbout>
+
+      <Grid></Grid>
 
       <DetailedTextBlock
         subtitleText={"Non-profit medical clinic"}

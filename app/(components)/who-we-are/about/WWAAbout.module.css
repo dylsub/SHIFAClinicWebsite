@@ -1,0 +1,17 @@
+.about_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 320px;
+  width: 1200px;
+}
+
+.title_text {
+  width: 400px;
+  line-height: 1.25;
+}
+
+.body_text {
+  padding-bottom: 30px;
+  width: 500px;
+}
