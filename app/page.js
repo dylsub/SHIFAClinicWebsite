@@ -16,19 +16,7 @@ export default function Home() {
 
       <HomeHero></HomeHero>
 
-      <HomeAbout
-        subtitleText={"Non-profit medical clinic"}
-        headerText={"Uplifting the Community with health services"}
-        bodyText={
-          "ICN SHIFA Clinic is a manifestation of a desire to serve humanity without any boundaries. ICN Free Clinic was started in its rudimentary form as a makeshift clinic in the hallways of Islamic Center of Naperville with a small team of passionate doctors. "
-        }
-        buttonText={"Who we are"}
-        width={700}
-        path="/"
-        titleText="Uplifting the Community"
-        src="home_about.png"
-      ></HomeAbout>
-
+      
       <Testimonial
         quoteText={
           '"The SHIFA Clinic provides patients with hope and empowerment. It\'s been a pleasure being part of this community and serving others."'
@@ -47,16 +35,7 @@ export default function Home() {
       ></HomeServicesPanel>
 
       <Statistics></Statistics>
-      <HomeGetInvolved     
-      subtitleText = {"Join our team"}
-      headerText = {'Get Involved'}
-      bodyText = {'The ICN SHIFA Clinic is looking for new volunteers to join our community. We offer opportunities ranging from job shadowing to full-time volunteering positions. We’d love to have you!'}
-      buttonText = {"Learn More"}
-      path=  {'/'}
-      width = {700}
-      titleText={"New Volunteers"}
-      src={'join_our_team.png'}>
-      </HomeGetInvolved>
+
       <h1>Header One - h1</h1>
       <h2>Header Two - h2</h2>
       <h3>Header Three - h3</h3>
