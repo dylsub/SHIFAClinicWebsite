@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./HeroQuote.module.css";
 
 const HeroQuote = ({ leadingText, quoteText, authorText }) => {
   // Ashlee and Victor
@@ -10,7 +11,19 @@ const HeroQuote = ({ leadingText, quoteText, authorText }) => {
   // The text should be dynamically fed into into the component
   // leadingText, quoteText, authorText should be the parameters
 
-  return <div></div>;
+  return (
+    <div className={styles.quoteContainer}>
+      {/* <div className={styles.overlay}></div> */}
+      <div className={styles.text_box}>
+        <p className={styles.leadingText}>{leadingText}</p>
+        <h1 className={styles.quoteText}>{quoteText}</h1>
+        <p className={styles.authorText}>{authorText}</p>
+      </div>
+   
+ 
+ 
+    </div>
+  );
 };
 
 export default HeroQuote;
