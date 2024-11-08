@@ -7,6 +7,7 @@ import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
 import Grid from "./(components)/who-we-are/grid/Grid";
 import HomeHero from "./(components)/home/HomeHero";
 import WWAHero from "./(components)/who-we-are/WWAHero";
+import HomeAbout from "./(components)/home/about/HomeAbout";
 
 export default function Home() {
   return (
@@ -21,7 +22,6 @@ export default function Home() {
 
       <Grid></Grid>
 
-      
       <Testimonial
         quoteText={
           '"The SHIFA Clinic provides patients with hope and empowerment. It\'s been a pleasure being part of this community and serving others."'
