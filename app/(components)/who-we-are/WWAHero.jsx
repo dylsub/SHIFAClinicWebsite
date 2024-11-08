@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./WWAHero.module.css";
-import ButtonWhiteFilled from "../reusables/ButtonWhiteFilled";
-import ButtonAnyColorFilled from "../reusables/ButtonAnyColorFilled";
+import ButtonAnyColorFilled from "../reusables/buttons/ButtonAnyColorFilled";
+import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
+
 
 const WWAHero = () => {
   // Ashlee + Victor

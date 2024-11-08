@@ -3,17 +3,19 @@ import Statistics from "./(components)/home/statistics/Statistics";
 import Testimonial from "./(components)/home/testimonial/Testimonial";
 import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
 import NavBar from "./(components)/navigation/NavBar";
-import DetailedTextBlock from "./(components)/reusables/DetailedTextBlock";
-import ButtonWhiteTransparent from "./(components)/reusables/ButtonWhiteTransparent";
-import ButtonWhiteFilled from "./(components)/reusables/ButtonWhiteFilled";
+import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
+import Grid from "./(components)/who-we-are/grid/Grid";
 import HomeHero from "./(components)/home/HomeHero";
+import WWAHero from "./(components)/who-we-are/WWAHero";
 
 export default function Home() {
   return (
     <div className="main">
       <NavBar></NavBar>
 
+      <WWAHero></WWAHero>
 
+      <HomeHero></HomeHero>
 
       <WWAAbout></WWAAbout>
 

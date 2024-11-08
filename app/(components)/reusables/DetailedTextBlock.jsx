@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonBlackTransparent from "./ButtonBlackTransparent";
+import ButtonBlackTransparent from "./buttons/ButtonBlackTransparent";
 
 export default function DetailedTextBlock({
   subtitleText,
