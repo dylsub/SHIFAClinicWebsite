@@ -3,10 +3,11 @@ import Statistics from "./(components)/home/statistics/Statistics";
 import Testimonial from "./(components)/home/testimonial/Testimonial";
 import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
 import NavBar from "./(components)/navigation/NavBar";
-import DetailedTextBlock from "./(components)/reusables/DetailedTextBlock";
 import ButtonWhiteTransparent from "./(components)/reusables/ButtonWhiteTransparent";
 import ButtonWhiteFilled from "./(components)/reusables/ButtonWhiteFilled";
 import HomeHero from "./(components)/home/HomeHero";
+import HomeGetInvolved from "./(components)/home/get-involved/HomeGetInvolved";
+import HomeAbout from "./(components)/home/about/HomeAbout";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
 
       <HomeHero></HomeHero>
 
-      <DetailedTextBlock
+      <HomeAbout
         subtitleText={"Non-profit medical clinic"}
         headerText={"Uplifting the Community with health services"}
         bodyText={
@@ -24,7 +25,9 @@ export default function Home() {
         buttonText={"Who we are"}
         width={700}
         path="/"
-      ></DetailedTextBlock>
+        titleText="Uplifting the Community"
+        src="home_about.png"
+      ></HomeAbout>
 
       <Testimonial
         quoteText={
@@ -44,6 +47,16 @@ export default function Home() {
       ></HomeServicesPanel>
 
       <Statistics></Statistics>
+      <HomeGetInvolved     
+      subtitleText = {"Join our team"}
+      headerText = {'Get Involved'}
+      bodyText = {'The ICN SHIFA Clinic is looking for new volunteers to join our community. We offer opportunities ranging from job shadowing to full-time volunteering positions. We’d love to have you!'}
+      buttonText = {"Learn More"}
+      path=  {'/'}
+      width = {700}
+      titleText={"New Volunteers"}
+      src={'join_our_team.png'}>
+      </HomeGetInvolved>
       <h1>Header One - h1</h1>
       <h2>Header Two - h2</h2>
       <h3>Header Three - h3</h3>
