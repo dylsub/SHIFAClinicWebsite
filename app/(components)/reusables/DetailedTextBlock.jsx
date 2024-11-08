@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import ButtonBlackTransparent from "./ButtonBlackTransparent";
-=======
-import ButtonWhiteTransparent from "./buttons/ButtonWhiteTransparent";
->>>>>>> 212d490d03a0dadaa5ca7366d4a1efd1a97a83bb
 
 export default function DetailedTextBlock({
   subtitleText,
@@ -12,10 +8,7 @@ export default function DetailedTextBlock({
   buttonText,
   path,
   width,
-<<<<<<< HEAD
   className
-=======
->>>>>>> 212d490d03a0dadaa5ca7366d4a1efd1a97a83bb
 }) {
   // Armaan Patel
 
@@ -27,7 +20,6 @@ export default function DetailedTextBlock({
   // It should also accept the width of the text block. Notice how the "Get Involved" text block is more narrow but follow the same format.
   // Style in DetailedTextBlock.module.css
   //button white transparent for button
-<<<<<<< HEAD
   return <div className={className} style={{width : `${width}px`}} >
     <h3>{subtitleText}</h3>
     <h1>{headerText}</h1>
@@ -36,14 +28,4 @@ export default function DetailedTextBlock({
       {buttonText}
     </ButtonBlackTransparent>
   </div>;
-=======
-  return (
-    <div style={{ width: `${width}px` }}>
-      <h3>{subtitleText}</h3>
-      <h1>{headerText}</h1>
-      <p>{bodyText}</p>
-      <ButtonWhiteTransparent path={path}>{buttonText}</ButtonWhiteTransparent>
-    </div>
-  );
->>>>>>> 212d490d03a0dadaa5ca7366d4a1efd1a97a83bb
 }
