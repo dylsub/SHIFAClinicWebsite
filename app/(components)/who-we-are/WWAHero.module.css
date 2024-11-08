@@ -1,0 +1,43 @@
+.WWAContainer {
+    width: 100vw;
+    height: 600px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/WWA.png');
+    background-size: cover;
+    background-position: left;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+  .WWAHeader {
+  color: white;
+  font-size: 3.5em;
+  margin-bottom: 15px;
+}
+
+
+.text_box {
+  width: 1200px;
+  /* background-color: green; */
+  margin-bottom: 100px; 
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+/*  
+  .heroButton1 {
+    color: rgb(255, 0, 0);
+    margin-top: 1em;
+    margin-left: 10vw;
+  }
+ 
+ 
+  .heroButton2 {
+    color: white;
+    margin-top: 5em;
+    margin-left: 10vw;
+  }
+  */

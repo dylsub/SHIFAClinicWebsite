@@ -13,7 +13,7 @@ export default function Home() {
     <div className="main">
       <NavBar></NavBar>
 
-      <HomeHero></HomeHero>
+
 
       <DetailedTextBlock
         subtitleText={"Non-profit medical clinic"}

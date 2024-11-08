@@ -24,7 +24,7 @@ export default function HomeHero() {
      {/* <div className={styles.overlay}></div> */}
      <div className={styles.text_box}>
        <h1 className={styles.heroHeader}>Sacred healing for all</h1>
-       <ButtonWhiteTransparent path="/">Request Appointment</ButtonWhiteTransparent>
+       <ButtonWhiteTransparent path="/">Request appointment</ButtonWhiteTransparent>
        <ButtonWhiteFilled path="/">View services</ButtonWhiteFilled>
      </div>
   
