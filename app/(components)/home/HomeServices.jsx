@@ -1,12 +1,16 @@
 import React from "react";
+import styles from "./HomeServices.module.css";
 
-export default function HomeServices() {
+export default function HomeServices({ children }) {
   // Ishaan
   // Now that you have the panel completed,
   // You want to create a component that holds three of these panels
   // These panels should be held in a content box (div) with a width of 1400px
   // These panels should stretch the whole content box with a gap in between
   // View the home/statistics folder for reference code
-
-  return <div></div>;
+  return (
+    <div className="wrapper">
+      <div className={styles.container}>{children}</div>
+    </div>
+  );
 }

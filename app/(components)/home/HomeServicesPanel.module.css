@@ -9,6 +9,7 @@
   padding: 20px;
   text-align: center;
   background-color: #fff;
+  flex: 1;
 }
 
 .icon {
