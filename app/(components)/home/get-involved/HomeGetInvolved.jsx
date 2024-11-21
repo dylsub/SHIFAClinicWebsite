@@ -1,35 +1,38 @@
 import React from "react";
 import DetailedTextBlock from "../../reusables/DetailedTextBlock";
 import styles from "./HomeGetInvolved.module.css";
-const HomeGetInvolved = (  {subtitleText,
+const HomeGetInvolved = ({
+  subtitleText,
   headerText,
   bodyText,
   buttonText,
   path,
   width,
   titleText,
-  src
+  src,
 }) => {
   // Armaan
   // Now that you have the detail text block component created,
   // You want to design the home get involved section.
   // The section be held in a content box (div) with a width of 1400px
   // An image and your created component should be in those boxes and styled appropriately
-  return <div width={1200} className={styles.aboutColumn}>
-    <img src={src} alt={titleText} />
-  <div className={styles.aboutText}>
-  <DetailedTextBlock
-    subtitleText = {subtitleText}
-    headerText = {headerText}
-    bodyText = {bodyText}
-    buttonText = {buttonText}
-    path=  {path}
-    width = {600}
-    >
-  </DetailedTextBlock>
-  </div>
-
-</div>;
+  return (
+    <div width={1200} className={styles.aboutColumn}>
+      <div className={styles.aboutImg}>
+        <img src={src} alt={titleText} />
+      </div>
+      <div className={styles.aboutText}>
+        <DetailedTextBlock
+          subtitleText={subtitleText}
+          headerText={headerText}
+          bodyText={bodyText}
+          buttonText={buttonText}
+          path={path}
+          width={500}
+        ></DetailedTextBlock>
+      </div>
+    </div>
+  );
 };
 
 export default HomeGetInvolved;
