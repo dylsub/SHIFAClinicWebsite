@@ -7,7 +7,6 @@ const HomeAbout = ({subtitleText,
   bodyText,
   buttonText,
   path,
-  width,
   titleText,
   src
 }) => {

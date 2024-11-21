@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonBlackTransparent from "./buttons/ButtonBlackTransparent";
+import styles from "./DetailedTextBlock.module.css";
 
 export default function DetailedTextBlock({
   subtitleText,
@@ -24,8 +25,10 @@ export default function DetailedTextBlock({
     <h3>{subtitleText}</h3>
     <h1>{headerText}</h1>
     <p>{bodyText}</p>
-    <ButtonBlackTransparent path={path}>
-      {buttonText}
-    </ButtonBlackTransparent>
+    <div className={styles.buttonContainer}>
+      <ButtonBlackTransparent path={path}>
+        {buttonText}
+      </ButtonBlackTransparent>
+    </div>
   </div>;
 }

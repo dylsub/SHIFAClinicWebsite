@@ -1,7 +1,8 @@
 .aboutColumn { 
+    gap:60px;
     flex: 1; /* Distributes columns equally */
     max-width: 100%; /* Ensures each column takes half the container width */
-    padding: 20px;
+    padding: 70px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
