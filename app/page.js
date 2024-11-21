@@ -8,6 +8,7 @@ import Grid from "./(components)/who-we-are/grid/Grid";
 import HomeHero from "./(components)/home/HomeHero";
 import WWAHero from "./(components)/who-we-are/WWAHero";
 import HomeAbout from "./(components)/home/about/HomeAbout";
+import GIDonate from "./(components)/get-involved/GIDonate";
 
 export default function Home() {
   return (
@@ -42,7 +43,7 @@ export default function Home() {
       <Statistics></Statistics>
 
       <h1>Header One - h1</h1>
-      <h2>Header Two - h2</h2>
+      <h2>Header Two - h2</h2>xs
       <h3>Header Three - h3</h3>
       <h4>Header Four - h4</h4>
 
