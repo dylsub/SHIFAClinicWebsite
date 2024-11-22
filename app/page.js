@@ -3,11 +3,13 @@ import Statistics from "./(components)/home/statistics/Statistics";
 import Testimonial from "./(components)/home/testimonial/Testimonial";
 import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
 import NavBar from "./(components)/navigation/NavBar";
+import DetailedTextBlock from "./(components)/reusables/DetailedTextBlock";
+import ButtonWhiteTransparent from "./(components)/reusables/buttons/ButtonWhiteTransparent";
+import ButtonWhiteFilled from "./(components)/reusables/buttons/ButtonWhiteFilled";
+import HomeHero from "./(components)/home/HomeHero";
 import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
 import Grid from "./(components)/who-we-are/grid/Grid";
-import HomeHero from "./(components)/home/HomeHero";
-import WWAHero from "./(components)/who-we-are/WWAHero";
-import HomeAbout from "./(components)/home/about/HomeAbout";
+import Donate from "./donate/page";
 
 export default function Home() {
   return (
@@ -17,10 +19,21 @@ export default function Home() {
       <WWAHero></WWAHero>
 
       <HomeHero></HomeHero>
-
+    
       <WWAAbout></WWAAbout>
 
       <Grid></Grid>
+
+      <DetailedTextBlock
+        subtitleText={"Non-profit medical clinic"}
+        headerText={"Uplifting the Community with health services"}
+        bodyText={
+          "ICN SHIFA Clinic is a manifestation of a desire to serve humanity without any boundaries. ICN Free Clinic was started in its rudimentary form as a makeshift clinic in the hallways of Islamic Center of Naperville with a small team of passionate doctors. "
+        }
+        buttonText={"Who we are"}
+        width={700}
+        path="/"
+      ></DetailedTextBlock>
 
       <Testimonial
         quoteText={
