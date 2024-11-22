@@ -1,21 +1,10 @@
 import React from "react";
 import ButtonAnyColorFilled from "../reusables/buttons/ButtonAnyColorFilled";
-import classes from "../get-involved/GIDonate.modules.css";
+import classes from "./GIDonate.module.css";
 
 const GIDonate = () => {
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "100px 100px",
-        textAlign: "center",
-        backgroundColor: "white",
-        maxWidth: "1500px",
-      }}
-    >
+    <div className={classes.container}>
       <h1
         style={{
           fontSize: "36px",
@@ -32,18 +21,15 @@ const GIDonate = () => {
           marginBottom: "45px",
         }}
       >
-        Giving back to the community is a principle we value, and donations
-        from our community are greatly appreciated. Your generous donations are
-        vital in helping us provide essential healthcare services. Thank you
-        for your generosity and helping us create a difference for those in
-        need!
+        Giving back to the community is a principle we value, and donations from
+        our community are greatly appreciated. Your generous donations are vital
+        in helping us provide essential healthcare services. Thank you for your
+        generosity and helping us create a difference for those in need!
       </p>
-    
-      <ButtonAnyColorFilled 
-      path="/donate" buttonColor="rgb(0, 0, 0)">
+
+      <ButtonAnyColorFilled path="/donate" buttonColor="rgb(0, 0, 0)">
         Donate Today!
       </ButtonAnyColorFilled>
-    
     </div>
   );
 };

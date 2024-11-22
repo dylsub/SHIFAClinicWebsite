@@ -12,6 +12,7 @@ import HomeGetInvolved from "./(components)/home/get-involved/HomeGetInvolved";
 import DonateThanks from "./(components)/donate/DonateThanks";
 import GIDonate from "./(components)/get-involved/GIDonate";
 import HomeServices from "./(components)/home/HomeServices";
+import DropDownPanel from "./(components)/reusables/DropDownPanel";
 
 export default function Home() {
   return (
@@ -19,6 +20,12 @@ export default function Home() {
       <NavBar></NavBar>
       <WWAHero></WWAHero>
       <HomeHero></HomeHero>
+
+      <DropDownPanel
+        buttonText={"Do I get paid?"}
+        dropdownText={"No this is a nonprofit dipshit"}
+      ></DropDownPanel>
+
       <HomeAbout
         subtitleText={"Non-profit medical clinic"}
         bodyText={
