@@ -1,5 +1,5 @@
 .aboutColumn { 
-    gap:60px;
+    gap: 60px;
     flex: 1; /* Distributes columns equally */
     max-width: 100%; /* Ensures each column takes half the container width */
     padding: 70px;

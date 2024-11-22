@@ -1,0 +1,21 @@
+.aboutColumn {
+  gap: 60px;
+  /* Distributes columns equally */
+  max-width: 100%; /* Ensures each column takes half the container width */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+}
+
+.aboutImg {
+  width: 540px;
+  display: flex;
+  align-items: start;
+}
