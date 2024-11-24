@@ -16,26 +16,26 @@ export default function NavBar() {
       <div className={styles.logo}>
         <Link href="/">
           {" "}
-          <Image src="/shifa.png" alt="Logo" width={40} height={40} />{" "}
+          <Image src="/shifa.png" alt="Logo" width={60} height={60} />{" "}
         </Link>
       </div>
 
       {/* Navigation Links Section */}
       <div className={styles.navLinks}>
-        <Link href="/" className={styles.link}>
+        <Link href="/home" className={styles.link}>
           Home
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/about" className={styles.link}>
           About
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/services" className={styles.link}>
           Services
         </Link>
       </div>
 
       {/* Buttons Section */}
       <div className={styles.buttons}>
-        <Link href="/" className={styles.button}>
+        <Link href="/login/page.js" className={styles.button}>
           Sign Up
         </Link>
         <Link href="/" className={styles.button}>
