@@ -9,6 +9,7 @@ import ButtonWhiteFilled from "./(components)/reusables/buttons/ButtonWhiteFille
 import HomeHero from "./(components)/home/HomeHero";
 import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
 import Grid from "./(components)/who-we-are/grid/Grid";
+// import HomeHero from "./(components)/home/HomeHero";
 import WWAHero from "./(components)/who-we-are/WWAHero";
 import HomeAbout from "./(components)/home/about/HomeAbout";
 import HomeGetInvolved from "./(components)/home/get-involved/HomeGetInvolved";
