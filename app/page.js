@@ -9,7 +9,6 @@ import ButtonWhiteFilled from "./(components)/reusables/buttons/ButtonWhiteFille
 import HomeHero from "./(components)/home/HomeHero";
 import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
 import Grid from "./(components)/who-we-are/grid/Grid";
-import HomeHero from "./(components)/home/HomeHero";
 import WWAHero from "./(components)/who-we-are/WWAHero";
 import HomeAbout from "./(components)/home/about/HomeAbout";
 import HomeGetInvolved from "./(components)/home/get-involved/HomeGetInvolved";
@@ -17,6 +16,8 @@ import DonateThanks from "./(components)/donate/DonateThanks";
 import GIDonate from "./(components)/get-involved/GIDonate";
 import HomeServices from "./(components)/home/HomeServices";
 import DropDownPanel from "./(components)/reusables/DropDownPanel";
+import RAHero from "./(components)/request-appointment/RAHero";
+import DonateHero from "./(components)/donate/DonateHero";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
       <NavBar></NavBar>
       <WWAHero></WWAHero>
       <HomeHero></HomeHero>
+      <RAHero></RAHero>
+      <DonateHero></DonateHero>
 
       <DropDownPanel
         buttonText={"Do I get paid?"}
