@@ -1,6 +1,6 @@
 import React from "react";
 import DetailedTextBlock from "../../reusables/DetailedTextBlock";
-import styles from "./HomeGetInvolved.module.css";
+import styles from "../about/HomeAbout.module.css";
 const HomeGetInvolved = ({
   subtitleText,
   headerText,
@@ -17,8 +17,8 @@ const HomeGetInvolved = ({
   // The section be held in a content box (div) with a width of 1400px
   // An image and your created component should be in those boxes and styled appropriately
   return (
-    <div width={1200} className={styles.aboutColumn}>
-      <div className={styles.aboutImg}>
+    <div className={styles.about + " content_box"}>
+      <div className={styles.aboutImage}>
         <img src={src} alt={titleText} />
       </div>
       <div className={styles.aboutText}>
@@ -28,7 +28,7 @@ const HomeGetInvolved = ({
           bodyText={bodyText}
           buttonText={buttonText}
           path={path}
-          width={500}
+          width={100}
         ></DetailedTextBlock>
       </div>
     </div>

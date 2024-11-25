@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Testimonial = ({ quoteText, authorText, roleText }) => {
   return (
-    <div className={classes.testimonial}>
+    <div className={classes.testimonial + " content_box"}>
       <div className={classes.text_box}>
         <h1 className={classes.quote_text}>{quoteText}</h1>
         <div className={classes.author_text_box}>

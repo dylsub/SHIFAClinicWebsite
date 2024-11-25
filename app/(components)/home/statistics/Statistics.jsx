@@ -4,7 +4,7 @@ import classes from "./Statistics.module.css";
 
 const Statistics = () => {
   return (
-    <div className={classes.stats}>
+    <div className={classes.stats + " content_box"}>
       <StatisticsNumber
         titleText={"70+"}
         descripText={"Patients Served"}
@@ -22,7 +22,7 @@ const Statistics = () => {
       ></StatisticsNumber>
       <StatisticsNumber
         titleText={"45+"}
-        descripText={"Past + Current Volunteers"}
+        descripText={"Active Volunteers"}
         color={"#6C0305"}
       ></StatisticsNumber>
       <StatisticsNumber

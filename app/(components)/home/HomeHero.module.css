@@ -1,37 +1,47 @@
 .heroContainer {
-    width: 100vw;
-    height: 600px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/Control-V.png');
-    background-size: cover;
-    background-position: left;
-    display: flex;
-    align-items: end;
-    justify-content: center;
+  width: 100vw;
+  height: 600px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("/Control-V.png");
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.heroHeader {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 3.5em;
+}
+
+.text_box {
+  /* width: 1200px; */
+  margin-bottom: 100px;
+}
+
+.button_box {
+  display: flex;
+  gap: 15px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .heroHeader {
+    font-size: 3.25em;
   }
-   .heroHeader {
-    color: white;
-    font-size: 3.5em;
-    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .heroHeader {
+    font-size: 2.75em;
   }
- 
- 
-  .text_box {
-    width: 1200px;
-    /* background-color: green; */
-    margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 720px) {
+  .heroHeader {
+    font-size: 2.25em;
   }
- 
- 
-  .heroButton1 {
-    color: white;
-    margin-top: 1em;
-    margin-left: 10vw;
+  .heroContainer {
+    height: 70vh;
   }
- 
- 
-  .heroButton2 {
-    color: white;
-    margin-top: -1.5em;
-    margin-left: 25vw;
-  }
- 
+}

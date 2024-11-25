@@ -9,7 +9,6 @@ export default function DetailedTextBlock({
   buttonText,
   path,
   width,
-  className
 }) {
   // Armaan Patel
 
@@ -21,14 +20,16 @@ export default function DetailedTextBlock({
   // It should also accept the width of the text block. Notice how the "Get Involved" text block is more narrow but follow the same format.
   // Style in DetailedTextBlock.module.css
   //button white transparent for button
-  return <div className={className} style={{width : `${width}px`}} >
-    <h3>{subtitleText}</h3>
-    <h1>{headerText}</h1>
-    <p>{bodyText}</p>
-    <div className={styles.buttonContainer}>
-      <ButtonBlackTransparent path={path}>
-        {buttonText}
-      </ButtonBlackTransparent>
+  return (
+    <div style={{ width: `${width}%` }}>
+      <h3 className={styles.detailed_subtitle}>{subtitleText}</h3>
+      <h1 className={styles.detailed_title}>{headerText}</h1>
+      <p>{bodyText}</p>
+      <div className={styles.buttonContainer}>
+        <ButtonBlackTransparent path={path}>
+          {buttonText}
+        </ButtonBlackTransparent>
+      </div>
     </div>
-  </div>;
+  );
 }
