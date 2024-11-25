@@ -2,6 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./NavBar.module.css";
+import ButtonBlackTransparent from "../reusables/buttons/ButtonBlackTransparent";
+import ButtonAnyColorFilled from "../reusables/buttons/ButtonAnyColorFilled";
+import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
+import ButtonWhiteTransparent from "../reusables/buttons/ButtonWhiteTransparent";
 
 export default function NavBar() {
   // Ayush Shastry
@@ -13,6 +17,7 @@ export default function NavBar() {
   return (
     <nav className={styles.navbar}>
       {/* Logo Section */}
+      <div className={styles.navbarContainer}>
       <div className={styles.logo}>
         <Link href="/">
           {" "}
@@ -22,26 +27,31 @@ export default function NavBar() {
 
       {/* Navigation Links Section */}
       <div className={styles.navLinks}>
-        <Link href="/home" className={styles.link}>
-          Home
-        </Link>
-        <Link href="/about" className={styles.link}>
-          About
+        <Link href="/who-we-are" className={styles.link}>
+          Who Are We
         </Link>
         <Link href="/services" className={styles.link}>
           Services
+        </Link>
+        <Link href="/get-involved" className={styles.link}>
+          Get Involved
+        </Link>
+        <Link href="/resources" className={styles.link}>
+          Resources
         </Link>
       </div>
 
       {/* Buttons Section */}
       <div className={styles.buttons}>
-        <Link href="/login/page.js" className={styles.button}>
-          Sign Up
-        </Link>
-        <Link href="/" className={styles.button}>
-          Login
-        </Link>
+        <ButtonBlackTransparent path = "\donate" className={styles.buttons}>
+          Donate 
+          </ButtonBlackTransparent>
+        <ButtonAnyColorFilled path = "\request-appointment" buttonColor = "red" className={styles.buttons}>
+          Request Appointment
+          </ButtonAnyColorFilled>
       </div>
+      </div>
+      
     </nav>
   );
 }
