@@ -17,41 +17,44 @@ export default function NavBar() {
   return (
     <nav className={styles.navbar}>
       {/* Logo Section */}
-      <div className={styles.navbarContainer}>
-      <div className={styles.logo}>
-        <Link href="/">
-          {" "}
-          <Image src="/shifa.png" alt="Logo" width={60} height={60} />{" "}
-        </Link>
-      </div>
+      <div className={styles.navbarContainer + " content_box"}>
+        <div className={styles.logo}>
+          <Link href="/">
+            {" "}
+            <Image src="/shifa.png" alt="Logo" width={60} height={60} />{" "}
+          </Link>
+        </div>
 
-      {/* Navigation Links Section */}
-      <div className={styles.navLinks}>
-        <Link href="/who-we-are" className={styles.link}>
-          Who Are We
-        </Link>
-        <Link href="/services" className={styles.link}>
-          Services
-        </Link>
-        <Link href="/get-involved" className={styles.link}>
-          Get Involved
-        </Link>
-        <Link href="/resources" className={styles.link}>
-          Resources
-        </Link>
-      </div>
+        {/* Navigation Links Section */}
+        <div className={styles.navLinks}>
+          <Link href="/who-we-are" className={styles.link}>
+            Who Are We
+          </Link>
+          <Link href="/services" className={styles.link}>
+            Services
+          </Link>
+          <Link href="/get-involved" className={styles.link}>
+            Get Involved
+          </Link>
+          <Link href="/resources" className={styles.link}>
+            Resources
+          </Link>
+        </div>
 
-      {/* Buttons Section */}
-      <div className={styles.buttons}>
-        <ButtonBlackTransparent path = "\donate" className={styles.buttons}>
-          Donate 
+        {/* Buttons Section */}
+        <div className={styles.buttons}>
+          <ButtonBlackTransparent path="/donate" className={styles.buttons}>
+            Donate
           </ButtonBlackTransparent>
-        <ButtonAnyColorFilled path = "\request-appointment" buttonColor = "red" className={styles.buttons}>
-          Request Appointment
+          <ButtonAnyColorFilled
+            path="/request-appointment"
+            buttonColor="red"
+            className={styles.buttons}
+          >
+            Request Appointment
           </ButtonAnyColorFilled>
+        </div>
       </div>
-      </div>
-      
     </nav>
   );
 }

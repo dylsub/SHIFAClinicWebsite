@@ -1,72 +1,45 @@
-/* Navbar Styles */
 .navbar {
-  background-color: #fff; /* Full-width background */
-  height: 80px; /* Slightly taller to accommodate elements */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Full width background */
-  top: 0; /* Aligns to the top */
-  padding: 0 20px; /* Adds padding for horizontal spacing */
-  box-sizing: border-box; /* Include padding in width calculation */
+  background-color: #fff;
+  height: 80px;
+  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-/* Constrain Navbar Content */
 .navbarContainer {
   display: flex;
-  align-items: center; /* Vertically centers all items */
-  justify-content: space-between; /* Evenly space logo, links, and buttons */
-  max-width: 1200px; /* Constrain content width */
-  margin: 0 auto; /* Center content horizontally */
-  width: 100%; /* Allow responsiveness */
+  align-items: center;
 }
 
-/* Logo Section */
 .logo {
   display: flex;
-  align-items: center; /* Vertically aligns the logo */
-  margin-right: auto; /* Push logo to the far left */
+  align-items: center;
+  margin-right: auto;
 }
 
 .logo img {
-  display: block; /* Ensures proper alignment */
-  width: auto; /* Prevents scaling issues */
-  height: 60px; /* Adjust the size of the logo */
-  margin-left: 10px; /* Optional spacing */
+  display: block;
+  width: auto;
+  height: 60px;
 }
 
-/* Navigation Links Section */
 .navLinks {
   display: flex;
-  justify-content: center; /* Center the navigation links */
-  gap: 30px; /* Adjust spacing between the links */
-  flex: 1; /* Allows .navLinks to take up available space */
+  justify-content: center;
+  gap: 50px;
+  flex: 1;
   text-align: center;
-  align-items: center; /* Ensures vertical alignment */
+  align-items: center;
 }
 
-/* Buttons Section */
 .buttons {
   display: flex;
-  justify-content: flex-end; /* Aligns buttons to the far right */
+  justify-content: flex-end;
   gap: 20px;
-  align-items: center; /* Ensures vertical alignment */
+  align-items: center;
 }
 
-/* Button Styling */
-.button {
-  margin-right: 10px;
-  padding: 8px 15px; /* Add padding inside the buttons */
-  border-radius: 5px; /* Optional: Add slight rounding for aesthetics */
-  background-color: #f5f5f5; /* Optional: Light background for buttons */
-  color: #333; /* Text color */
-  transition: all 0.3s ease; /* Smooth hover effects */
-  display: inline-block;
-}
-
-
-
-/* Link Styling */
 .link {
   text-decoration: none;
   color: #333;
@@ -76,11 +49,24 @@
 }
 
 .link:hover {
-  color: red; /* Hover color */
-  text-decoration: underline; /* Optional hover underline */
+  color: red;
+  text-decoration: underline;
 }
 
-/* Spacer for content below navbar */
-.navbarSpacer {
-  height: 80px; /* Match the height of .navbar */
+@media only screen and (max-width: 1280px) {
+  .navLinks {
+    gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .navLinks {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .buttons {
+    display: none;
+  }
 }
