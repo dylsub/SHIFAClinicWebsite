@@ -55,6 +55,7 @@ p {
 .content_box {
   width: 1200px;
   display: flex;
+  /* flex-direction: row; */
   /* background-color: blue; */
 }
 
