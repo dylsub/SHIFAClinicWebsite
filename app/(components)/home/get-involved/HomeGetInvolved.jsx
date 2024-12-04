@@ -16,7 +16,7 @@ const HomeGetInvolved = (  {subtitleText,
   // The section be held in a content box (div) with a width of 1400px
   // An image and your created component should be in those boxes and styled appropriately
   return <div width={1200} className={styles.aboutColumn}>
-    <img src={src} alt={titleText} />
+  <img src={src} alt={titleText} />
   <div className={styles.aboutText}>
   <DetailedTextBlock
     subtitleText = {subtitleText}
