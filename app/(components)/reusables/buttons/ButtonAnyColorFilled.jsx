@@ -15,7 +15,7 @@ export default function ButtonAnyColorFilled({ children, path, buttonColor }) {
 
   return (
     <Link href={path} style={style} className={styles.button}>
-      {children}
+      <p>{children}</p>
     </Link>
   );
 }

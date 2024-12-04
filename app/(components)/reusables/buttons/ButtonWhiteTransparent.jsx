@@ -8,7 +8,7 @@ export default function ButtonWhiteTransparent({ children, path }) {
   // Give it a transition over time (Like 0.15s)
   return (
     <Link href={path} className={styles.button}>
-      {children}
+      <p>{children}</p>
     </Link>
   );
 }

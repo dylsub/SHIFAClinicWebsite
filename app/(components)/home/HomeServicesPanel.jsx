@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./HomeServicesPanel.module.css";
+import ButtonAnyColorFilled from "../reusables/buttons/ButtonAnyColorFilled";
 
 export default function HomeServicesPanel({
   src,
@@ -14,13 +15,10 @@ export default function HomeServicesPanel({
       <img src={src} alt={titleText} className={styles.icon} />
       <h1 className={styles.title}>{titleText}</h1>
       <p className={styles.description}>{descripText}</p>
-      <a
-        href={buttonPath}
-        className={styles.button}
-        style={{ backgroundColor: colorCode }}
-      >
+
+      <ButtonAnyColorFilled path={buttonPath} buttonColor={colorCode}>
         {buttonText}
-      </a>
+      </ButtonAnyColorFilled>
     </div>
   );
 }

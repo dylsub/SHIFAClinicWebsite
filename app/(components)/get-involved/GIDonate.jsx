@@ -1,12 +1,37 @@
 import React from "react";
+import ButtonAnyColorFilled from "../reusables/buttons/ButtonAnyColorFilled";
+import classes from "./GIDonate.module.css";
 
 const GIDonate = () => {
-  // Swetha
-  // Design the section on the Get Involved page with the header: "Your Support Matters"
-  // Use a <Link> element for the button
-  // Style effectively
-  // Use a content box of width 1200px;
-  return <div></div>;
+  return (
+    <div className={classes.container}>
+      <h1
+        style={{
+          fontSize: "36px",
+          marginBottom: "30px",
+        }}
+      >
+        Your Support Matters
+      </h1>
+      <p
+        style={{
+          fontSize: "18px",
+          lineHeight: "1.6",
+          maxWidth: "1200px",
+          marginBottom: "45px",
+        }}
+      >
+        Giving back to the community is a principle we value, and donations from
+        our community are greatly appreciated. Your generous donations are vital
+        in helping us provide essential healthcare services. Thank you for your
+        generosity and helping us create a difference for those in need!
+      </p>
+
+      <ButtonAnyColorFilled path="/donate" buttonColor="rgb(0, 0, 0)">
+        Donate Today!
+      </ButtonAnyColorFilled>
+    </div>
+  );
 };
 
 export default GIDonate;

@@ -1,8 +1,6 @@
 .stats {
   display: flex;
   /* justify-content: space-between; */
-  width: 1200px;
-  padding: 150px 0;
   /* background-color: lightblue; */
 }
 
@@ -20,5 +18,17 @@
 }
 
 .stat_description {
-  font-size: 17px;
+}
+
+@media only screen and (max-width: 720px) {
+  .stats {
+    gap: 75px;
+  }
+  .stat_title {
+    font-size: 60px;
+  }
+
+  .stat_description {
+    font-size: 30px;
+  }
 }
