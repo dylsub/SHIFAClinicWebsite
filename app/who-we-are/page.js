@@ -6,6 +6,7 @@ import BackgroundWhiteWrapper from "../(components)/reusables/BackgroundWhiteWra
 import BackgroundGreyWrapper from "../(components)/reusables/BackgroundGreyWrapper";
 import Grid from "../(components)/who-we-are/grid/Grid";
 import Contact from "../(components)/reusables/Contact";
+import Team from "../(components)/who-we-are/team/Team"; // Import the Team component
 
 const WhoWeAre = () => {
   return (
@@ -24,9 +25,7 @@ const WhoWeAre = () => {
 
       <Grid></Grid>
 
-      <BackgroundWhiteWrapper>
-        <h1>Team section (TODO)</h1>
-      </BackgroundWhiteWrapper>
+      <Team> </Team>
 
       <BackgroundGreyWrapper>
         <Contact></Contact>

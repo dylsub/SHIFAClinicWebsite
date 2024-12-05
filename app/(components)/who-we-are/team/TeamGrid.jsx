@@ -1,13 +1,25 @@
 import React from "react";
+import styles from "./Team.module.css";
+import TeamItem from "./TeamItem";
 
 const TeamGrid = () => {
-  // Ayush
-  // A grid of TeamItem components (2x3)
-  // Make sure that they remain in a content box
-  // Each TeamItem should dynamically fill the size of the content box
-  // (Each item should be a third the width and have some sort of gap)
+  const teamData = [
+    { imageSrc: "/doctors.jpg", label: "SHIFA Providers" },
+    { imageSrc: "/doctors.jpg", label: "SHIFA Dentists" },
+    { imageSrc: "/doctors.jpg", label: "SHIFA Nurses" },
+    { imageSrc: "/RAHero.png", label: "SHIFA Pharmacists" },
+    { imageSrc: "/doctors.jpg", label: "SHIFA Admins" },
+    { imageSrc: "/doctors.jpg", label: "Student Volunteers" },
+  ];
 
-  return <div></div>;
+  return (
+    <div className={styles.teamGrid}>
+      {teamData.map((item, index) => (
+        <TeamItem key={index} imageSrc={item.imageSrc} label={item.label} />
+      ))}
+    </div>
+  );
 };
 
 export default TeamGrid;
+
