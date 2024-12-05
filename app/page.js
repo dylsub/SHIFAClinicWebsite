@@ -21,6 +21,7 @@ import DonateHero from "./(components)/donate/DonateHero";
 import BackgroundGreyWrapper from "./(components)/reusables/BackgroundGreyWrapper";
 import BackgroundWhiteWrapper from "./(components)/reusables/BackgroundWhiteWrapper";
 import Contact from "./(components)/reusables/Contact";
+import BackgroundDarkGreyWrapper from "./(components)/reusables/BackgroundDarkGreyWrapper";
 
 export default function Home() {
   return (
@@ -97,9 +98,15 @@ export default function Home() {
         ></HomeGetInvolved>
       </BackgroundWhiteWrapper>
 
-      <BackgroundGreyWrapper>
-        <Contact></Contact>
-      </BackgroundGreyWrapper>
+      <BackgroundDarkGreyWrapper>
+        <Contact
+        subtitleText={"Question or concern?"}
+        buttonText={"Submit"}
+        path={"/"}
+        src={"contact.png"}
+        headerText={"Feel free to contact us"}>
+        </Contact>
+      </BackgroundDarkGreyWrapper>
     </div>
   );
 }
