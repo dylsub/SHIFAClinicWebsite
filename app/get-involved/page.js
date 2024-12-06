@@ -5,6 +5,8 @@ import BackgroundWhiteWrapper from "../(components)/reusables/BackgroundWhiteWra
 import GIDonate from "../(components)/get-involved/GIDonate";
 import BackgroundDarkGreyWrapper from "../(components)/reusables/BackgroundDarkGreyWrapper";
 import Contact from "../(components)/reusables/Contact";
+import DropDownPanel from "../(components)/reusables/DropDownPanel";
+import DropdownColumn from "../(components)/get-involved/FAQ/DropdownColumn";
 
 const GetInvolved = () => {
   return (
@@ -17,6 +19,10 @@ const GetInvolved = () => {
         }
         authorText={"-Prophet Muhammad"}
       ></HeroQuote>
+
+      <BackgroundWhiteWrapper>
+        <DropdownColumn></DropdownColumn>
+      </BackgroundWhiteWrapper>
 
       <BackgroundWhiteWrapper>
         <GIDonate></GIDonate>
