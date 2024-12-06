@@ -2,16 +2,21 @@
 
 import React, { useState } from "react";
 import styles from "./DropDownPanel.module.css";
+import { FaChevronDown } from "react-icons/fa";
 
-const DropDownPanel = ({ buttonText, dropdownText }) => {
+const DropDownPanel = ({ buttonText, dropdownText, size }) => {
     const [open, setOpen] = useState(false);
 
     const toggleDropdown = () => {
         setOpen((prev) => !prev);
     };
 
+    const dynamicWidth = {
+        width: size || "100%"
+    };
+
     return (
-        <div className={styles.dropdownContainer}>
+        <div className={styles.dropdownContainer} style = {dynamicWidth}>
             {/* Dropdown button */}
             <div
                 onClick={toggleDropdown}
@@ -39,3 +44,5 @@ export default DropDownPanel;
   // (Stuff below it should be pushed down so that things don't overlap. This is easier than it sounds)
   // Good luck!
   // displayblock
+  // custom width
+  // stylize text box

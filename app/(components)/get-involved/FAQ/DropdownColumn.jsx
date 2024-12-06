@@ -1,4 +1,5 @@
 import React from "react";
+import DropDownPanel from "../../reusables/DropDownPanel";
 
 const DropdownColumn = () => {
   // Devin + Faris
@@ -6,7 +7,41 @@ const DropdownColumn = () => {
   // It should be 600px or so wide (Not set)
   // Ensure that everything is working correctly
 
-  return <div></div>;
+  return <div>  
+    <DropDownPanel
+      buttonText={"Volunteer Coordinators"}
+      dropdownText={"The volunteer coordinators at SHIFA Clinic oversee the recruitment, scheduling, and support of volunteers, ensuring all operations run smoothly and efficiently."}
+      size={"600px"}
+    ></DropDownPanel>
+
+    <DropDownPanel
+      buttonText={"Assessment Process & Requirements"}
+      dropdownText={"Volunteers are required to meet specific eligibility criteria and undergo an application process that includes an assessment of their skills, background, and commitment to serving the community."}
+      size={"600px"}
+    ></DropDownPanel>
+
+    <DropDownPanel
+      buttonText={"Training & Orientation"}
+      dropdownText={"New volunteers participate in a structured training and orientation program where they learn essential healthcare skills such as history taking and obtaining vital signs under supervision."}
+      size={"600px"}
+    ></DropDownPanel>
+
+    <DropDownPanel
+      buttonText={"How the Volunteer Process Works"}
+      dropdownText={"The volunteer process involves applying through a formal system, attending an orientation, completing training, and then actively participating in various healthcare-related tasks at the clinic."}
+      size={"600px"}
+    ></DropDownPanel>
+    <DropDownPanel
+      buttonText={"Roles & Responsibilities"}
+      dropdownText={"Volunteers take on a variety of roles based on their skills and interests, ranging from clinical tasks like assisting healthcare providers to non-clinical support such as administrative work and marketing."}
+      size={"600px"}
+    ></DropDownPanel>
+    <DropDownPanel
+      buttonText={"Volunteer Commitment & Expectations"}
+      dropdownText={"Volunteers can expect to commit 10-15 hours of work to Shifa Clinic on a weekly basis, assisting in basic administrative tasks, patient care, and vital analysis."}
+      size={"600px"}
+    ></DropDownPanel>
+  </div>;
 };
 
 export default DropdownColumn;

@@ -1,5 +1,5 @@
+
 .dropdownContainer {
-    width: 100%;
     /* margin: 20px 0; */
     border-top: 1px solid #A1080B;
 }
@@ -29,7 +29,11 @@
 }
 
 .dropdownButton.open::after {
-    content: "\2304";
+    content: "\276F";
+    font-size: 12px;
+    color: #EC2024;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
 }
 
 .dropdownMenu {
