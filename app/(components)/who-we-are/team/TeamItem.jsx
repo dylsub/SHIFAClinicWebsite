@@ -13,4 +13,3 @@ const TeamItem = ({ imageSrc, label }) => {
 };
 
 export default TeamItem;
-

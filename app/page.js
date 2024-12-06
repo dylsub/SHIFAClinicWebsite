@@ -100,12 +100,12 @@ export default function Home() {
 
       <BackgroundDarkGreyWrapper>
         <Contact
-        subtitleText={"Question or concern?"}
-        buttonText={"Submit"}
-        path={"/"}
-        src={"contact.png"}
-        headerText={"Feel free to contact us"}>
-        </Contact>
+          subtitleText={"Question or concern?"}
+          buttonText={"Submit"}
+          path={"/"}
+          src={"contact.png"}
+          headerText={"Feel free to contact us"}
+        ></Contact>
       </BackgroundDarkGreyWrapper>
     </div>
   );

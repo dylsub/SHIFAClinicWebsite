@@ -1,0 +1,23 @@
+.ResourcesContainer {
+    width: 100vw;
+    height: 600px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/Resources.png');
+    background-size: cover;
+    background-position: left;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.ResourcesHeader {
+    color: rgb(0, 0, 0);
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+
+.text_box {
+    width: 1200px;
+    /* background-color: green; */
+    margin-bottom: 100px;
+
+}
