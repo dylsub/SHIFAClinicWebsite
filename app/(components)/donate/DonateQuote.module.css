@@ -1,36 +1,25 @@
-.DonateQuoteContainer {
-    width: 100vw;
-    height: 600px;
-    background-color: #f2f2f2;
-    background-size: cover;
-    background-position: left;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-}
-
 .DonateQuote {
-    color: rgb(0, 0, 0);
-    font-size: 3.5em;
-    margin-bottom: 15px;
+  color: rgb(0, 0, 0);
+  font-size: 3.5em;
+  margin-bottom: 15px;
 }
 
 .content_box {
-    width: 1200px; 
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
+  width: 1200px;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 .image_box {
-    width: 50%; 
-    height: 100%;
-    background-image: url('/DonateQuotePerson.png');
+  width: 50%;
+  height: 100%;
 }
 
 .text_box {
-    width: 50%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

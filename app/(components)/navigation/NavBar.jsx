@@ -20,8 +20,7 @@ export default function NavBar() {
       <div className={styles.navbarContainer + " content_box"}>
         <div className={styles.logo}>
           <Link href="/">
-            {" "}
-            <Image src="/shifa.png" alt="Logo" width={60} height={60} />{" "}
+            <Image src="/shifa.png" alt="Logo" width={60} height={60} />
           </Link>
         </div>
 

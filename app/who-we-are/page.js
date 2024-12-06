@@ -7,6 +7,8 @@ import BackgroundGreyWrapper from "../(components)/reusables/BackgroundGreyWrapp
 import Grid from "../(components)/who-we-are/grid/Grid";
 import Contact from "../(components)/reusables/Contact";
 import Team from "../(components)/who-we-are/team/Team"; // Import the Team component
+import BackgroundDarkGreyWrapper from "../(components)/reusables/BackgroundDarkGreyWrapper";
+import DonateQuote from "../(components)/donate/DonateQuote";
 
 const WhoWeAre = () => {
   return (
@@ -25,11 +27,20 @@ const WhoWeAre = () => {
 
       <Grid></Grid>
 
-      <Team> </Team>
+      <BackgroundWhiteWrapper>
+        <Team> </Team>
+      </BackgroundWhiteWrapper>
 
-      <BackgroundGreyWrapper>
-        <Contact></Contact>
-      </BackgroundGreyWrapper>
+      <BackgroundDarkGreyWrapper>
+        <Contact
+          subtitleText={"Question or concern?"}
+          titleText={"Nurse holding a baby"}
+          buttonText={"Submit"}
+          headerText={"Feel free to contact us"}
+          path={"/"}
+          src={"contact.png"}
+        ></Contact>
+      </BackgroundDarkGreyWrapper>
     </div>
   );
 };
