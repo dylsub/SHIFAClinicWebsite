@@ -1,0 +1,54 @@
+ .contentBox {
+    padding: 20px;
+    text-align: center;
+    background-color: #e2e2e2;
+    width: 1500px;
+  }
+  
+  .header {
+    margin-top: 25px;
+    font-size: 24px;
+    font-weight: bold; 
+    margin-bottom: 55px; 
+    color: #000; 
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 0px; 
+  }
+  
+  .redButton {
+    border: 2px;
+    padding: 8px 18px;
+    border-radius: 40px;
+    background-color: rgb(222, 31, 31);
+    color: white;
+    text-align: center;
+    width: 220px;
+    font-family: "Inter";
+    transition: background-color .15s;
+    transition: color .15s; 
+  }
+  
+  .redButton:hover {
+    filter: brightness(0.9);
+  }
+  
+  .line {
+    width: 200px; 
+    height: 2px; 
+    background-color: #000; 
+    margin-bottom: 50px;
+  }
+  
+  .leftButton {
+    margin-bottom: 50px;
+  }
+  
+  .rightButton {
+    margin-bottom: 50px;
+  }
+  
