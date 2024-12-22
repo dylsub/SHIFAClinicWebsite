@@ -1,22 +1,37 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
+import styles from './MobileNavMenu.module.css';
 
 const MobileNavMenu = () => {
-    // Ayush
-    // You are going to design a mobile navigational panel
-
-    // View https://dylsub.me or https://stemandbudsnaperville.org for reference
-    // Make your chrome window narrow and click the button that appears on the navigation bar
-
-    // Make the width of this panel like 70vw and the height 100vh
-    // Don't worry about the logic of closing and opening the panel but make sure that the links and buttons function correctly
-
-    // Style is up to your creativity: make it look clean!
-
   return (
-    <div>
-      
+    <div className={styles.mobileNavMenu}>
+      <ul className={styles.navLinks}>
+        <li>
+          <Link href="/home">Home</Link>
+        </li>
+        <li>
+          <Link href="/about">About</Link>
+        </li>
+        <li>
+          <Link href="/services">Services</Link>
+        </li>
+        <li>
+          <Link href="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link href="/donate">Donate</Link>
+        </li>
+      </ul>
+      <div className={styles.buttons}>
+        <Link href="/login" className={styles.button}>
+          Login
+        </Link>
+        <Link href="/signup" className={styles.button}>
+          Sign Up
+        </Link>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default MobileNavMenu
+export default MobileNavMenu;

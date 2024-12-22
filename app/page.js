@@ -22,11 +22,13 @@ import BackgroundGreyWrapper from "./(components)/reusables/BackgroundGreyWrappe
 import BackgroundWhiteWrapper from "./(components)/reusables/BackgroundWhiteWrapper";
 import Contact from "./(components)/reusables/Contact";
 import BackgroundDarkGreyWrapper from "./(components)/reusables/BackgroundDarkGreyWrapper";
+import MobileNavMenu from "./(components)/navigation/MobileNavMenu";
 
 export default function Home() {
   return (
     <div className="main">
       <NavBar></NavBar>
+      <MobileNavMenu></MobileNavMenu>
       <HomeHero></HomeHero>
 
       <BackgroundWhiteWrapper>
