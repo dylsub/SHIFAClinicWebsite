@@ -1,10 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './MobileNavMenu.module.css';
 
 const MobileNavMenu = () => {
   return (
     <div className={styles.mobileNavMenu}>
+      {/* Logo Section */}
+      <div className={styles.logo}>
+        <Link href="/">
+          <Image
+            src="/shifa.png"
+            width={50}
+            height={50}
+            className={styles.logoImage}
+          />
+        </Link>
+      </div>
+
       <ul className={styles.navLinks}>
         <li>
           <Link href="/home">Home</Link>
@@ -22,6 +35,7 @@ const MobileNavMenu = () => {
           <Link href="/donate">Donate</Link>
         </li>
       </ul>
+
       <div className={styles.buttons}>
         <Link href="/login" className={styles.button}>
           Login

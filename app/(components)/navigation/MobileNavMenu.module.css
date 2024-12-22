@@ -1,62 +1,67 @@
-/* Container for the mobile navigation menu */
 .mobileNavMenu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 70vw; /* Menu width */
-    height: 100vh; /* Full screen height */
-    background-color: #fff; /* Clean white background */
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    z-index: 1000; /* Ensure it sits above other content */
-  }
-  
-  /* Navigation links */
-  .navLinks {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navLinks li {
-    margin-bottom: 20px;
-  }
-  
-  .navLinks a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #333;
-    font-family: "Inter", sans-serif;
-    transition: color 0.3s ease;
-  }
-  
-  .navLinks a:hover {
-    color: #e23809; /* Red highlight on hover */
-  }
-  
-  /* Button container */
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .button {
-    padding: 10px 20px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #e23809; /* Red background */
-    color: #fff;
-    text-decoration: none;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #c52006; /* Darker red on hover */
-  }
-  
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw; 
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.logo {
+  margin-bottom: 20px; 
+  display: flex;
+  justify-content: center;
+}
+
+.logoImage {
+  width: 50px; 
+  height: auto; 
+}
+
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  text-align: center;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #e23809; 
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; 
+}
+
+.button {
+  text-decoration: none;
+  background-color: #e23809;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #b81c07; 
+}
