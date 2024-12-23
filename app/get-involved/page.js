@@ -7,6 +7,7 @@ import BackgroundDarkGreyWrapper from "../(components)/reusables/BackgroundDarkG
 import Contact from "../(components)/reusables/Contact";
 import DropDownPanel from "../(components)/reusables/DropDownPanel";
 import DropdownColumn from "../(components)/get-involved/FAQ/DropdownColumn";
+import GetInvolvedFAQ from "../(components)/get-involved/FAQ/GetInvolvedFAQ";
 
 const GetInvolved = () => {
   return (
@@ -21,7 +22,7 @@ const GetInvolved = () => {
       ></HeroQuote>
 
       <BackgroundWhiteWrapper>
-        <DropdownColumn></DropdownColumn>
+        <GetInvolvedFAQ></GetInvolvedFAQ>
       </BackgroundWhiteWrapper>
 
       <BackgroundWhiteWrapper>

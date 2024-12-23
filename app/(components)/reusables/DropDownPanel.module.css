@@ -5,8 +5,8 @@
 
 .dropdownButton {
   background-color: white;
-  padding: 20px 5px;
-  font-size: 16px;
+  padding: 30px 5px;
+  font-size: 20px;
   color: #000;
   display: flex;
   justify-content: space-between;
@@ -21,7 +21,7 @@
 
 .dropdownButton::after {
   content: "\276F";
-  font-size: 12px;
+  font-size: 20px;
   color: #ec2024;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
@@ -29,7 +29,7 @@
 
 .dropdownButton.open::after {
   content: "\276F";
-  font-size: 12px;
+  font-size: 20px;
   color: #ec2024;
   transform: rotate(90deg);
   transition: transform 0.3s ease;
@@ -38,7 +38,7 @@
 .dropdownMenu {
   background-color: #e2e2e2;
   padding: 20px;
-  font-size: 12px;
+  font-size: 15px;
   color: #333;
   line-height: 1.5;
   border-top: 1px solid #ccc;
