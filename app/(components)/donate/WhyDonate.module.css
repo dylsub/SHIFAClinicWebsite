@@ -1,0 +1,13 @@
+.container {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 120px;
+  font-size: 3.5rem;
+}
+
+.infoGroupWrapper {
+  margin-bottom: 40px;
+}
