@@ -1,16 +1,11 @@
-import React from 'react'
+import React from "react";
+import styles from "./WhyDonate.module.css";
 
-const WhyDonate = () => {
-    // Ishaan
-    // Use the InfoGroup.jsx/InfoPanel.jsx components you created to set up the "Why Donate to ICN SHIFA Clinic" section
-    // Add the title text
-    // Style accordingly
-
+export default function WhyDonate({ children }) {
   return (
-    <div>
-      
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Why Donate to ICN SHIFA Clinic?</h2>
+      {children}
     </div>
-  )
+  );
 }
-
-export default WhyDonate
