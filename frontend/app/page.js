@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Statistics from "./(components)/home/statistics/Statistics";
 import Testimonial from "./(components)/home/testimonial/Testimonial";
 import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
@@ -28,7 +27,7 @@ export default function Home() {
   return (
     <div className="main">
       <NavBar></NavBar>
-      <MobileNavMenu></MobileNavMenu>
+      {/* <MobileNavMenu></MobileNavMenu> */}
       <HomeHero></HomeHero>
 
       <BackgroundWhiteWrapper>

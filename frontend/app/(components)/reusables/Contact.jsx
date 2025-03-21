@@ -18,7 +18,7 @@ const Contact = ({
   if (state.succeeded) {
     return (
       <div className={styles.successMessage}>
-        <p>Thanks for reaching out! We'll get back to you soon.</p>
+        <p>Thanks for reaching out! We will get back to you soon.</p>
       </div>
     );
   }
@@ -33,17 +33,8 @@ const Contact = ({
             <label className={styles.label} htmlFor="name">
               Name
             </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className={styles.input}
-            />
-            <ValidationError 
-              prefix="Name" 
-              field="name" 
-              errors={state.errors} 
-            />
+            <input type="text" id="name" name="name" className={styles.input} />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
             <label className={styles.label} htmlFor="email">
               Email
             </label>
@@ -53,10 +44,10 @@ const Contact = ({
               name="email"
               className={styles.input}
             />
-            <ValidationError 
-              prefix="Email" 
-              field="email" 
-              errors={state.errors} 
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
             />
             <label className={styles.label} htmlFor="message">
               Message
@@ -66,10 +57,10 @@ const Contact = ({
               name="message"
               className={styles.text_area}
             />
-            <ValidationError 
-              prefix="Message" 
-              field="message" 
-              errors={state.errors} 
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
             />
             <div className={styles.buttonContainer}>
               <button

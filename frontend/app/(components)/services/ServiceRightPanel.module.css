@@ -1,11 +1,28 @@
 .container {
-  position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
+  height: 650px;
   margin: 0 auto;
   padding: 0;
-  display: flex;
-  justify-content: flex-start;
+  /* background-color: coral; */
+}
+
+.image_box {
+  height: 600px;
+  width: 1100px;
+  /* background-color: black; */
+  overflow: hidden;
+  position: relative;
+  top: -350px;
+}
+
+.image_box img {
+}
+
+.content_box {
+  position: relative;
+  top: 300px;
+  left: 600px;
 }
 
 .contentCard {
@@ -14,6 +31,7 @@
   padding: 40px;
   text-align: center;
   width: 600px;
+  height: 350px;
   border-top: 12px solid var(--background-color);
   border-right: 12px solid var(--background-color);
   z-index: 1;
