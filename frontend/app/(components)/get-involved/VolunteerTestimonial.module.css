@@ -1,0 +1,20 @@
+.container {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 120px;
+  font-size: 3.5rem;
+}
+
+.button {
+  margin-top: 80px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #b91c1c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
