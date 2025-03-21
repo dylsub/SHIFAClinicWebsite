@@ -8,6 +8,10 @@ import Contact from "../(components)/reusables/Contact";
 import DropDownPanel from "../(components)/reusables/DropDownPanel";
 import DropdownColumn from "../(components)/get-involved/FAQ/DropdownColumn";
 import GetInvolvedFAQ from "../(components)/get-involved/FAQ/GetInvolvedFAQ";
+import BackgroundGreyWrapper from "../(components)/reusables/BackgroundGreyWrapper";
+import VolunteerTestimonial from "../(components)/get-involved/VolunteerTestimonial";
+import InfoGroup from "../(components)/reusables/InfoGroup";
+import InfoPanel from "../(components)/reusables/InfoPanel";
 
 const GetInvolved = () => {
   return (
@@ -24,6 +28,31 @@ const GetInvolved = () => {
       <BackgroundWhiteWrapper>
         <GetInvolvedFAQ></GetInvolvedFAQ>
       </BackgroundWhiteWrapper>
+
+      <BackgroundGreyWrapper>
+        <VolunteerTestimonial>
+          <InfoGroup>
+            <InfoPanel
+              src="contact.png"
+              titleText="Jane Doe"
+              descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
+              colorCode="red"
+            ></InfoPanel>
+            <InfoPanel
+              src="contact.png"
+              titleText="Jane Doe"
+              descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
+              colorCode="red"
+            ></InfoPanel>
+            <InfoPanel
+              src="contact.png"
+              titleText="Jane Doe"
+              descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
+              colorCode="red"
+            ></InfoPanel>
+          </InfoGroup>
+        </VolunteerTestimonial>
+      </BackgroundGreyWrapper>
 
       <BackgroundWhiteWrapper>
         <GIDonate></GIDonate>
