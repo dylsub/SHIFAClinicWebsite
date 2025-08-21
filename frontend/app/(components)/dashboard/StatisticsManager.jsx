@@ -19,11 +19,14 @@ const StatisticsManager = () => {
 
   const fetchStatistics = async () => {
     try {
-      const response = await fetch("http://localhost:3536/api/statistics", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + "/api/statistics",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         // Assign colors to statistics in order
@@ -50,7 +53,7 @@ const StatisticsManager = () => {
     try {
       const token = getAuthToken();
       const response = await fetch(
-        "http://localhost:3536/api/statistics/update",
+        process.env.NEXT_PUBLIC_API_URL + "/api/statistics/update",
         {
           method: "PUT",
           headers: {

@@ -17,7 +17,9 @@ const Statistics = () => {
 
   const fetchStatistics = async () => {
     try {
-      const response = await fetch("http://localhost:3536/api/statistics");
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + "/api/statistics"
+      );
       if (response.ok) {
         const data = await response.json();
         // Assign colors to statistics in order

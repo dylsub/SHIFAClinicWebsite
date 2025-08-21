@@ -13,7 +13,9 @@ const ResourcesGrid = () => {
 
   const fetchResources = async () => {
     try {
-      const response = await fetch("http://localhost:3536/api/resources");
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + "/api/resources"
+      );
       if (response.ok) {
         const data = await response.json();
         setResources(data);

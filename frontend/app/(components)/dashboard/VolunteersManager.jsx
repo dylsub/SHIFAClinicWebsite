@@ -32,11 +32,14 @@ const VolunteersManager = () => {
 
   const fetchVolunteers = async () => {
     try {
-      const response = await fetch("http://localhost:3536/api/volunteers", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + "/api/volunteers",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         setVolunteers(data);
@@ -67,13 +70,16 @@ const VolunteersManager = () => {
     formData.append("image", file);
 
     const token = getAuthToken();
-    const response = await fetch("http://localhost:3536/api/upload-image", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: formData,
-    });
+    const response = await fetch(
+      process.env.NEXT_PUBLIC_API_URL + "/api/upload-image",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      }
+    );
 
     if (response.ok) {
       const data = await response.json();
@@ -96,17 +102,20 @@ const VolunteersManager = () => {
       }
 
       const token = getAuthToken();
-      const response = await fetch("http://localhost:3536/api/volunteers", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          ...formData,
-          imageSrc: imageUrl,
-        }),
-      });
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + "/api/volunteers",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            ...formData,
+            imageSrc: imageUrl,
+          }),
+        }
+      );
 
       if (response.ok) {
         setFormData({
@@ -137,7 +146,7 @@ const VolunteersManager = () => {
       try {
         const token = getAuthToken();
         const response = await fetch(
-          `http://localhost:3536/api/volunteers/${volunteerId}`,
+          process.env.NEXT_PUBLIC_API_URL + `/api/volunteers/${volunteerId}`,
           {
             method: "DELETE",
             headers: {

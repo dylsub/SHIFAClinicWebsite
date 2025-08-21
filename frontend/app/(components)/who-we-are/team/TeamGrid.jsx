@@ -17,7 +17,9 @@ const TeamGrid = () => {
 
   const fetchVolunteers = async () => {
     try {
-      const response = await fetch("http://localhost:3536/api/volunteers");
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + "/api/volunteers"
+      );
       if (response.ok) {
         const data = await response.json();
         setVolunteers(data);
