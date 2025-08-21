@@ -1,0 +1,99 @@
+.dashboardContainer {
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e1e5e9;
+}
+
+.dashboardTitle {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 2.5rem;
+}
+
+.logoutButton {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.tabContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 12px 24px;
+  border: 2px solid #e1e5e9;
+  background: white;
+  color: #666;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  border-color: #ec2024;
+  color: #ec2024;
+  transform: translateY(-1px);
+}
+
+.activeTab {
+  background: #ec2024;
+  color: white;
+  border-color: #ec2024;
+}
+
+.activeTab:hover {
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(236, 32, 36, 0.3);
+}
+
+.contentArea {
+  min-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .dashboardHeader {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .dashboardTitle {
+    font-size: 2rem;
+  }
+
+  .tabContainer {
+    gap: 8px;
+  }
+
+  .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import NavBar from "../(components)/navigation/NavBar";
 import WWAHero from "../(components)/who-we-are/WWAHero";
-import WWAAbout from "../(components)/who-we-are/about/WWAAbout";
+import WWAAbout from "../(components)/who-we-are/WWAAbout";
 import BackgroundWhiteWrapper from "../(components)/reusables/BackgroundWhiteWrapper";
 import BackgroundGreyWrapper from "../(components)/reusables/BackgroundGreyWrapper";
 import Grid from "../(components)/who-we-are/grid/Grid";
 import Contact from "../(components)/reusables/Contact";
 import Team from "../(components)/who-we-are/team/Team"; // Import the Team component
 import BackgroundDarkGreyWrapper from "../(components)/reusables/BackgroundDarkGreyWrapper";
-import DonateQuote from "../(components)/donate/DonateQuote";
+import Milestones from "../(components)/who-we-are/Milestones";
 
 const WhoWeAre = () => {
   return (
@@ -22,12 +22,12 @@ const WhoWeAre = () => {
       </BackgroundGreyWrapper>
 
       <BackgroundWhiteWrapper>
-        <h1>Timeline section (TODO)</h1>
+        <Milestones></Milestones>
       </BackgroundWhiteWrapper>
 
       <Grid></Grid>
 
-      <BackgroundWhiteWrapper>
+      <BackgroundWhiteWrapper id={"team"}>
         <Team> </Team>
       </BackgroundWhiteWrapper>
 

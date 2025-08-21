@@ -8,7 +8,7 @@ import styles from "./InfoGroup.module.css";
 
 export default function InfoGroup({ children }) {
   return (
-    <div className="wrapper">
+    <div className="content_box">
       <div className={styles.container}>{children}</div>
     </div>
   );

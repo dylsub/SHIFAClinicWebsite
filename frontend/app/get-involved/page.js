@@ -5,13 +5,12 @@ import BackgroundWhiteWrapper from "../(components)/reusables/BackgroundWhiteWra
 import GIDonate from "../(components)/get-involved/GIDonate";
 import BackgroundDarkGreyWrapper from "../(components)/reusables/BackgroundDarkGreyWrapper";
 import Contact from "../(components)/reusables/Contact";
-import DropDownPanel from "../(components)/reusables/DropDownPanel";
-import DropdownColumn from "../(components)/get-involved/FAQ/DropdownColumn";
 import GetInvolvedFAQ from "../(components)/get-involved/FAQ/GetInvolvedFAQ";
 import BackgroundGreyWrapper from "../(components)/reusables/BackgroundGreyWrapper";
 import VolunteerTestimonial from "../(components)/get-involved/VolunteerTestimonial";
 import InfoGroup from "../(components)/reusables/InfoGroup";
 import InfoPanel from "../(components)/reusables/InfoPanel";
+import ImageBanner from "../(components)/reusables/ImageBanner";
 
 const GetInvolved = () => {
   return (
@@ -24,6 +23,8 @@ const GetInvolved = () => {
         }
         authorText={"-Prophet Muhammad"}
       ></HeroQuote>
+
+      <ImageBanner src="doctors.jpg"></ImageBanner>
 
       <BackgroundWhiteWrapper>
         <GetInvolvedFAQ></GetInvolvedFAQ>

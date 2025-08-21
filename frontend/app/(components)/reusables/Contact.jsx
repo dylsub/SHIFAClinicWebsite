@@ -24,7 +24,7 @@ const Contact = ({
   }
 
   return (
-    <div className={styles.about}>
+    <div className={styles.about + " content_box"}>
       <div className={styles.aboutText}>
         <h3 className={styles.detailed_subtitle}>{subtitleText}</h3>
         <h1 className={styles.detailed_title}>{headerText}</h1>

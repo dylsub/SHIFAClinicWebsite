@@ -1,17 +1,17 @@
-import React from 'react'
-import classes from './Person.module.css';
+import React from "react";
+import classes from "./Person.module.css";
 
-const Person = () => {
+const Person = ({ imageSrc, name, role }) => {
   return (
     <div>
       <div className={classes.container}>
-        <img src="inputimage" alt="Image" />
+        <img src={imageSrc} alt={name} />
         <div className={classes.overlay}>
-          <p>Sample Text</p>
+          <p>{role}</p>
         </div>
-      </div> 
+      </div>
       <div className={classes.name}>
-        <p>Name</p> 
+        <p>{name}</p>
       </div>
     </div>
   );

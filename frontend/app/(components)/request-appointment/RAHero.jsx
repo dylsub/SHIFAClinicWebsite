@@ -1,19 +1,24 @@
 import React from "react";
 import styles from "./RAHero.module.css";
+import ButtonWhiteTransparent from "../reusables/buttons/ButtonWhiteTransparent";
+import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 
-const RAHero = () => {
-  // Ashlee + Victor
-  // Y'all know the drill
-  // Stylize this one like the Figma
-
+export default function HomeHero() {
   return (
-    <div className={styles.RAHeroContainer}>
-      {/* <div className={styles.overlay}></div> */}
-      <div className={styles.text_box}>
-        <h1 className={styles.RAHeroHeader}>Request An Appointment</h1>
+    <div className={`${styles.heroContainer}`}>
+      <div className={`${styles.text_box} content_box`}>
+        <div>
+          <h1 className={styles.heroHeader}>Request an Appointment</h1>
+          <div className={styles.button_box}>
+            <ButtonWhiteTransparent scrollTo="request-appointment">
+              View Request Form
+            </ButtonWhiteTransparent>
+            <ButtonWhiteFilled scrollTo="contact-us">
+              Contact Us
+            </ButtonWhiteFilled>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
-
-export default RAHero;
+}

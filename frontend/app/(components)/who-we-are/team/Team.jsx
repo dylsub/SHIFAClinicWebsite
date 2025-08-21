@@ -4,7 +4,7 @@ import TeamGrid from "./TeamGrid";
 
 const Team = () => {
   return (
-    <section className={styles.teamSection}>
+    <section className={styles.teamSection + " content_box"}>
       <h1 className={styles.heading}>Meet Our Team</h1>
       <p className={styles.description}>
         ICN SHIFA Clinic is the manifestation of a dream that is shared commonly

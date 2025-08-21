@@ -1,0 +1,164 @@
+.resourcesContainer {
+  text-align: center;
+  flex-direction: column;
+}
+
+.titleSection {
+  margin-bottom: 50px;
+}
+
+.titleSection h1 {
+  margin-bottom: 20px;
+}
+
+.titleSection p {
+  margin-bottom: 30px;
+}
+
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resourceCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.resourceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #e23809;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.resourceImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.resourceCard:hover .resourceImage {
+  transform: scale(1.05);
+}
+
+.resourceContent {
+  padding: 25px;
+  text-align: left;
+}
+
+.resourceTitle {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.resourceDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.resourceLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e23809;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #e23809;
+}
+
+.resourceLink:hover {
+  background: transparent;
+  color: #e23809;
+  transform: translateY(-2px);
+}
+
+.noResources {
+  grid-column: 1 / -1;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.noResources p {
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resourcesContainer {
+    padding: 40px 15px;
+  }
+
+  .titleSection h1 {
+    font-size: 2rem;
+  }
+
+  .titleSection p {
+    font-size: 1.1rem;
+  }
+
+  .resourcesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resourceContent {
+    padding: 20px;
+  }
+
+  .resourceTitle {
+    font-size: 1.3rem;
+  }
+
+  .imageContainer {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resourcesContainer {
+    padding: 30px 10px;
+  }
+
+  .titleSection h1 {
+    font-size: 1.8rem;
+  }
+
+  .resourceContent {
+    padding: 15px;
+  }
+
+  .resourceTitle {
+    font-size: 1.2rem;
+  }
+
+  .imageContainer {
+    height: 160px;
+  }
+}

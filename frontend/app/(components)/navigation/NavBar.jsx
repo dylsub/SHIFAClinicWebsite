@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import styles from "./NavBar.module.css";
 import ButtonBlackTransparent from "../reusables/buttons/ButtonBlackTransparent";
 import ButtonAnyColorFilled from "../reusables/buttons/ButtonAnyColorFilled";
@@ -8,6 +11,8 @@ import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 import ButtonWhiteTransparent from "../reusables/buttons/ButtonWhiteTransparent";
 
 export default function NavBar() {
+  const pathname = usePathname();
+
   // Ayush Shastry
   // Fix formatting on Nav Bar
   // Get it looking perfect
@@ -26,16 +31,36 @@ export default function NavBar() {
 
         {/* Navigation Links Section */}
         <div className={styles.navLinks}>
-          <Link href="/who-we-are" className={styles.link}>
+          <Link
+            href="/who-we-are"
+            className={`${styles.link} ${
+              pathname === "/who-we-are" ? styles.active : ""
+            }`}
+          >
             Who Are We
           </Link>
-          <Link href="/services" className={styles.link}>
+          <Link
+            href="/services"
+            className={`${styles.link} ${
+              pathname === "/services" ? styles.active : ""
+            }`}
+          >
             Services
           </Link>
-          <Link href="/get-involved" className={styles.link}>
+          <Link
+            href="/get-involved"
+            className={`${styles.link} ${
+              pathname === "/get-involved" ? styles.active : ""
+            }`}
+          >
             Get Involved
           </Link>
-          <Link href="/resources" className={styles.link}>
+          <Link
+            href="/resources"
+            className={`${styles.link} ${
+              pathname === "/resources" ? styles.active : ""
+            }`}
+          >
             Resources
           </Link>
         </div>

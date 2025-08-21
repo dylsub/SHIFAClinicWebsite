@@ -2,13 +2,54 @@ require("dotenv").config({ path: "./.env" });
 
 const express = require("express");
 const cors = require("cors");
+const { MongoClient, ObjectId } = require("mongodb");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const rateLimit = require("express-rate-limit");
 const { connectToDb, getDb } = require("./db");
-//init app and middleware
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+const { upload, uploadImageToFirebase } = require("./uploadUtils");
+
 const app = express();
+
+// JWT secret key (in production, use environment variable)
+const JWT_SECRET = process.env.JWT_SECRET;
+
+// Rate limiting for login attempts
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // limit each IP to 5 requests per windowMs
+  message: "Too many login attempts, please try again later.",
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// Middleware
 app.use(express.json());
 app.use(cors());
 const PORT = process.env.PORT || 3536;
 
+// Authentication middleware
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({ message: "Access token required" });
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) {
+      return res.status(403).json({ message: "Invalid or expired token" });
+    }
+    req.user = user;
+    next();
+  });
+};
+
+// MongoDB connection
 let db;
 connectToDb((err) => {
   if (!err) {
@@ -19,155 +60,400 @@ connectToDb((err) => {
   }
 });
 
-// Fetches all the model data for the ModelData database
-app.get("/test", async (req, res) => {
-  console.log("Fetching test!");
+// Authentication endpoints
+app.post("/api/auth/login", loginLimiter, async (req, res) => {
   try {
-    const collection = db.collection("userInfo");
-    const items = await collection.find({}).toArray();
-    console.log(items);
-    res.status(200).json(items);
-  } catch (err) {
-    console.error("Error fetching items:", err);
-    res.status(500).send("Error fetching recent items");
-  }
-});
+    const { username, password } = req.body;
 
-//////////////////////////////////////////////////
-// BELOW IS ALL SAMPLE CODE FOR YALL REFERENCE
-//////////////////////////////////////////////////
+    // Get credentials from environment variables
+    const validUsername = process.env.ADMIN_USERNAME;
+    const validPassword = process.env.ADMIN_PASSWORD;
 
-// Route to handle data insertion
-app.post("/add_model_data", async (req, res) => {
-  try {
-    console.log("Recieved Request: ", req.body);
-    const { accuracy, model, benchmark, confusion_matrix, transactionHash } =
-      req.body;
-
-    console.log(
-      typeof accuracy,
-      typeof model,
-      typeof benchmark,
-      typeof confusion_matrix
-    );
-
-    // Validate request body
-    if (
-      typeof accuracy !== "number" ||
-      typeof model !== "string" ||
-      typeof benchmark !== "string" ||
-      typeof confusion_matrix !== "object"
-    ) {
-      return res.status(400).json({ error: "Invalid data format" });
+    // Check if environment variables are set
+    if (!validUsername || !validPassword) {
+      console.error(
+        "Admin credentials not configured in environment variables"
+      );
+      return res.status(500).json({ message: "Server configuration error" });
     }
 
-    // Create the data object with timestamp
-    const dataEntry = {
-      accuracy,
-      model,
-      benchmark,
-      confusion_matrix,
-      transactionHash,
-      entry_time: new Date(), // Current timestamp
-    };
+    if (username !== validUsername || password !== validPassword) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
 
-    // Insert into EigenGames2025.ModelData collection
-    const result = await db.collection("ModelData").insertOne(dataEntry);
+    // Generate JWT token
+    const token = jwt.sign({ username, role: "admin" }, JWT_SECRET, {
+      expiresIn: "24h",
+    });
 
-    res
-      .status(201)
-      .json({ message: "Data inserted successfully", id: result.insertedId });
-  } catch (error) {
-    console.error("Error inserting data:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
-
-app.post("/add_stake_data", async (req, res) => {
-  try {
-    console.log("Received Stake Data Request:", req.body);
-    const {
-      stakerAddress,
-      operatorName,
-      operatorAddress,
-      amountStaked,
-      yieldValue,
-    } = req.body;
-
-    console.log(
-      typeof stakerAddress,
-      typeof operatorName,
-      typeof operatorAddress,
-      typeof amountStaked,
-      typeof yieldValue
-    );
-
-    // Validate request body
-
-    // Create the data object with entry_time as the current timestamp
-    const stakeEntry = {
-      stakerAddress,
-      operatorName,
-      operatorAddress,
-      amountStaked,
-      yield: yieldValue, // 'yield' is a reserved word in JS, so using yieldValue in req.body
-      entry_time: new Date(), // Automatically generate the current timestamp
-    };
-
-    // Insert into EigenGames2025.StakeData collection
-    const result = await db.collection("StakeData").insertOne(stakeEntry);
-
-    res.status(201).json({
-      message: "Stake data inserted successfully",
-      id: result.insertedId,
+    res.json({
+      message: "Login successful",
+      token,
+      user: { username, role: "admin" },
     });
   } catch (error) {
-    console.error("Error inserting stake data:", error);
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Login error:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
-// Fetches all the model data for the ModelData database
-app.get("/modeldata", async (req, res) => {
-  console.log("Fetching model data");
-  try {
-    const collection = db.collection("ModelData");
-    // Find all items, sort them by createdAt in descending order (-1), and limit to 10
-    const items = await collection.find({}).toArray();
+app.post("/api/auth/verify", authenticateToken, (req, res) => {
+  res.json({ valid: true, user: req.user });
+});
 
-    res.status(200).json(items);
+// Image upload endpoint
+app.post(
+  "/api/upload-image",
+  authenticateToken,
+  upload.single("image"),
+  async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ message: "No image file provided" });
+      }
+
+      const imageUrl = await uploadImageToFirebase(req.file, "shifa-clinic");
+
+      res.json({
+        message: "Image uploaded successfully",
+        imageUrl: imageUrl,
+      });
+    } catch (error) {
+      console.error("Image upload error:", error);
+      res.status(500).json({ message: "Failed to upload image" });
+    }
+  }
+);
+
+// Protected routes - require authentication for write operations only
+app.use("/api/volunteers", (req, res, next) => {
+  // Allow GET requests without authentication
+  if (req.method === "GET") {
+    return next();
+  }
+  // Require authentication for POST, PUT, DELETE
+  return authenticateToken(req, res, next);
+});
+
+app.use("/api/resources", (req, res, next) => {
+  // Allow GET requests without authentication
+  if (req.method === "GET") {
+    return next();
+  }
+  // Require authentication for POST, PUT, DELETE
+  return authenticateToken(req, res, next);
+});
+
+app.use("/api/statistics", (req, res, next) => {
+  // Allow GET requests without authentication
+  if (req.method === "GET") {
+    return next();
+  }
+  // Require authentication for POST, PUT, DELETE
+  return authenticateToken(req, res, next);
+});
+
+// Dashboard API Endpoints
+
+// GET - Fetch all statistics
+app.get("/api/statistics", async (req, res) => {
+  console.log("Fetching statistics");
+  try {
+    const collection = db.collection("statistics");
+    const statistics = await collection.find({}).toArray();
+    res.status(200).json(statistics);
   } catch (err) {
-    console.error("Error fetching items:", err);
-    res.status(500).send("Error fetching recent items");
+    console.error("Error fetching statistics:", err);
+    res.status(500).json({ error: "Error fetching statistics" });
   }
 });
 
-app.get("/stake_data/:stakerAddress", async (req, res) => {
+// GET - Fetch all volunteers
+app.get("/api/volunteers", async (req, res) => {
+  console.log("Fetching volunteers");
   try {
-    const { stakerAddress } = req.params;
-
-    // Validate the input
-    if (typeof stakerAddress !== "string" || !stakerAddress.startsWith("0x")) {
-      return res.status(400).json({ error: "Invalid stakerAddress format" });
-    }
-
-    // Search for the entry in the StakeData collection
-    const stakeEntry = await db
-      .collection("StakeData")
-      .findOne({ stakerAddress });
-
-    if (!stakeEntry) {
-      return res.status(404).json({ error: "Stake data not found" });
-    }
-
-    res.status(200).json(stakeEntry);
-  } catch (error) {
-    console.error("Error fetching stake data:", error);
-    res.status(500).json({ error: "Internal server error" });
+    const collection = db.collection("volunteers");
+    const volunteers = await collection.find({}).toArray();
+    res.status(200).json(volunteers);
+  } catch (err) {
+    console.error("Error fetching volunteers:", err);
+    res.status(500).json({ error: "Error fetching volunteers" });
   }
 });
 
-// Health check endpoint
-app.get("/", (req, res) => {
-  res.send("API is running...");
+// GET - Fetch all resources
+app.get("/api/resources", async (req, res) => {
+  console.log("Fetching resources");
+  try {
+    const collection = db.collection("resources");
+    const resources = await collection.find({}).toArray();
+    res.status(200).json(resources);
+  } catch (err) {
+    console.error("Error fetching resources:", err);
+    res.status(500).json({ error: "Error fetching resources" });
+  }
+});
+
+// POST - Add new volunteer
+app.post("/api/volunteers", async (req, res) => {
+  console.log("Adding new volunteer:", req.body);
+  try {
+    const { name, role, category, imageSrc } = req.body;
+
+    // Validate request body
+    if (!name || !role || !category || !imageSrc) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const volunteerData = {
+      name,
+      role,
+      category,
+      imageSrc,
+      createdAt: new Date(),
+    };
+
+    const collection = db.collection("volunteers");
+    const result = await collection.insertOne(volunteerData);
+
+    res.status(201).json({
+      message: "Volunteer added successfully",
+      id: result.insertedId,
+      volunteer: volunteerData,
+    });
+  } catch (err) {
+    console.error("Error adding volunteer:", err);
+    res.status(500).json({ error: "Error adding volunteer" });
+  }
+});
+
+// POST - Add new resource
+app.post("/api/resources", async (req, res) => {
+  console.log("Adding new resource:", req.body);
+  try {
+    const { title, description, link, imageSrc } = req.body;
+
+    // Validate request body
+    if (!title || !description || !link || !imageSrc) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const resourceData = {
+      title,
+      description,
+      link,
+      imageSrc,
+      createdAt: new Date(),
+    };
+
+    const collection = db.collection("resources");
+    const result = await collection.insertOne(resourceData);
+
+    res.status(201).json({
+      message: "Resource added successfully",
+      id: result.insertedId,
+      resource: resourceData,
+    });
+  } catch (err) {
+    console.error("Error adding resource:", err);
+    res.status(500).json({ error: "Error adding resource" });
+  }
+});
+
+// POST - Update statistic
+app.post("/api/statistics/update", async (req, res) => {
+  console.log("Updating statistic:", req.body);
+  try {
+    const { id, title, description } = req.body;
+
+    // Validate request body
+    if (!id || !title || !description) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const collection = db.collection("statistics");
+    const result = await collection.updateOne(
+      { id: parseInt(id) },
+      {
+        $set: {
+          title,
+          description,
+          updatedAt: new Date(),
+        },
+      },
+      { upsert: true } // Create if doesn't exist
+    );
+
+    res.status(200).json({
+      message: "Statistic updated successfully",
+      modifiedCount: result.modifiedCount,
+      upsertedCount: result.upsertedCount,
+    });
+  } catch (err) {
+    console.error("Error updating statistic:", err);
+    res.status(500).json({ error: "Error updating statistic" });
+  }
+});
+
+// PUT - Update statistic (alternative method)
+app.put("/api/statistics/update", async (req, res) => {
+  console.log("Updating statistic:", req.body);
+  try {
+    const { id, title, description } = req.body;
+
+    // Validate request body
+    if (!id || !title || !description) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const collection = db.collection("statistics");
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      {
+        $set: {
+          title,
+          description,
+          updatedAt: new Date(),
+        },
+      }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: "Statistic not found" });
+    }
+
+    res.status(200).json({
+      message: "Statistic updated successfully",
+      modifiedCount: result.modifiedCount,
+    });
+  } catch (err) {
+    console.error("Error updating statistic:", err);
+    res.status(500).json({ error: "Error updating statistic" });
+  }
+});
+
+// PUT - Update volunteer
+app.put("/api/volunteers/:id", async (req, res) => {
+  console.log("Updating volunteer:", req.params.id, req.body);
+  try {
+    const { id } = req.params;
+    const { name, role, category, imageSrc } = req.body;
+
+    // Validate request body
+    if (!name || !role || !category || !imageSrc) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const collection = db.collection("volunteers");
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      {
+        $set: {
+          name,
+          role,
+          category,
+          imageSrc,
+          updatedAt: new Date(),
+        },
+      }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: "Volunteer not found" });
+    }
+
+    res.status(200).json({
+      message: "Volunteer updated successfully",
+      modifiedCount: result.modifiedCount,
+    });
+  } catch (err) {
+    console.error("Error updating volunteer:", err);
+    res.status(500).json({ error: "Error updating volunteer" });
+  }
+});
+
+// PUT - Update resource
+app.put("/api/resources/:id", async (req, res) => {
+  console.log("Updating resource:", req.params.id, req.body);
+  try {
+    const { id } = req.params;
+    const { title, description, link, imageSrc } = req.body;
+
+    // Validate request body
+    if (!title || !description || !link || !imageSrc) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const collection = db.collection("resources");
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      {
+        $set: {
+          title,
+          description,
+          link,
+          imageSrc,
+          updatedAt: new Date(),
+        },
+      }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: "Resource not found" });
+    }
+
+    res.status(200).json({
+      message: "Resource updated successfully",
+      modifiedCount: result.modifiedCount,
+    });
+  } catch (err) {
+    console.error("Error updating resource:", err);
+    res.status(500).json({ error: "Error updating resource" });
+  }
+});
+
+// DELETE - Delete volunteer
+app.delete("/api/volunteers/:id", async (req, res) => {
+  console.log("Deleting volunteer:", req.params.id);
+  try {
+    const { id } = req.params;
+
+    const collection = db.collection("volunteers");
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: "Volunteer not found" });
+    }
+
+    res.status(200).json({
+      message: "Volunteer deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (err) {
+    console.error("Error deleting volunteer:", err);
+    res.status(500).json({ error: "Error deleting volunteer" });
+  }
+});
+
+// DELETE - Delete resource
+app.delete("/api/resources/:id", async (req, res) => {
+  console.log("Deleting resource:", req.params.id);
+  try {
+    const { id } = req.params;
+
+    const collection = db.collection("resources");
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: "Resource not found" });
+    }
+
+    res.status(200).json({
+      message: "Resource deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (err) {
+    console.error("Error deleting resource:", err);
+    res.status(500).json({ error: "Error deleting resource" });
+  }
 });

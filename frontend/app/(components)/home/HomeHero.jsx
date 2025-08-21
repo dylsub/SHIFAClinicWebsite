@@ -12,10 +12,12 @@ export default function HomeHero() {
             Sacred healing institute for all
           </h1>
           <div className={styles.button_box}>
-            <ButtonWhiteTransparent path="/">
+            <ButtonWhiteTransparent path="/request-appointment">
               Request Appointment
             </ButtonWhiteTransparent>
-            <ButtonWhiteFilled path="/">View services</ButtonWhiteFilled>
+            <ButtonWhiteFilled path="/services">
+              View services
+            </ButtonWhiteFilled>
           </div>
         </div>
       </div>

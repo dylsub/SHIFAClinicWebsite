@@ -4,24 +4,20 @@ import classes from "./GIDonate.module.css";
 
 const GIDonate = () => {
   return (
-    <div className={classes.container}>
-      <h1>
-        Your Support Matters
-      </h1>
+    <div className={classes.container + " content_box"}>
+      <h1>Your Support Matters</h1>
       <p>
         Giving back to the community is a principle we value, and donations from
         our community are greatly appreciated. Your generous donations are vital
         in helping us provide essential healthcare services. Thank you for your
-        generosity and helping us create a difference for those in need!
+        commitment to helping us create a difference for those who are in need!
       </p>
-      
-      <div className={classes.buttonContainer}>
-      <ButtonAnyColorFilled path="/donate" buttonColor="rgb(0, 0, 0)">
-        Donate Today!
-      </ButtonAnyColorFilled>
-      </div>
-      
 
+      <div className={classes.buttonContainer}>
+        <ButtonAnyColorFilled path="/donate" buttonColor="rgb(0, 0, 0)">
+          Donate Today!
+        </ButtonAnyColorFilled>
+      </div>
     </div>
   );
 };

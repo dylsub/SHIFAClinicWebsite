@@ -1,0 +1,51 @@
+.teamSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin-bottom: 30px;
+}
+
+.description {
+  margin-bottom: 100px;
+}
+
+.panelContainer {
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 1000px) {
+  .teamSection {
+    padding: 20px 10px;
+  }
+
+  .description {
+    margin-bottom: 50px;
+  }
+
+  .panelContainer {
+    padding: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .teamSection {
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+  }
+
+  .panelContainer {
+    padding: 0;
+  }
+}

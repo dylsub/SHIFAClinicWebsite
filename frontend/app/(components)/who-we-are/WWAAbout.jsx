@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import ButtonBlackTransparent from "../../reusables/buttons/ButtonBlackTransparent";
+import ButtonBlackTransparent from "../reusables/buttons/ButtonBlackTransparent";
 import classes from "./WWAAbout.module.css";
 
 // I cooked
@@ -21,7 +23,9 @@ const WWAAbout = () => {
         </p>
 
         <div className={classes.buttonContainer}>
-          <ButtonBlackTransparent path="/">Our Team</ButtonBlackTransparent>
+          <ButtonBlackTransparent scrollTo="team">
+            Our Team
+          </ButtonBlackTransparent>
         </div>
       </div>
     </div>

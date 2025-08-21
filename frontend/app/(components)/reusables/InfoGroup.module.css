@@ -1,7 +1,19 @@
 .container {
   display: flex;
   justify-content: flex-start;
-  gap: 30px;
+  gap: 50px;
   width: 1200px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    gap: 50px;
+  }
 }

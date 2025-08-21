@@ -1,0 +1,96 @@
+.teamSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 40px;
+  text-decoration-line: underline;
+  text-underline-offset: 25px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for the entire page layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100%;
+  background-color: #ececec;
+}
+
+/* Styles for the text box */
+.gridText {
+  width: 50vw;
+  height: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.gridText h1 {
+  margin-bottom: 40px;
+  text-decoration-line: underline;
+  text-underline-offset: 25px;
+}
+
+.gridText p {
+  line-height: 1.5;
+}
+
+/* Styles for the image box */
+.gridImage {
+  width: 50vw;
+  height: 40vw;
+  overflow: hidden; /* Ensures image is cropped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridImage img {
+  width: auto;
+  height: 100%; /* Ensures image fills the height, cropping the width */
+  object-fit: cover; /* Maintains aspect ratio without scaling */
+}
+
+@media only screen and (max-width: 1280px) {
+}
+
+@media only screen and (max-width: 1000px) {
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    padding-top: 75px;
+  }
+  .gridImage {
+    width: 100%;
+    height: 70vw;
+  }
+  .gridText {
+    width: 100%;
+    height: auto;
+  }
+}

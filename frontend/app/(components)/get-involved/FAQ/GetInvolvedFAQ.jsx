@@ -1,25 +1,50 @@
-import React from 'react'
-import TextColumn from './TextColumn'
-import DropdownColumn from './DropdownColumn'
+import React from "react";
+import TextColumn from "./TextColumn";
+import DropdownColumn from "../../reusables/DropdownColumn";
+import styles from "./GetInvolvedFAQ.module.css";
 
 const GetInvolvedFAQ = () => {
-    // Devin + Faris
-    // Final boss lets get it
-    // This component represents the full General FAQ section on the Get Involved page
-    // It should have a text section -> TextColumn.jsx and DropdownColumn.jsx side by side -> closing text section
-    // Create TextColumn.jsx in its reprective file
-    // Style accordingly
+  const faqData = [
+    [
+      "Volunteer Coordinators",
+      "The volunteer coordinators at SHIFA Clinic oversee the recruitment, scheduling, and support of volunteers, ensuring all operations run smoothly and efficiently.",
+    ],
+    [
+      "Assessment Process & Requirements",
+      "Volunteers are required to meet specific eligibility criteria and undergo an application process that includes an assessment of their skills, background, and commitment to serving the community.",
+    ],
+    [
+      "Training & Orientation",
+      "New volunteers participate in a structured training and orientation program where they learn essential healthcare skills such as history taking and obtaining vital signs under supervision.",
+    ],
+    [
+      "How the Volunteer Process Works",
+      "The volunteer process involves applying through a formal system, attending an orientation, completing training, and then actively participating in various healthcare-related tasks at the clinic.",
+    ],
+    [
+      "Roles & Responsibilities",
+      "Volunteers take on a variety of roles based on their skills and interests, ranging from clinical tasks like assisting healthcare providers to non-clinical support such as administrative work and marketing.",
+    ],
+    [
+      "Volunteer Commitment & Expectations",
+      "Volunteers can expect to commit 10-15 hours of work to Shifa Clinic on a weekly basis, assisting in basic administrative tasks, patient care, and vital analysis.",
+    ],
+  ];
 
   return (
-    <div className = "getInvolvedFAQ" style = {{ display: 'flex', flexDirection: 'row', gap: '1rem', alignItems: 'flex-start', margin: '60px'}}>
-      <div className = "textColumn" style = {{ flex: '1', boxSizing: 'border-box', padding: '1rem', marginRight: '30px'}}>
+    <div className="content_box">
+      <div className={styles.textColumn}>
         <TextColumn />
       </div>
-      <div className = "dropdownColumn" style = {{ flex: '1', boxSizing: 'border-box', padding: '1rem'}}>
-        <DropdownColumn columnSize={"600px"} />
+      <div className="dropdownColumn">
+        <DropdownColumn
+          columnSize={"600px"}
+          numDropdowns={6}
+          testArr={faqData}
+        />
       </div>
     </div>
   );
 };
 
-export default GetInvolvedFAQ
+export default GetInvolvedFAQ;

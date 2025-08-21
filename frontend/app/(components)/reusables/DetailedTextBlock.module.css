@@ -4,9 +4,23 @@
 }
 
 .detailed_title {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .detailed_subtitle {
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .buttonContainer {
+    margin-top: 30px;
+  }
 }

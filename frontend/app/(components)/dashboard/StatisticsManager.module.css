@@ -1,0 +1,120 @@
+.container {
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.statisticsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statCard {
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.statCard:hover {
+  border-color: #e23809;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.statContent {
+  text-align: center;
+}
+
+.displayMode .statTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.displayMode .statTitle:hover {
+  transform: scale(1.05);
+}
+
+.statDescription {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+.editMode {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.editInput {
+  padding: 10px;
+  font-size: 1.5rem;
+  border: 2px solid #e23809;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.editButtons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.saveButton,
+.cancelButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.saveButton {
+  background: #28a745;
+  color: white;
+}
+
+.saveButton:hover {
+  background: #218838;
+}
+
+.cancelButton {
+  background: #dc3545;
+  color: white;
+}
+
+.cancelButton:hover {
+  background: #c82333;
+}
+
+@media (max-width: 768px) {
+  .statisticsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .displayMode .statTitle {
+    font-size: 2rem;
+  }
+
+  .editInput {
+    font-size: 1.2rem;
+  }
+}

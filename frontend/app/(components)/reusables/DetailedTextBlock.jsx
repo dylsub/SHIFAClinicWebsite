@@ -21,7 +21,7 @@ export default function DetailedTextBlock({
   // Style in DetailedTextBlock.module.css
   //button white transparent for button
   return (
-    <div style={{ width: `${width}%` }}>
+    <div className={styles.container} style={{ width: `${width}%` }}>
       <h3 className={styles.detailed_subtitle}>{subtitleText}</h3>
       <h1 className={styles.detailed_title}>{headerText}</h1>
       <p>{bodyText}</p>

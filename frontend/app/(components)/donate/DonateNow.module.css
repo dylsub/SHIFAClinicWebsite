@@ -1,0 +1,12 @@
+.container {
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed black;
+  padding: 50px;
+}
+
+.container h1 {
+  text-align: center;
+}

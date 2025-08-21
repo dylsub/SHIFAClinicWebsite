@@ -5,7 +5,7 @@
   width: 25%;
   border-bottom: 8px solid;
   border-left: 8px solid;
-  padding: 20px;
+  padding: 20px 30px;
   text-align: center;
   background-color: #fff;
   flex: 1;
@@ -15,10 +15,11 @@
   width: 120px;
   height: 120px;
   margin-bottom: 16px;
+  border-radius: 200px;
 }
 
 .title {
-  margin: 8px 0;
+  margin: 25px 0;
   color: black;
   font-size: 2.5em;
 }

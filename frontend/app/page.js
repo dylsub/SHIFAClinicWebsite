@@ -1,27 +1,15 @@
 import Statistics from "./(components)/home/statistics/Statistics";
 import Testimonial from "./(components)/home/testimonial/Testimonial";
-import HomeServicesPanel from "./(components)/home/HomeServicesPanel";
 import NavBar from "./(components)/navigation/NavBar";
-import DetailedTextBlock from "./(components)/reusables/DetailedTextBlock";
-import ButtonWhiteTransparent from "./(components)/reusables/buttons/ButtonWhiteTransparent";
-import ButtonWhiteFilled from "./(components)/reusables/buttons/ButtonWhiteFilled";
 import HomeHero from "./(components)/home/HomeHero";
-import WWAAbout from "./(components)/who-we-are/about/WWAAbout";
-import Grid from "./(components)/who-we-are/grid/Grid";
-import WWAHero from "./(components)/who-we-are/WWAHero";
 import HomeAbout from "./(components)/home/about/HomeAbout";
 import HomeGetInvolved from "./(components)/home/get-involved/HomeGetInvolved";
-import DonateThanks from "./(components)/donate/DonateThanks";
-import GIDonate from "./(components)/get-involved/GIDonate";
 import HomeServices from "./(components)/home/HomeServices";
-import DropDownPanel from "./(components)/reusables/DropDownPanel";
-import RAHero from "./(components)/request-appointment/RAHero";
-import DonateHero from "./(components)/donate/DonateHero";
 import BackgroundGreyWrapper from "./(components)/reusables/BackgroundGreyWrapper";
 import BackgroundWhiteWrapper from "./(components)/reusables/BackgroundWhiteWrapper";
 import Contact from "./(components)/reusables/Contact";
 import BackgroundDarkGreyWrapper from "./(components)/reusables/BackgroundDarkGreyWrapper";
-import MobileNavMenu from "./(components)/navigation/MobileNavMenu";
+import InfoPanel2 from "./(components)/reusables/InfoPanel2";
 
 export default function Home() {
   return (
@@ -37,7 +25,7 @@ export default function Home() {
             "ICN SHIFA Clinic is a manifestation of a desire to serve humanity without any boundaries. ICN Free Clinic was started in its rudimentary form as a makeshift clinic in the hallways of Islamic Center of Naperville with a small team of passionate doctors."
           }
           buttonText={"Who we are"}
-          path={"/"}
+          path={"/who-we-are"}
           src={"home_about.png"}
           headerText={"Uplifting the community with health services"}
         ></HomeAbout>
@@ -45,30 +33,30 @@ export default function Home() {
 
       <BackgroundGreyWrapper>
         <HomeServices>
-          <HomeServicesPanel
+          <InfoPanel2
             src="/PiggyBank.png"
             titleText="Expert Led"
             descripText="We are a team of professionals with backgrounds, certifications, and experience in the medical world."
             buttonText="Our Team"
             colorCode="#FF0000"
-            buttonPath="/"
-          ></HomeServicesPanel>
-          <HomeServicesPanel
+            buttonPath="/who-we-are#team"
+          ></InfoPanel2>
+          <InfoPanel2
             src="/PiggyBank.png"
-            titleText="Expert Led"
-            descripText="We are a team of professionals with backgrounds, certifications, and experience in the medical world."
-            buttonText="Our Team"
+            titleText="100% Free"
+            descripText="We offer a wide range of medical services including primary care, dental, mental health, and specialty care."
+            buttonText="Our Services"
             colorCode="#FF0000"
-            buttonPath="/"
-          ></HomeServicesPanel>
-          <HomeServicesPanel
+            buttonPath="/services"
+          ></InfoPanel2>
+          <InfoPanel2
             src="/PiggyBank.png"
-            titleText="Expert Led"
-            descripText="We are a team of professionals with backgrounds, certifications, and experience in the medical world."
-            buttonText="Our Team"
+            titleText="Volunteer Run"
+            descripText="We are a community-driven organization that is committed to providing the best possible care to our patients."
+            buttonText="Volunteer"
             colorCode="#FF0000"
-            buttonPath="/"
-          ></HomeServicesPanel>
+            buttonPath="/get-involved"
+          ></InfoPanel2>
         </HomeServices>
       </BackgroundGreyWrapper>
 
@@ -90,10 +78,10 @@ export default function Home() {
         <HomeGetInvolved
           subtitleText={"Join our team"}
           bodyText={
-            "The ICN SHIFA Clinic is looking for new volunteers to join our community. We offer opportunities ranging from job shadowing to full-time volunteering positions. We’d love to have you!"
+            "The ICN SHIFA Clinic is looking for new volunteers to join our community. We offer opportunities ranging from job shadowing to full-time volunteering positions. We'd love to have you!"
           }
           buttonText={"Learn More"}
-          path={"/"}
+          path={"/get-involved"}
           src={"join_our_team.png"}
           headerText={"Get Involved"}
         ></HomeGetInvolved>
@@ -103,7 +91,7 @@ export default function Home() {
         <Contact
           subtitleText={"Question or concern?"}
           buttonText={"Submit"}
-          path={"/"}
+          path={"/contact"}
           src={"contact.png"}
           headerText={"Feel free to contact us"}
         ></Contact>

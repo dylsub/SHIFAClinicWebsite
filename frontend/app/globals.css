@@ -60,6 +60,7 @@ p {
 .content_box {
   width: 1200px;
   display: flex;
+  /* background-color: green; */
   /* flex-direction: row; */
   /* background-color: blue; */
 }

@@ -1,0 +1,37 @@
+/* General Section Styling */
+.teamSection {
+  text-align: center;
+  flex-direction: column;
+}
+
+.heading {
+  margin-bottom: 30px;
+}
+
+.description {
+  margin-bottom: 100px;
+}
+
+/* Resource Content Styling */
+.resourceContent p {
+  margin-bottom: 1rem;
+}
+
+.resourceList {
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.resourceItem {
+  margin-bottom: 0.5rem;
+}
+
+.resourceLink {
+  color: #e60400;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.resourceLink:hover {
+  opacity: 0.8;
+}

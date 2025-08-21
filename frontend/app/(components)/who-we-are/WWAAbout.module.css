@@ -1,29 +1,48 @@
 .about_container {
   justify-content: center;
   align-items: center;
+  border: 2px dashed black;
+  padding: 50px 0;
 }
 
 .buttonContainer {
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .title_text {
-  width: 33%;
+  width: 400px;
   line-height: 1.25;
+  margin-right: 0px;
+}
+
+.title_text h1 {
+  /* font-size: 4.5rem; */
 }
 
 .body_text {
-  width: 40%;
+  width: 550px;
+  text-align: left;
 }
 
 @media only screen and (max-width: 1280px) {
+  .title_text {
+    width: 300px;
+  }
+
   .body_text {
     width: 55%;
   }
 }
 
 @media only screen and (max-width: 1000px) {
+  .title_text {
+    width: 200px;
+  }
+
+  .body_text {
+    width: 55%;
+  }
   .body_text {
     width: 55%;
   }
@@ -33,18 +52,23 @@
 }
 
 @media only screen and (max-width: 720px) {
+  .about_container {
+    border: none;
+    padding: 0;
+  }
   .title_text {
     width: 100%;
     /* text-align: center; */
     /* text-size-adjust: 100%; */
     margin-bottom: 50px;
+    text-align: center;
   }
   .body_text {
     width: 100%;
-    /* text-align: center; */
+    text-align: center;
   }
   .buttonContainer {
     margin-top: 50px;
-    /* justify-content: center; */
+    justify-content: center;
   }
 }

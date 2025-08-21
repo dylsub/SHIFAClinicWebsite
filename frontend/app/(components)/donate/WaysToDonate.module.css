@@ -1,0 +1,13 @@
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin-bottom: 75px;
+}
+
+.infoGroupWrapper {
+  margin-bottom: 40px;
+}

@@ -1,23 +1,21 @@
 import React from "react";
 import styles from "./DonateHero.module.css";
+import ButtonWhiteTransparent from "../reusables/buttons/ButtonWhiteTransparent";
 import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 
-const DonateHero = () => {
-  // Ashlee + Victor
-  // Y'all know the drill
-  // Stylize this one like the Figma
-
+export default function HomeHero() {
   return (
-    <div className={styles.donateHeroContainer}>
-      {/* <div className={styles.overlay}></div> */}
-      <div className={styles.text_box}>
-        <h1 className={styles.donateHeroHeader}>Make A Donation</h1>
-        <div className={styles.button_box}>
-          <ButtonWhiteFilled path="/">Donate Now</ButtonWhiteFilled>
+    <div className={`${styles.heroContainer}`}>
+      <div className={`${styles.text_box} content_box`}>
+        <div>
+          <h1 className={styles.heroHeader}>Support our mission</h1>
+          <div className={styles.button_box}>
+            <ButtonWhiteTransparent scrollTo="donate-now">
+              Donate Now
+            </ButtonWhiteTransparent>
+          </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default DonateHero;
+}

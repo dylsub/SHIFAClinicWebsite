@@ -1,6 +1,7 @@
 .dropdownContainer {
   /* margin: 20px 0; */
   border-top: 1px solid #a1080b;
+  text-align: left;
 }
 
 .dropdownButton {

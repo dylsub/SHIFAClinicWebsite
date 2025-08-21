@@ -1,0 +1,22 @@
+.container {
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed black;
+  padding: 50px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.container h1 {
+  text-align: center;
+}

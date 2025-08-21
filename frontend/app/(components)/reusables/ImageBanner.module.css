@@ -1,0 +1,10 @@
+.container {
+  width: 100vw;
+  height: 45vh;
+  overflow: hidden;
+}
+
+.container img {
+  width: 100vw;
+  height: auto;
+}

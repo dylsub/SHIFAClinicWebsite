@@ -1,30 +1,24 @@
 import React from "react";
 import styles from "./WWAHero.module.css";
-import ButtonAnyColorFilled from "../reusables/buttons/ButtonAnyColorFilled";
+import ButtonWhiteTransparent from "../reusables/buttons/ButtonWhiteTransparent";
 import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 
-const WWAHero = () => {
-  // Ashlee + Victor
-  // Do the same thing as the home hero
-  // Most code should be copy pasted
-  // Make minor styling changes to fit the Figma design
-
+export default function HomeHero() {
   return (
-    <div className={styles.WWAContainer}>
-      {/* <div className={styles.overlay}></div> */}
-      <div className={styles.text_box + " content_box"}>
+    <div className={`${styles.heroContainer}`}>
+      <div className={`${styles.text_box} content_box`}>
         <div>
-          <h1 className={styles.WWAHeader}>Who we are</h1>
+          <h1 className={styles.heroHeader}>What is the ICN SHIFA Clinic?</h1>
           <div className={styles.button_box}>
-            <ButtonAnyColorFilled path="/" buttonColor="rgb(255, 0, 0)">
-              Our Mission and Vision
-            </ButtonAnyColorFilled>
-            <ButtonWhiteFilled path="/">Our Team</ButtonWhiteFilled>
+            <ButtonWhiteTransparent path="/services">
+              View Services
+            </ButtonWhiteTransparent>
+            <ButtonWhiteFilled path="/get-involved">
+              Get Involved
+            </ButtonWhiteFilled>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default WWAHero;
+}

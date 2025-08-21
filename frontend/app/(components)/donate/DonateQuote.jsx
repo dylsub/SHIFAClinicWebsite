@@ -9,7 +9,7 @@ const DonateQuote = () => {
   // Both should be 50% the content box
 
   return (
-    <div className={styles.content_box}>
+    <div className={styles.content_box + " content_box"}>
       <div className={styles.image_box}>
         <img src="/DonateQuotePerson.png"></img>
       </div>

@@ -9,10 +9,10 @@ const ServiceRightPanel = ({
 }) => {
   return (
     <div
-      className={styles.container}
+      className={styles.container + " content_box"}
       style={{ "--background-color": backgroundColor }}
     >
-      <div className={styles.content_box}>
+      <div className={styles.content}>
         <div className={styles.contentCard}>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.paragraph}>{paragraph}</p>

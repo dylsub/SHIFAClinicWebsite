@@ -1,22 +1,3 @@
-.getInvolvedFAQ {
-    display: flex;
-    flex-direction: row; /* default anyway, but explicit for clarity */
-    gap: 1rem;
-    /* optionally: flex-wrap: wrap; if you want them to stack on tiny screens */
-    align-items: flex-start; /* if you want them aligned at the top */
-  }
-  
-  /* Let each column fill up about half */
-  .textColumn, .dropdownColumn {
-    flex: 1;              /* each gets half of the container width */
-    box-sizing: border-box;
-    padding: 1rem;        /* for spacing */
-  }
-  
-  /* For debugging, you could color them in temporarily: */
-  .textColumn {
-    background-color: #f0f0f0; 
-  }
-  .dropdownColumn {
-    background-color: #fff8f8;
-  }
+.textColumn {
+  margin-right: 100px;
+}

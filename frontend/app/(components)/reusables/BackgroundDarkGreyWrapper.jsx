@@ -1,9 +1,10 @@
 import React from "react";
 import classes from "./BackgroundWrapper.module.css";
 
-const BackgroundDarkGreyWrapper = ({ children }) => {
+const BackgroundDarkGreyWrapper = ({ children, id }) => {
   return (
     <div
+      id={id || ""}
       style={{
         backgroundColor: "#535353",
       }}

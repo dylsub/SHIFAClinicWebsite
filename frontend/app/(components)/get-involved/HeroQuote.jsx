@@ -12,16 +12,13 @@ const HeroQuote = ({ leadingText, quoteText, authorText }) => {
   // leadingText, quoteText, authorText should be the parameters
 
   return (
-    <div className={styles.quoteContainer}>
+    <div className={styles.quoteContainer + " content_box"}>
       {/* <div className={styles.overlay}></div> */}
       <div className={styles.text_box}>
         <p className={styles.leadingText}>{leadingText}</p>
         <h1 className={styles.quoteText}>{quoteText}</h1>
         <p className={styles.authorText}>{authorText}</p>
       </div>
-   
- 
- 
     </div>
   );
 };
