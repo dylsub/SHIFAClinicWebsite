@@ -29,3 +29,32 @@
   font-size: 1.3em;
   color: #000000;
 }
+
+@media only screen and (max-width: 1280px) {
+  .quoteText {
+    font-size: 3.25em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .quoteContainer {
+    height: 450px;
+  }
+  .leadingText {
+    font-size: 1em;
+  }
+
+  .quoteText {
+    font-size: 2em;
+  }
+
+  .authorText {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .quoteText {
+    font-size: 1.5em;
+  }
+}
