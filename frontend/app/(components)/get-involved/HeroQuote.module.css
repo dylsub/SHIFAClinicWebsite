@@ -57,4 +57,7 @@
   .quoteText {
     font-size: 1.5em;
   }
+  .quoteContainer {
+    height: 350px;
+  }
 }
