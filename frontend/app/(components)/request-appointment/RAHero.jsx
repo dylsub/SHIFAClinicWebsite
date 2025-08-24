@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./RAHero.module.css";
+import styles from "../home/HomeHero.module.css";
 import ButtonWhiteTransparent from "../reusables/buttons/ButtonWhiteTransparent";
 import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 

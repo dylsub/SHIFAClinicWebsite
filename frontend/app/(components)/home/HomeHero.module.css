@@ -1,14 +1,46 @@
 .heroContainer {
   width: 100vw;
   height: 600px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url("/Control-V.png");
-  background-size: cover;
-  background-position: left;
   display: flex;
   align-items: end;
   justify-content: center;
 }
+
+.home {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    url("/Control-V.png");
+  background-size: cover;
+  background-position: left;
+}
+
+.who_we_are {
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+    url("/wwahero.png");
+  background-size: cover;
+  background-position: left;
+}
+
+.resources {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("/resourceshero.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+.donate {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("/donate_hero.png");
+  background-size: cover;
+  background-position: left;
+}
+
+.request_appointment {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("/rahero.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
 .heroHeader {
   color: white;
   margin-bottom: 15px;
@@ -39,9 +71,20 @@
 
 @media only screen and (max-width: 720px) {
   .heroHeader {
-    font-size: 2.25em;
+    font-size: 3rem;
   }
+
+  .text_box {
+    margin-bottom: 15vh;
+  }
+
   .heroContainer {
-    height: 70vh;
+    height: calc(100vh - 80px);
+    background-size: cover;
+    background-position: left;
+  }
+
+  .button_box {
+    flex-direction: column;
   }
 }

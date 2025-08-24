@@ -47,13 +47,23 @@
     padding: 0;
   }
 
+  .quote_text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
   .image_box {
-    width: 100%;
+    width: 85vw;
     align-items: center;
     justify-content: center;
+    background-color: red;
   }
 
   .image {
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
