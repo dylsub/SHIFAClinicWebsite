@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <div className="main">
       <NavBar></NavBar>
-      {/* <MobileNavMenu></MobileNavMenu> */}
       <HomeHero></HomeHero>
 
       <BackgroundWhiteWrapper>

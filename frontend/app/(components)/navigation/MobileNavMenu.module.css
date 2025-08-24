@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 70vw; 
+  width: 70vw;
   height: 100vh;
   background-color: #fff;
   box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.2);
@@ -10,21 +10,42 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: #f0f0f0;
+}
 
 .logo {
-  margin-bottom: 20px; 
+  margin: 40px 0 40px 0;
   display: flex;
   justify-content: center;
 }
 
 .logoImage {
-  width: 50px; 
-  height: auto; 
+  width: 100px;
+  height: auto;
 }
-
 
 .navLinks {
   list-style: none;
@@ -32,36 +53,19 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 15px; 
+  gap: 20px;
   text-align: center;
 }
 
 .navLinks li a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #333;
   transition: color 0.3s ease;
+  padding: 10px 0;
+  display: block;
 }
 
 .navLinks li a:hover {
-  color: #e23809; 
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px; 
-}
-
-.button {
-  text-decoration: none;
-  background-color: #e23809;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #b81c07; 
+  color: #e23809;
 }

@@ -1,18 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './MobileNavMenu.module.css';
 
-const MobileNavMenu = () => {
+const MobileNavMenu = ({ onClose }) => {
   return (
     <div className={styles.mobileNavMenu}>
+      {/* Close Button */}
+      <button className={styles.closeButton} onClick={onClose} aria-label="Close menu">
+        ×
+      </button>
+
       {/* Logo Section */}
       <div className={styles.logo}>
-        <Link href="/">
-          <Image
+        <Link href="/" onClick={onClose}>
+          <img
             src="/shifa.png"
-            width={50}
-            height={50}
+            alt="SHIFA Clinic Logo"
             className={styles.logoImage}
           />
         </Link>
@@ -20,30 +23,24 @@ const MobileNavMenu = () => {
 
       <ul className={styles.navLinks}>
         <li>
-          <Link href="/home">Home</Link>
+          <Link href="/who-we-are" onClick={onClose}>Who Are We</Link>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <Link href="/services" onClick={onClose}>Services</Link>
         </li>
         <li>
-          <Link href="/services">Services</Link>
+          <Link href="/get-involved" onClick={onClose}>Get Involved</Link>
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Link href="/resources" onClick={onClose}>Resources</Link>
         </li>
         <li>
-          <Link href="/donate">Donate</Link>
+          <Link href="/donate" onClick={onClose}>Donate</Link>
+        </li>
+        <li>
+          <Link href="/request-appointment" onClick={onClose}>Request Appointment</Link>
         </li>
       </ul>
-
-      <div className={styles.buttons}>
-        <Link href="/login" className={styles.button}>
-          Login
-        </Link>
-        <Link href="/signup" className={styles.button}>
-          Sign Up
-        </Link>
-      </div>
     </div>
   );
 };
