@@ -5,7 +5,7 @@ import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 
 export default function HomeHero() {
   return (
-    <div className={`${styles.heroContainer}`}>
+    <div className={`${styles.heroContainer} ${styles.request_appointment}`}>
       <div className={`${styles.text_box} content_box`}>
         <div>
           <h1 className={styles.heroHeader}>Request an Appointment</h1>
