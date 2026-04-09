@@ -2,9 +2,16 @@
   width: 100vw;
   height: 45vh;
   overflow: hidden;
+  background-color: green;
 }
 
 .container img {
   width: 100vw;
   height: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    height: auto;
+  }
 }

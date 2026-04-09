@@ -1,9 +1,25 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import TextColumn from "./TextColumn";
 import DropdownColumn from "../../reusables/DropdownColumn";
 import styles from "./GetInvolvedFAQ.module.css";
 
+const FAQ_COLUMN_BREAKPOINT_PX = 720;
+
 const GetInvolvedFAQ = () => {
+  const [columnSize, setColumnSize] = useState("600px");
+
+  useEffect(() => {
+    const mq = window.matchMedia(
+      `(max-width: ${FAQ_COLUMN_BREAKPOINT_PX - 1}px)`
+    );
+    const sync = () => setColumnSize(mq.matches ? "85vw" : "600px");
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  
   const faqData = [
     [
       "Volunteer Coordinators",
@@ -32,13 +48,13 @@ const GetInvolvedFAQ = () => {
   ];
 
   return (
-    <div className="content_box">
+    <div className={"content_box " + styles.container}>
       <div className={styles.textColumn}>
         <TextColumn />
       </div>
       <div className="dropdownColumn">
         <DropdownColumn
-          columnSize={"600px"}
+          columnSize={columnSize}
           numDropdowns={6}
           testArr={faqData}
         />

@@ -53,3 +53,14 @@
   display: block;
   opacity: 1;
 }
+
+@media (max-width: 475px) {
+  .dropdownButton {
+    font-size: 16px;
+  }
+
+  .dropdownButton::after,
+  .dropdownButton.open::after {
+    font-size: 16px;
+  }
+}
