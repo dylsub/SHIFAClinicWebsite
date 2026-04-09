@@ -33,7 +33,7 @@ export default function Home() {
       <BackgroundGreyWrapper>
         <HomeServices>
           <InfoPanel2
-            src="/PiggyBank.png"
+            src="/ExpertLed.png"
             titleText="Expert Led"
             descripText="We are a team of professionals with backgrounds, certifications, and experience in the medical world."
             buttonText="Our Team"
@@ -41,7 +41,7 @@ export default function Home() {
             buttonPath="/who-we-are#team"
           ></InfoPanel2>
           <InfoPanel2
-            src="/PiggyBank.png"
+            src="/HoldingHeart.png"
             titleText="100% Free"
             descripText="We offer a wide range of medical services including primary care, dental, mental health, and specialty care."
             buttonText="Our Services"
