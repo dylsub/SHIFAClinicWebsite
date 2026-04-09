@@ -1,10 +1,15 @@
 .textColumn {
   margin-right: 100px;
-  background-color: red;
+  /* background-color: red; */
 }
 
 @media only screen and (max-width: 1000px) {
   .textColumn {
     margin-right: 0px;
+    margin-bottom: 50px;
+  }
+
+  .container {
+    flex-direction: column;
   }
 }
