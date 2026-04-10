@@ -12,6 +12,8 @@ import InfoGroup from "../(components)/reusables/InfoGroup";
 import InfoPanel from "../(components)/reusables/InfoPanel";
 import ImageBanner from "../(components)/reusables/ImageBanner";
 
+//test
+
 const GetInvolved = () => {
   return (
     <div className="main">
