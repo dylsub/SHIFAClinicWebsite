@@ -12,6 +12,101 @@
   margin-bottom: 100px;
 }
 
+.teamSections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.teamCategory {
+  flex-direction: column;
+  text-align: left;
+  background-color: #f7f7f7;
+  border-left: 4px solid #e23809;
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 32px;
+}
+
+.categoryHeading {
+  font-family: inherit;
+  font-size: 35px;
+  margin: 0;
+  text-align: left;
+}
+
+.categoryToggle {
+  align-items: center;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdownIcon {
+  color: #e23809;
+  font-family: var(--font-inter);
+  font-size: 24px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.dropdownIconOpen {
+  transform: rotate(180deg);
+}
+
+.categoryContent {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.35s ease, opacity 0.25s ease;
+}
+
+.categoryContentOpen {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.categoryContentInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.teamMembersGrid {
+  border-top: 1px solid #dedede;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  justify-items: center;
+  margin-top: 18px;
+  max-width: 100%;
+  padding-top: 28px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .categoryHeading {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .categoryHeading {
+    font-size: 24px;
+  }
+
+  .teamCategory {
+    padding: 28px;
+  }
+}
+
 /* Grid Styling */
 .teamGrid {
   display: grid;
@@ -54,4 +149,33 @@
 .label:hover {
   background-color: #e23809;
   color: white;
+}
+
+@media (max-width: 1200px) {
+  .teamMembersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .teamMembersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .teamMembersGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .categoryHeading {
+    font-size: 30px;
+  }
+
+  .teamCategory {
+    padding: 24px 18px;
+  }
 }

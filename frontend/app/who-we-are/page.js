@@ -9,6 +9,7 @@ import Contact from "../(components)/reusables/Contact";
 import Team from "../(components)/who-we-are/team/Team"; // Import the Team component
 import BackgroundDarkGreyWrapper from "../(components)/reusables/BackgroundDarkGreyWrapper";
 import Milestones from "../(components)/who-we-are/Milestones";
+import ClinicInfo from "../(components)/home/ClinicInfo";
 
 const WhoWeAre = () => {
   return (
@@ -20,6 +21,8 @@ const WhoWeAre = () => {
       <BackgroundGreyWrapper>
         <WWAAbout></WWAAbout>
       </BackgroundGreyWrapper>
+
+      <ClinicInfo></ClinicInfo>
 
       <BackgroundWhiteWrapper>
         <Milestones></Milestones>
@@ -36,7 +39,7 @@ const WhoWeAre = () => {
           subtitleText={"Question or concern?"}
           titleText={"Nurse holding a baby"}
           buttonText={"Submit"}
-          headerText={"Feel free to contact us"}
+          headerText={"Contact us here"}
           path={"/"}
           src={"contact.png"}
         ></Contact>

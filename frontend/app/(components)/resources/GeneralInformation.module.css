@@ -13,6 +13,8 @@
 }
 
 .panelContainer {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Responsive styling */
@@ -27,22 +29,20 @@
 
   .panelContainer {
     padding: 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Center panel row as a group (narrow content_box + side padding). */
+  .infoGroupRow {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
 @media only screen and (max-width: 720px) {
   .teamSection {
     padding: 20px;
-  }
-
-  .heading {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-
-  .description {
-    font-size: 0.9rem;
-    margin-bottom: 40px;
   }
 
   .panelContainer {

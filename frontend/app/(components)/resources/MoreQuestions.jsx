@@ -2,16 +2,15 @@ import React from "react";
 import styles from "./MoreQuestions.module.css";
 import InfoPanel2 from "../reusables/InfoPanel2";
 import InfoGroup from "../reusables/InfoGroup";
+import ResourcesSectionIntro from "./ResourcesSectionIntro";
 
 const MoreQuestions = () => {
   return (
     <div className={styles.section + " content_box"}>
-      <h1 className={styles.heading}>More Questions?</h1>
-      <p className={styles.description}>
-        If you have any additional questions or concerns, please feel free to
-        reach out to us. For more information, please visit our FAQ page for the
-        most common questions.
-      </p>
+      <ResourcesSectionIntro
+        title="More Questions?"
+        description="If you have any additional questions or concerns, please feel free to reach out to us. For more information, please visit our FAQ page for the most common questions."
+      />
       <div className={styles.container}>
         <InfoGroup>
           <InfoPanel2

@@ -10,10 +10,20 @@ const VolunteersManager = () => {
   const [formData, setFormData] = useState({
     name: "",
     role: "",
+    description: "",
     category: "SHIFA Providers",
     imageSrc: "",
   });
   const [selectedImage, setSelectedImage] = useState(null);
+  const [editingVolunteerId, setEditingVolunteerId] = useState(null);
+  const [editFormData, setEditFormData] = useState({
+    name: "",
+    role: "",
+    description: "",
+    category: "SHIFA Providers",
+    imageSrc: "",
+  });
+  const [selectedEditImage, setSelectedEditImage] = useState(null);
   const [uploading, setUploading] = useState(false);
 
   const categories = [
@@ -62,6 +72,20 @@ const VolunteersManager = () => {
     const file = e.target.files[0];
     if (file) {
       setSelectedImage(file);
+    }
+  };
+
+  const handleEditInputChange = (e) => {
+    setEditFormData({
+      ...editFormData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleEditImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedEditImage(file);
     }
   };
 
@@ -121,6 +145,7 @@ const VolunteersManager = () => {
         setFormData({
           name: "",
           role: "",
+          description: "",
           category: "SHIFA Providers",
           imageSrc: "",
         });
@@ -170,6 +195,81 @@ const VolunteersManager = () => {
     }
   };
 
+  const handleEdit = (volunteer) => {
+    setEditingVolunteerId(volunteer._id);
+    setEditFormData({
+      name: volunteer.name || "",
+      role: volunteer.role || "",
+      description: volunteer.description || "",
+      category: volunteer.category || "SHIFA Providers",
+      imageSrc: volunteer.imageSrc || "",
+    });
+    setSelectedEditImage(null);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingVolunteerId(null);
+    setEditFormData({
+      name: "",
+      role: "",
+      description: "",
+      category: "SHIFA Providers",
+      imageSrc: "",
+    });
+    setSelectedEditImage(null);
+  };
+
+  const handleUpdate = async (e, volunteerId) => {
+    e.preventDefault();
+    setUploading(true);
+
+    try {
+      let imageUrl = editFormData.imageSrc;
+
+      if (selectedEditImage) {
+        imageUrl = await uploadImage(selectedEditImage);
+      }
+
+      const token = getAuthToken();
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + `/api/volunteers/${volunteerId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            ...editFormData,
+            imageSrc: imageUrl,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setVolunteers((prev) =>
+          prev.map((volunteer) =>
+            volunteer._id === volunteerId
+              ? { ...volunteer, ...editFormData, imageSrc: imageUrl }
+              : volunteer
+          )
+        );
+        handleCancelEdit();
+        fetchVolunteers();
+        alert("Volunteer updated successfully!");
+      } else if (response.status === 401) {
+        window.location.reload();
+      } else {
+        alert("Failed to update volunteer");
+      }
+    } catch (error) {
+      console.error("Error updating volunteer:", error);
+      alert("Error updating volunteer");
+    } finally {
+      setUploading(false);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -207,6 +307,17 @@ const VolunteersManager = () => {
                 onChange={handleInputChange}
                 required
                 placeholder="Enter volunteer role"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label>Description:</label>
+              <textarea
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
+                placeholder="Enter a short bio or description"
+                rows="4"
               />
             </div>
 
@@ -266,15 +377,107 @@ const VolunteersManager = () => {
                   }}
                 />
                 <div className={styles.volunteerInfo}>
-                  <h4>{volunteer.name}</h4>
-                  <p className={styles.role}>{volunteer.role}</p>
-                  <p className={styles.category}>{volunteer.category}</p>
-                  <button
-                    onClick={() => handleDelete(volunteer._id)}
-                    className={styles.deleteButton}
-                  >
-                    Delete
-                  </button>
+                  {editingVolunteerId === volunteer._id ? (
+                    <form
+                      className={styles.editForm}
+                      onSubmit={(e) => handleUpdate(e, volunteer._id)}
+                    >
+                      <div className={styles.formGroup}>
+                        <label>Name:</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={editFormData.name}
+                          onChange={handleEditInputChange}
+                          required
+                        />
+                      </div>
+                      <div className={styles.formGroup}>
+                        <label>Role:</label>
+                        <input
+                          type="text"
+                          name="role"
+                          value={editFormData.role}
+                          onChange={handleEditInputChange}
+                          required
+                        />
+                      </div>
+                      <div className={styles.formGroup}>
+                        <label>Description:</label>
+                        <textarea
+                          name="description"
+                          value={editFormData.description}
+                          onChange={handleEditInputChange}
+                          rows="4"
+                        />
+                      </div>
+                      <div className={styles.formGroup}>
+                        <label>Category:</label>
+                        <select
+                          name="category"
+                          value={editFormData.category}
+                          onChange={handleEditInputChange}
+                          required
+                        >
+                          {categories.map((category) => (
+                            <option key={category} value={category}>
+                              {category}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className={styles.formGroup}>
+                        <label>Replace Image:</label>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleEditImageChange}
+                        />
+                        <small>Leave blank to keep current image</small>
+                      </div>
+                      <div className={styles.actionButtons}>
+                        <button
+                          type="submit"
+                          className={styles.saveButton}
+                          disabled={uploading}
+                        >
+                          {uploading ? "Saving..." : "Save"}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={handleCancelEdit}
+                          className={styles.cancelButton}
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  ) : (
+                    <>
+                      <h4>{volunteer.name}</h4>
+                      <p className={styles.role}>{volunteer.role}</p>
+                      {volunteer.description && (
+                        <p className={styles.description}>
+                          {volunteer.description}
+                        </p>
+                      )}
+                      <p className={styles.category}>{volunteer.category}</p>
+                      <div className={styles.actionButtons}>
+                        <button
+                          onClick={() => handleEdit(volunteer)}
+                          className={styles.editButton}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => handleDelete(volunteer._id)}
+                          className={styles.deleteButton}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             ))}

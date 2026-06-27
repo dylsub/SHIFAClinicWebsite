@@ -9,6 +9,7 @@ const DonateThanks = ({
   bodyText,
   buttonText,
   path,
+  scrollTo,
   titleText,
   src,
 }) => {
@@ -25,6 +26,9 @@ const DonateThanks = ({
           bodyText={bodyText}
           buttonText={buttonText}
           path={path}
+          scrollTo={scrollTo}
+          width={92}
+          className={styles.textBlockMobileFull}
         ></DetailedTextBlock>
       </div>
       <div className={styles.imageContainer}>

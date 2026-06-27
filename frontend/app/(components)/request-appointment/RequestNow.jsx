@@ -14,10 +14,18 @@ const DonateNow = () => {
         </p>
       </div>
       <div className={classes.buttonContainer}>
-        <ButtonAnyColorFilled buttonColor="#EC2024" path="/">
+        <ButtonAnyColorFilled
+          buttonColor="#EC2024"
+          path="https://forms.myupdox.com/#/form/67642"
+          openInNewTab
+        >
           Request Medical Appointment
         </ButtonAnyColorFilled>
-        <ButtonAnyColorFilled buttonColor="#5b0304" path="/">
+        <ButtonAnyColorFilled
+          buttonColor="#5b0304"
+          path="https://forms.myupdox.com/#/form/70338"
+          openInNewTab
+        >
           Request Dental Appointment
         </ButtonAnyColorFilled>
       </div>

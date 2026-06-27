@@ -7,38 +7,75 @@
 }
 
 .home {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
-    url("/Control-V.png");
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.88) 22%,
+      rgba(0, 0, 0, 0.84) 40%,
+      rgba(0, 0, 0, 0.58) 48%,
+      rgba(0, 0, 0, 0.34) 55%,
+      rgba(0, 0, 0, 0.16) 62%,
+      rgba(0, 0, 0, 0.05) 68%,
+      rgba(0, 0, 0, 0) 73%
+    ),
+    url("/SHIFA3.jpeg");
   background-size: cover;
   background-position: left;
 }
 
 .who_we_are {
-  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-    url("/wwahero.png");
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+    url("/SHIFA1.jpeg");
   background-size: cover;
   background-position: left;
 }
 
 .resources {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
     url("/resourceshero.jpg");
   background-size: cover;
   background-position: left;
 }
 
 .donate {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url("/donatehero.jpg");
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+    url("/serviceright.jpg");
   background-size: cover;
   background-position: left;
 }
 
 .request_appointment {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url("/rahero.jpg");
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.05)),
+    url("/clinic4.png");
   background-size: cover;
   background-position: left;
+}
+
+.clinicName {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.92);
+  display: flex;
+  font-family: var(--font-inter);
+  font-size: 1.15rem;
+  font-weight: 500;
+  gap: 14px;
+  letter-spacing: 0.12em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.clinicName::before,
+.clinicName::after {
+  background-color: rgba(255, 255, 255, 0.8);
+  content: "";
+  display: block;
+  height: 2px;
+  width: 58px;
 }
 
 .heroHeader {
@@ -70,6 +107,17 @@
 }
 
 @media only screen and (max-width: 720px) {
+  .clinicName {
+    font-size: 0.95rem;
+    gap: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .clinicName::before,
+  .clinicName::after {
+    width: 38px;
+  }
+
   .heroHeader {
     font-size: 3rem;
   }

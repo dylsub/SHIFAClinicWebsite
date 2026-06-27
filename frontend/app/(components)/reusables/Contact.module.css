@@ -1,46 +1,96 @@
 .about {
   display: flex;
-  gap: 150px;
+  gap: 80px;
   font-size: 20px;
-  /* background-color: green; */
+  align-items: flex-start;
 }
 
 .aboutText {
   display: flex;
   align-items: flex-start;
-  width: 60%;
+  width: 45%;
   justify-content: left;
   flex-direction: column;
-  /* background-color: red; */
 }
 
-.aboutImage {
+.formColumn {
   display: flex;
-  justify-content: start;
-  align-items: center;
-  width: 40%;
-  /* background-color: blue; */
+  width: 55%;
 }
 
 .buttonContainer {
-  background-color: white;
   margin-top: 20px;
-  padding: 5px;
-  color: black;
+  width: fit-content;
+}
+
+.button {
+  background-color: #fff;
+  border: none;
   border-radius: 40px;
-  text-align: center;
-  width: 150px;
+  color: #000;
+  cursor: pointer;
   font-family: "Inter";
-  transition: background-color 0.15s;
-  font-size: 25px;
+  font-size: 18px;
+  padding: 8px 18px;
+  transition: filter 0.15s;
+}
+
+.button:hover {
+  filter: brightness(0.9);
 }
 
 .detailed_title {
   color: white;
+  margin-bottom: 32px;
 }
 
 .detailed_subtitle {
   color: #b3b3b3;
+}
+
+.toggleGroup {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.toggleOption {
+  background-color: transparent;
+  border: 2px solid #7a7a7a;
+  border-radius: 12px;
+  color: #d9d9d9;
+  cursor: pointer;
+  font-family: var(--font-inter);
+  font-size: 18px;
+  line-height: 1.35;
+  min-height: 145px;
+  padding: 22px;
+  text-align: left;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.toggleOption:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.toggleOptionActive {
+  background-color: #fff;
+  border-color: #fff;
+  color: #111;
+}
+
+.toggleOptionActive:hover {
+  color: #111;
+}
+
+.toggleDescription {
+  color: #d9d9d9;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .form_container {
@@ -52,6 +102,19 @@
 .form {
   display: flex;
   flex-direction: column;
+  gap: 18px;
+}
+
+.nameFields {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .input {
@@ -65,9 +128,14 @@
 }
 
 .label {
-  font-size: 25px;
-  padding-top: 10px;
+  font-size: 20px;
   color: #fffbfb;
+}
+
+.required {
+  color: #b3b3b3;
+  font-size: 0.65em;
+  font-weight: 400;
 }
 
 .text_area {
@@ -83,28 +151,36 @@
 
 .successMessage {
   color: white;
+  text-align: center;
+}
+
+.successMessage .button {
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 1000px) {
   .about {
-    gap: 70px;
+    gap: 50px;
   }
 
   .aboutText {
-    width: 70%;
+    width: 45%;
   }
 
-  .aboutImage {
-    width: 30%;
+  .formColumn {
+    width: 55%;
+  }
+
+  .toggleGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .toggleOption {
+    min-height: auto;
   }
 
   .label {
-    font-size: 22px;
-  }
-
-  .buttonContainer {
-    font-size: 22px;
-    width: 140px;
+    font-size: 18px;
   }
 }
 
@@ -112,12 +188,12 @@
   .about {
     flex-direction: column;
     gap: 50px;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
   }
 
-  .form {
-    /* background-color: red; */
+  .nameFields {
+    grid-template-columns: 1fr;
   }
 
   .aboutText {
@@ -126,29 +202,26 @@
     text-align: center;
   }
 
+  .formColumn {
+    width: 100%;
+  }
+
+  .toggleGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .toggleOption {
+    text-align: center;
+  }
+
   .label {
     text-align: left;
-  }
-
-  .aboutImage {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .aboutImage img {
-    width: 100%;
-    /* max-width: 400px; */
-  }
-
-  .form_container {
-    /* background-color: blue; */
   }
 
   .input {
     height: 45px;
     font-size: 16px;
     padding: 0 15px;
-    margin-bottom: 20px;
   }
 
   .text_area {
@@ -156,19 +229,19 @@
     font-size: 16px;
     padding: 15px;
     resize: vertical;
-    margin-bottom: 30px;
   }
 
   .label {
-    font-size: 20px;
-    padding-top: 15px;
+    font-size: 18px;
   }
 
   .buttonContainer {
-    font-size: 20px;
     width: 100%;
     margin-top: 25px;
-    padding: 8px;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .detailed_title {

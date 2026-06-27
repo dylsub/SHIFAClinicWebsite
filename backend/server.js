@@ -198,7 +198,15 @@ app.get("/api/resources", async (req, res) => {
 app.post("/api/volunteers", async (req, res) => {
   console.log("Adding new volunteer:", req.body);
   try {
-    const { name, role, category, imageSrc } = req.body;
+    const {
+      name,
+      role,
+      description: rawDescription = "",
+      category,
+      imageSrc,
+    } = req.body;
+    const description =
+      typeof rawDescription === "string" ? rawDescription.trim() : "";
 
     // Validate request body
     if (!name || !role || !category || !imageSrc) {
@@ -208,6 +216,7 @@ app.post("/api/volunteers", async (req, res) => {
     const volunteerData = {
       name,
       role,
+      description,
       category,
       imageSrc,
       createdAt: new Date(),
@@ -337,7 +346,15 @@ app.put("/api/volunteers/:id", async (req, res) => {
   console.log("Updating volunteer:", req.params.id, req.body);
   try {
     const { id } = req.params;
-    const { name, role, category, imageSrc } = req.body;
+    const {
+      name,
+      role,
+      description: rawDescription = "",
+      category,
+      imageSrc,
+    } = req.body;
+    const description =
+      typeof rawDescription === "string" ? rawDescription.trim() : "";
 
     // Validate request body
     if (!name || !role || !category || !imageSrc) {
@@ -351,6 +368,7 @@ app.put("/api/volunteers/:id", async (req, res) => {
         $set: {
           name,
           role,
+          description,
           category,
           imageSrc,
           updatedAt: new Date(),

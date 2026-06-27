@@ -1,15 +1,16 @@
 import React from "react";
 import styles from "./InfoGroup.module.css";
 // Ishaan
-// This is functionally the same as HomeServices.jsx.
-// However, you are only passing in the special children prop.
+// Same flex row + content_box pattern as HomeServices (panel row only; no section heading).
 // This means that in pseudocode <InfoGroup><InfoPanel/> * 3</InfoGroup>,
 // <InfoPanel/> * 3 would be stored in the children prop
 
-export default function InfoGroup({ children }) {
+export default function InfoGroup({ children, className = "" }) {
   return (
-    <div className="content_box">
-      <div className={styles.container}>{children}</div>
+    <div
+      className={[styles.container, "content_box", className].filter(Boolean).join(" ")}
+    >
+      {children}
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 85vw;
+  margin: 0 auto;
+  align-self: center;
+  box-sizing: border-box;
+}
+
+.heading {
+  margin-bottom: 30px;
+}
+
+.description {
+  margin-bottom: 100px;
+}
+

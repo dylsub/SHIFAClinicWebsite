@@ -15,10 +15,15 @@ export default function InfoPanel2({
   borderLeftWidth = "0px",
   borderBottomWidth = "0px",
   link = false,
+  circularIcon = false,
 }) {
+  const hasImage = src != null && src !== "";
+
   return (
     <div
-      className={styles.panel}
+      className={[styles.panel, !hasImage && styles.panelNoImage]
+        .filter(Boolean)
+        .join(" ")}
       style={{
         borderTopWidth: borderTopWidth,
         borderRightWidth: borderRightWidth,
@@ -27,7 +32,16 @@ export default function InfoPanel2({
         borderColor: colorCode,
       }}
     >
-      {src != "" && <img src={src} alt={titleText} className={styles.icon} />}
+      {hasImage && (
+        <img
+          src={src}
+          alt={titleText}
+          className={
+            styles.icon +
+            (circularIcon ? ` ${styles.iconCircular}` : "")
+          }
+        />
+      )}
       <h1 className={styles.title}>
         {link ? (
           <Link className={styles.link_text} href={buttonPath}>

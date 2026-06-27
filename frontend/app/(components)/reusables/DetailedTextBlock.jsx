@@ -8,7 +8,9 @@ export default function DetailedTextBlock({
   bodyText,
   buttonText,
   path,
+  scrollTo,
   width,
+  className = "",
 }) {
   // Armaan Patel
 
@@ -21,12 +23,15 @@ export default function DetailedTextBlock({
   // Style in DetailedTextBlock.module.css
   //button white transparent for button
   return (
-    <div className={styles.container} style={{ width: `${width}%` }}>
+    <div
+      className={[styles.container, className].filter(Boolean).join(" ")}
+      style={{ width: `${width ?? 100}%` }}
+    >
       <h3 className={styles.detailed_subtitle}>{subtitleText}</h3>
       <h1 className={styles.detailed_title}>{headerText}</h1>
       <p>{bodyText}</p>
       <div className={styles.buttonContainer}>
-        <ButtonBlackTransparent path={path}>
+        <ButtonBlackTransparent path={path} scrollTo={scrollTo}>
           {buttonText}
         </ButtonBlackTransparent>
       </div>

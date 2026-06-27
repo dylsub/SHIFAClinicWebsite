@@ -45,6 +45,7 @@ const Dashboard = () => {
     return (
       <div className="main">
         <NavBar />
+        <div id="hero" />
         <LoginModal
           isOpen={showLoginModal}
           onLoginSuccess={handleLoginSuccess}
@@ -56,7 +57,7 @@ const Dashboard = () => {
   return (
     <div className="main">
       <NavBar />
-      <div className={styles.dashboardContainer + " content_box"}>
+      <div id="hero" className={styles.dashboardContainer + " content_box"}>
         <div className={styles.dashboardHeader}>
           <h1 className={styles.dashboardTitle}>Admin Dashboard</h1>
           <button onClick={handleLogout} className={styles.logoutButton}>

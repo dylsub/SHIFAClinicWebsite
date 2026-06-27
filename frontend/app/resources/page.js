@@ -11,6 +11,7 @@ import BackgroundGreyWrapper from "../(components)/reusables/BackgroundGreyWrapp
 import GeneralInformation from "../(components)/resources/GeneralInformation";
 import MoreQuestions from "../(components)/resources/MoreQuestions";
 import ResourcesGrid from "../(components)/resources/ResourcesGrid";
+import EventsAnnouncements from "../(components)/resources/EventsAnnouncements";
 
 const Resources = () => {
   return (
@@ -31,8 +32,13 @@ const Resources = () => {
       </BackgroundGreyWrapper>
 
       <BackgroundWhiteWrapper>
-        <MoreQuestions></MoreQuestions>
+        <EventsAnnouncements></EventsAnnouncements>
       </BackgroundWhiteWrapper>
+
+{/* 
+      <BackgroundWhiteWrapper>
+        <MoreQuestions></MoreQuestions>
+      </BackgroundWhiteWrapper> */}
 
       <BackgroundDarkGreyWrapper>
         <Contact
@@ -40,7 +46,7 @@ const Resources = () => {
           buttonText={"Submit"}
           path={"/"}
           src={"contact.png"}
-          headerText={"Feel free to contact us"}
+          headerText={"Contact us here"}
         ></Contact>
       </BackgroundDarkGreyWrapper>
     </div>

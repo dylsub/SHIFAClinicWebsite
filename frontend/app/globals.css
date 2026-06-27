@@ -22,6 +22,10 @@ body {
   background-color: #fff;
 }
 
+#hero {
+  scroll-margin-top: 80px;
+}
+
 h2,
 h3,
 h4,

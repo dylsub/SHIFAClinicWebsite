@@ -1,18 +1,8 @@
 .resourcesContainer {
   text-align: center;
   flex-direction: column;
-}
-
-.titleSection {
-  margin-bottom: 50px;
-}
-
-.titleSection h1 {
-  margin-bottom: 20px;
-}
-
-.titleSection p {
-  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .resourcesGrid {
@@ -33,7 +23,6 @@
 }
 
 .resourceCard:hover {
-  transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   border-color: #e23809;
 }
@@ -49,10 +38,6 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
-}
-
-.resourceCard:hover .resourceImage {
-  transform: scale(1.05);
 }
 
 .resourceContent {
@@ -94,7 +79,6 @@
 .resourceLink:hover {
   background: transparent;
   color: #e23809;
-  transform: translateY(-2px);
 }
 
 .noResources {
@@ -109,18 +93,64 @@
   font-style: italic;
 }
 
+/* Mid-range layout: match content_box width changes with stable 2-column cards */
+@media (max-width: 1280px) and (min-width: 769px) {
+  .resourcesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .resourceContent {
+    padding: 20px;
+  }
+
+  .resourceTitle {
+    font-size: 1.2rem;
+  }
+
+  .resourceDescription {
+    font-size: 0.95rem;
+  }
+
+  .imageContainer {
+    height: 180px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .resourceCard {
+    width: 100%;
+  }
+
+  .resourceTitle {
+    font-size: 1rem;
+  }
+
+  .resourceDescription {
+    font-size: 0.85rem;
+  }
+
+  .resourcesContainer {
+    width: 725px;
+  }
+
+  .resourceCard:nth-child(odd) {
+    justify-self: end;
+  }
+
+  .resourceCard:nth-child(even) {
+    justify-self: start;
+  }
+
+  .resourcesGrid {
+    gap: 24px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .resourcesContainer {
     padding: 40px 15px;
-  }
-
-  .titleSection h1 {
-    font-size: 2rem;
-  }
-
-  .titleSection p {
-    font-size: 1.1rem;
   }
 
   .resourcesGrid {
@@ -144,10 +174,6 @@
 @media (max-width: 480px) {
   .resourcesContainer {
     padding: 30px 10px;
-  }
-
-  .titleSection h1 {
-    font-size: 1.8rem;
   }
 
   .resourceContent {

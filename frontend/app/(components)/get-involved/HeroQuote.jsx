@@ -12,7 +12,7 @@ const HeroQuote = ({ leadingText, quoteText, authorText }) => {
   // leadingText, quoteText, authorText should be the parameters
 
   return (
-    <div className={styles.quoteContainer + " content_box"}>
+    <div id="hero" className={styles.quoteContainer + " content_box"}>
       {/* <div className={styles.overlay}></div> */}
       <div className={styles.text_box}>
         <p className={styles.leadingText}>{leadingText}</p>

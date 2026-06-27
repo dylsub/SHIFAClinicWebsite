@@ -3,16 +3,15 @@
 import React, { useEffect, useState } from "react";
 import TextColumn from "./TextColumn";
 import DropdownColumn from "../../reusables/DropdownColumn";
+import { DROPDOWN_COLUMN_BREAKPOINT_PX } from "../../reusables/dropdownColumnBreakpoint";
 import styles from "./GetInvolvedFAQ.module.css";
-
-const FAQ_COLUMN_BREAKPOINT_PX = 720;
 
 const GetInvolvedFAQ = () => {
   const [columnSize, setColumnSize] = useState("600px");
 
   useEffect(() => {
     const mq = window.matchMedia(
-      `(max-width: ${FAQ_COLUMN_BREAKPOINT_PX - 1}px)`
+      `(max-width: ${DROPDOWN_COLUMN_BREAKPOINT_PX - 1}px)`
     );
     const sync = () => setColumnSize(mq.matches ? "85vw" : "600px");
     sync();

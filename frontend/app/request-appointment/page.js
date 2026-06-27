@@ -22,7 +22,7 @@ const RequestAppointment = () => {
           buttonText={"Submit"}
           path={"/"}
           src={"contact.png"}
-          headerText={"Feel free to contact us"}
+          headerText={"Contact us here"}
         ></Contact>
       </BackgroundDarkGreyWrapper>
     </div>

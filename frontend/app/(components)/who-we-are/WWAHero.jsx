@@ -5,7 +5,7 @@ import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 
 export default function HomeHero() {
   return (
-    <div className={`${styles.heroContainer} ${styles.who_we_are}`}>
+    <div id="hero" className={`${styles.heroContainer} ${styles.who_we_are}`}>
       <div className={`${styles.text_box} content_box`}>
         <div>
           <h1 className={styles.heroHeader}>What is the ICN SHIFA Clinic?</h1>

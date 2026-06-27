@@ -25,11 +25,12 @@ const Donate = () => {
         <DonateThanks
           subtitleText={""}
           bodyText={
-            "Your generosity helps us continue providing free medical services to those in need, thanks to the dedication of our incredible volunteer team. Every contribution, no matter the amount, supports our mission to offer compassionate care to the community. With your support, we can make a meaningful difference in the health and well-being of individuals and families in need."
+            "ICN SHIFA Clinic is operated and managed completely by a team of volunteers with no paid staff. Though, we are blessed with a team of volunteers who are willing to dedicate their time, we will always appreciate monetary support."
           }
           buttonText={"Ways to Donate"}
-          path={"/"}
-          src={"nurse-treating-patient-stockcake.png"}
+          path={"#ways-to-donate"}
+          scrollTo="ways-to-donate"
+          src={"two_people.png"}
           headerText={
             "Thank you for considering a donation to ICN SHIFA Clinic!"
           }
@@ -58,24 +59,21 @@ const Donate = () => {
         </WhyDonate>
       </BackgroundGreyWrapper>
 
-      <BackgroundWhiteWrapper>
+      <BackgroundWhiteWrapper id="ways-to-donate">
         <WaysToDonate>
           <InfoGroup>
             <InfoAltPanel
               descripText="You can make a secure donation online through our website. It’s fast, easy, and convenient. Whether you choose to make a one-time gift or set up a recurring donation, your support goes a long way in helping us provide free healthcare to those in need. "
+              buttonText="Donate Online Now"
+              buttonPath="https://www.paypal.com/cgi-bin/webscr?business=F6E5CZWWG7KLS&cancel_return=http%3A%2F%2Fclinic.icnmasjid.org&cmd=_donations&currency_code=USD&invoice=ICN%20SHIFA%20CLINIC&item_name=ICN%20SHIFA%20CLINIC&item_number=ICN%20SHIFA%20CLINIC&lc=US&no_note=0&no_shipping=1&return=http%3A%2F%2Fclinic.icnmasjid.org&rm=1"
+              buttonColor="#EC2024"
               iconOption={1}
             ></InfoAltPanel>
             <InfoAltPanel
-              descripText="If you prefer to donate by mail or in person, you can send a check directly to ICN SHIFA Clinic at
-
- [Insert Mailing Address Here]. 
-
-Please make checks payable to “ICN SHIFA Clinic.”"
+              descripText="If you prefer to donate by mail or in person, you can send a check directly to ICN SHIFA Clinic at"
+              addressText="25W530 75th Street, Naperville, IL 60565."
+              closingText="Please make checks payable to “ICN SHIFA Clinic.”"
               iconOption={2}
-            ></InfoAltPanel>
-            <InfoAltPanel
-              descripText="We welcome donations of medical supplies and equipment, which play a crucial role in enhancing patient care at ICN SHIFA Clinic.  If you’re interested in donating supplies, please contact us to learn more about the specific items currently needed."
-              iconOption={3}
             ></InfoAltPanel>
           </InfoGroup>
         </WaysToDonate>
@@ -86,8 +84,8 @@ Please make checks payable to “ICN SHIFA Clinic.”"
           quoteText={
             '"Giving is not just about making a donation. It is about making a genuine difference in the community."'
           }
-          authorText="Jane Anderson"
-          roleText="Nurse Practitioner"
+          authorText="Usman Khan, MD"
+          roleText="Chief Medical Officer"
         ></Testimonial>
       </BackgroundGreyWrapper>
 
@@ -101,7 +99,7 @@ Please make checks payable to “ICN SHIFA Clinic.”"
           buttonText={"Submit"}
           path={"/"}
           src={"contact.png"}
-          headerText={"Feel free to contact us"}
+          headerText={"Contact us here"}
         ></Contact>
       </BackgroundDarkGreyWrapper>
     </div>

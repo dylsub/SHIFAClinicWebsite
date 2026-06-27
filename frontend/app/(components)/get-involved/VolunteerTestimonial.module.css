@@ -1,10 +1,25 @@
-.container {
-  padding: 60px 0;
-  text-align: center;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.heading {
-  margin-bottom: 70px;
+.container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    gap: 50px;
+  }
 }
 
 .button {

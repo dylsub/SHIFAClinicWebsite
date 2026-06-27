@@ -7,7 +7,8 @@ import { getAuthToken } from "./AuthUtils";
 const StatisticsManager = () => {
   const [statistics, setStatistics] = useState([]);
   const [editingId, setEditingId] = useState(null);
-  const [editValue, setEditValue] = useState("");
+  const [editTitle, setEditTitle] = useState("");
+  const [editDescription, setEditDescription] = useState("");
 
   // Color array in the correct order
   const colors = ["#FD6A6D", "#EC2024", "#A1080B", "#6C0305", "#230203"];
@@ -46,7 +47,8 @@ const StatisticsManager = () => {
 
   const handleEdit = (stat) => {
     setEditingId(stat._id);
-    setEditValue(stat.title);
+    setEditTitle(stat.title);
+    setEditDescription(stat.description);
   };
 
   const handleSave = async (stat) => {
@@ -62,8 +64,8 @@ const StatisticsManager = () => {
           },
           body: JSON.stringify({
             id: stat._id,
-            title: editValue,
-            description: stat.description,
+            title: editTitle,
+            description: editDescription,
           }),
         }
       );
@@ -71,11 +73,14 @@ const StatisticsManager = () => {
       if (response.ok) {
         setStatistics((prevStats) =>
           prevStats.map((s) =>
-            s._id === stat._id ? { ...s, title: editValue } : s
+            s._id === stat._id
+              ? { ...s, title: editTitle, description: editDescription }
+              : s
           )
         );
         setEditingId(null);
-        setEditValue("");
+        setEditTitle("");
+        setEditDescription("");
         fetchStatistics(); // Refresh
       } else if (response.status === 401) {
         window.location.reload();
@@ -90,14 +95,15 @@ const StatisticsManager = () => {
 
   const handleCancel = () => {
     setEditingId(null);
-    setEditValue("");
+    setEditTitle("");
+    setEditDescription("");
   };
 
   return (
     <div className={styles.container}>
       <h2 className={styles.sectionTitle}>Manage Statistics</h2>
       <p className={styles.description}>
-        Click on any statistic value to edit it. Changes will be saved to the
+        Click on any statistic to edit its value and label. Changes will be saved to the
         database.
       </p>
 
@@ -107,13 +113,25 @@ const StatisticsManager = () => {
             <div className={styles.statContent}>
               {editingId === stat._id ? (
                 <div className={styles.editMode}>
-                  <input
-                    type="text"
-                    value={editValue}
-                    onChange={(e) => setEditValue(e.target.value)}
-                    className={styles.editInput}
-                    autoFocus
-                  />
+                  <label className={styles.editLabel}>
+                    Value
+                    <input
+                      type="text"
+                      value={editTitle}
+                      onChange={(e) => setEditTitle(e.target.value)}
+                      className={styles.editInput}
+                      autoFocus
+                    />
+                  </label>
+                  <label className={styles.editLabel}>
+                    Label
+                    <input
+                      type="text"
+                      value={editDescription}
+                      onChange={(e) => setEditDescription(e.target.value)}
+                      className={styles.editDescriptionInput}
+                    />
+                  </label>
                   <div className={styles.editButtons}>
                     <button
                       onClick={() => handleSave(stat)}

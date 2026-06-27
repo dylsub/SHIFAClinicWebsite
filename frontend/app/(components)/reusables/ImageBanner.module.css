@@ -1,17 +1,35 @@
 .container {
+  position: relative;
   width: 100vw;
-  height: 45vh;
+  height: 40vh;
   overflow: hidden;
   background-color: green;
 }
 
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
 .container img {
-  width: 100vw;
-  height: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media only screen and (max-width: 1000px) {
   .container {
-    height: auto;
+    height: 34vh;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    height: 28vh;
   }
 }

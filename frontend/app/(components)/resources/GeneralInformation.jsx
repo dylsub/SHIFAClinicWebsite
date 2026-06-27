@@ -2,18 +2,17 @@ import React from "react";
 import styles from "./GeneralInformation.module.css";
 import InfoGroup from "../reusables/InfoGroup";
 import InfoPanel2 from "../reusables/InfoPanel2";
+import ResourcesSectionIntro from "./ResourcesSectionIntro";
 
 const GeneralInformation = () => {
   return (
     <div className={styles.teamSection + " content_box"}>
-      <h1 className={styles.heading}>General Health Information</h1>
-      <p className={styles.description}>
-        Here you'll find helpful resources and information about general health
-        topics. These resources are meant to provide basic education and
-        guidance, but should not replace professional medical advice.
-      </p>
+      <ResourcesSectionIntro
+        title="General Health Information"
+        description="Here you'll find helpful resources and information about general health topics. These resources are meant to provide basic education and guidance, but should not replace professional medical advice."
+      />
       <div className={styles.panelContainer}>
-        <InfoGroup>
+        <InfoGroup className={styles.infoGroupRow}>
           <InfoPanel2
             src={""}
             colorCode={"#333333"}

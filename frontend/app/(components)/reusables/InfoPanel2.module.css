@@ -27,6 +27,11 @@
   margin-bottom: 16px;
 }
 
+.iconCircular {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .title {
   margin: 15px 0;
   color: black;
@@ -51,13 +56,66 @@
   margin-top: 20px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1280px) {
   .panel {
-    padding: 10px;
+    padding: 20px 10px;
+  }
+
+  .icon {
+    width: 100px;
+    height: 100px;
   }
 
   .title {
     font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .panel {
+    padding: 10px 5px;
+  }
+
+  .icon {
+    width: 84px;
+    height: 84px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1280px) {
+  .panelNoImage {
+    min-height: 225px;
+    padding-top: 11.25px;
+    padding-bottom: 11.25px;
+  }
+
+  .panelNoImage .title {
+    margin-top: 8.4375px;
+    margin-bottom: 8.4375px;
+  }
+
+  .panelNoImage .description {
+    margin-bottom: 22.5px;
+  }
+}
+
+@media only screen and (min-width: 721px) and (max-width: 1000px) {
+  .panelNoImage {
+    min-height: 225px;
+    padding: 5.625px 3.75px;
+  }
+
+  .panelNoImage .title {
+    margin-top: 8.4375px;
+    margin-bottom: 8.4375px;
+  }
+
+  .panelNoImage .description {
+    margin-bottom: 22.5px;
   }
 }
 
@@ -66,7 +124,26 @@
     padding: 30px;
   }
 
+  .icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .panelNoImage {
+    min-height: 300px;
+    padding: 22.5px;
+  }
+
+  .panelNoImage .title {
+    margin-top: 11.25px;
+    margin-bottom: 11.25px;
+  }
+
+  .panelNoImage .description {
+    margin-bottom: 30px;
+  }
+
   .title {
-    font-size: 40px;
+    font-size: 32px;
   }
 }

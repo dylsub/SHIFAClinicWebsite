@@ -20,3 +20,18 @@
 .container h1 {
   text-align: center;
 }
+
+@media only screen and (max-width: 720px) {
+  .buttonContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container .buttonContainer :global(a) {
+    box-sizing: border-box;
+    width: min(92vw, 420px);
+    max-width: 100%;
+  }
+}
+

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "./ResourcesGrid.module.css";
+import ResourcesSectionIntro from "./ResourcesSectionIntro";
 
 const ResourcesGrid = () => {
   const [resources, setResources] = useState([]);
@@ -27,13 +28,10 @@ const ResourcesGrid = () => {
 
   return (
     <div className={styles.resourcesContainer + " content_box"}>
-      <div className={styles.titleSection}>
-        <h1>Other SHIFA Resources</h1>
-        <p>
-          Access helpful resources and information to support your healthcare
-          journey.
-        </p>
-      </div>
+      <ResourcesSectionIntro
+        title="Other SHIFA Resources"
+        description="Access helpful resources and information to support your healthcare journey."
+      />
 
       <div className={styles.resourcesGrid}>
         {resources.length === 0 ? (

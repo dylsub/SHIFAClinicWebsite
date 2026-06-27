@@ -65,18 +65,25 @@
 }
 
 .formGroup input,
-.formGroup select {
+.formGroup select,
+.formGroup textarea {
   padding: 10px;
   border: 2px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
+  font-family: inherit;
   transition: border-color 0.3s ease;
 }
 
 .formGroup input:focus,
-.formGroup select:focus {
+.formGroup select:focus,
+.formGroup textarea:focus {
   outline: none;
   border-color: #e23809;
+}
+
+.formGroup textarea {
+  resize: vertical;
 }
 
 .submitButton {
@@ -159,9 +166,30 @@
   font-size: 0.9rem;
 }
 
+.description {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.editButton,
+.saveButton,
+.cancelButton,
 .deleteButton {
   padding: 8px 16px;
-  background: #dc3545;
   color: white;
   border: none;
   border-radius: 5px;
@@ -169,6 +197,34 @@
   font-size: 14px;
   font-weight: 600;
   transition: background-color 0.3s ease;
+}
+
+.editButton {
+  background: #007bff;
+}
+
+.editButton:hover {
+  background: #0056b3;
+}
+
+.saveButton {
+  background: #28a745;
+}
+
+.saveButton:hover {
+  background: #218838;
+}
+
+.cancelButton {
+  background: #6c757d;
+}
+
+.cancelButton:hover {
+  background: #5a6268;
+}
+
+.deleteButton {
+  background: #dc3545;
 }
 
 .deleteButton:hover {

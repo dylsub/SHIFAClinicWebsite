@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ResourcesDropdown.module.css";
 import DropdownColumn from "../reusables/DropdownColumn";
 import Link from "next/link";
+import ResourcesSectionIntro from "./ResourcesSectionIntro";
 
 const ResourcesDropdown = () => {
   const resourcesData = [
@@ -132,19 +133,17 @@ const ResourcesDropdown = () => {
 
   return (
     <div className={styles.teamSection + " content_box"}>
-      <h1 className={styles.heading}>ICN SHIFA Clinic Recommended Diets</h1>
-      <p className={styles.description}>
-        Here are some helpful resources for managing your diet with high blood
-        pressure or kidney disease. Please reach out to our registered medical
-        professionals if you have any questions or concerns about your health
-        and would like a diet recommend to you. Taking care of your health
-        starts with what you put into your body on a daily basis.
-      </p>
-      <DropdownColumn
-        columnSize={"1200px"}
-        numDropdowns={5}
-        testArr={resourcesData}
+      <ResourcesSectionIntro
+        title="ICN SHIFA Clinic Recommended Diets"
+        description="Here are some helpful resources for managing your diet with high blood pressure or kidney disease. Please reach out to our registered medical professionals if you have any questions or concerns about your health and would like a diet recommend to you. Taking care of your health starts with what you put into your body on a daily basis."
       />
+      <div className={styles.dropdownColumn}>
+        <DropdownColumn
+          columnSize="100%"
+          numDropdowns={5}
+          testArr={resourcesData}
+        />
+      </div>
     </div>
   );
 };

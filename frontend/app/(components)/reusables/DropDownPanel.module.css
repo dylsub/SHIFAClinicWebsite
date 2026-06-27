@@ -54,13 +54,37 @@
   opacity: 1;
 }
 
-@media (max-width: 475px) {
+/* Align with FAQ / resources narrow layout (same breakpoint as GetInvolvedFAQ columnSize). */
+@media (max-width: 719px) {
   .dropdownButton {
     font-size: 16px;
+    padding: 24px 5px;
   }
 
   .dropdownButton::after,
   .dropdownButton.open::after {
     font-size: 16px;
+  }
+
+  .dropdownMenu {
+    font-size: 14px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 475px) {
+  .dropdownButton {
+    font-size: 14px;
+    padding: 20px 5px;
+  }
+
+  .dropdownButton::after,
+  .dropdownButton.open::after {
+    font-size: 14px;
+  }
+
+  .dropdownMenu {
+    font-size: 13px;
+    padding: 14px;
   }
 }

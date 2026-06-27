@@ -2,7 +2,12 @@ import React from "react";
 import Link from "next/link";
 import styles from "./ButtonAnyColorFilled.module.css";
 
-export default function ButtonAnyColorFilled({ children, path, buttonColor }) {
+export default function ButtonAnyColorFilled({
+  children,
+  path,
+  buttonColor,
+  openInNewTab = false,
+}) {
   // Devin + Faris
   // Finish this as well.
   // This one shoud take in a color and update the border and the fill color to it
@@ -14,7 +19,13 @@ export default function ButtonAnyColorFilled({ children, path, buttonColor }) {
   };
 
   return (
-    <Link href={path} style={style} className={styles.button}>
+    <Link
+      href={path}
+      style={style}
+      className={styles.button}
+      target={openInNewTab ? "_blank" : undefined}
+      rel={openInNewTab ? "noopener noreferrer" : undefined}
+    >
       <p>{children}</p>
     </Link>
   );

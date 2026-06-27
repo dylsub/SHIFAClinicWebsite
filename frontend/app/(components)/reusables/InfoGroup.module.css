@@ -2,8 +2,8 @@
   display: flex;
   justify-content: flex-start;
   gap: 50px;
-  width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 1000px) {

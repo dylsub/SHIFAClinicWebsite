@@ -14,6 +14,14 @@ const ResourcesManager = () => {
     imageSrc: "",
   });
   const [selectedImage, setSelectedImage] = useState(null);
+  const [editingResourceId, setEditingResourceId] = useState(null);
+  const [editFormData, setEditFormData] = useState({
+    title: "",
+    description: "",
+    link: "",
+    imageSrc: "",
+  });
+  const [selectedEditImage, setSelectedEditImage] = useState(null);
   const [uploading, setUploading] = useState(false);
 
   // Fetch resources from MongoDB
@@ -53,6 +61,20 @@ const ResourcesManager = () => {
     const file = e.target.files[0];
     if (file) {
       setSelectedImage(file);
+    }
+  };
+
+  const handleEditInputChange = (e) => {
+    setEditFormData({
+      ...editFormData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleEditImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedEditImage(file);
     }
   };
 
@@ -137,7 +159,7 @@ const ResourcesManager = () => {
       try {
         const token = getAuthToken();
         const response = await fetch(
-          process.env.NEXT_PUBLIC_API_URL + "/api/resources/${resourceId}",
+          process.env.NEXT_PUBLIC_API_URL + `/api/resources/${resourceId}`,
           {
             method: "DELETE",
             headers: {
@@ -158,6 +180,79 @@ const ResourcesManager = () => {
         console.error("Error deleting resource:", error);
         alert("Error deleting resource");
       }
+    }
+  };
+
+  const handleEdit = (resource) => {
+    setEditingResourceId(resource._id);
+    setEditFormData({
+      title: resource.title || "",
+      description: resource.description || "",
+      link: resource.link || "",
+      imageSrc: resource.imageSrc || "",
+    });
+    setSelectedEditImage(null);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingResourceId(null);
+    setEditFormData({
+      title: "",
+      description: "",
+      link: "",
+      imageSrc: "",
+    });
+    setSelectedEditImage(null);
+  };
+
+  const handleUpdate = async (e, resourceId) => {
+    e.preventDefault();
+    setUploading(true);
+
+    try {
+      let imageUrl = editFormData.imageSrc;
+
+      if (selectedEditImage) {
+        imageUrl = await uploadImage(selectedEditImage);
+      }
+
+      const token = getAuthToken();
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + `/api/resources/${resourceId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            ...editFormData,
+            imageSrc: imageUrl,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setResources((prev) =>
+          prev.map((resource) =>
+            resource._id === resourceId
+              ? { ...resource, ...editFormData, imageSrc: imageUrl }
+              : resource
+          )
+        );
+        handleCancelEdit();
+        fetchResources();
+        alert("Resource updated successfully!");
+      } else if (response.status === 401) {
+        window.location.reload();
+      } else {
+        alert("Failed to update resource");
+      }
+    } catch (error) {
+      console.error("Error updating resource:", error);
+      alert("Error updating resource");
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -253,22 +348,97 @@ const ResourcesManager = () => {
                   }}
                 />
                 <div className={styles.resourceInfo}>
-                  <h4>{resource.title}</h4>
-                  <p className={styles.description}>{resource.description}</p>
-                  <a
-                    href={resource.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.resourceLink}
-                  >
-                    View Resource
-                  </a>
-                  <button
-                    onClick={() => handleDelete(resource._id)}
-                    className={styles.deleteButton}
-                  >
-                    Delete
-                  </button>
+                  {editingResourceId === resource._id ? (
+                    <form
+                      className={styles.editForm}
+                      onSubmit={(e) => handleUpdate(e, resource._id)}
+                    >
+                      <div className={styles.formGroup}>
+                        <label>Title:</label>
+                        <input
+                          type="text"
+                          name="title"
+                          value={editFormData.title}
+                          onChange={handleEditInputChange}
+                          required
+                        />
+                      </div>
+                      <div className={styles.formGroup}>
+                        <label>Description:</label>
+                        <textarea
+                          name="description"
+                          value={editFormData.description}
+                          onChange={handleEditInputChange}
+                          required
+                          rows="3"
+                        />
+                      </div>
+                      <div className={styles.formGroup}>
+                        <label>Link:</label>
+                        <input
+                          type="url"
+                          name="link"
+                          value={editFormData.link}
+                          onChange={handleEditInputChange}
+                          required
+                        />
+                      </div>
+                      <div className={styles.formGroup}>
+                        <label>Replace Image:</label>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleEditImageChange}
+                        />
+                        <small>Leave blank to keep current image</small>
+                      </div>
+                      <div className={styles.actionButtons}>
+                        <button
+                          type="submit"
+                          className={styles.saveButton}
+                          disabled={uploading}
+                        >
+                          {uploading ? "Saving..." : "Save"}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={handleCancelEdit}
+                          className={styles.cancelButton}
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  ) : (
+                    <>
+                      <h4>{resource.title}</h4>
+                      <p className={styles.description}>
+                        {resource.description}
+                      </p>
+                      <div className={styles.actionButtons}>
+                        <a
+                          href={resource.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.resourceLink}
+                        >
+                          View Resource
+                        </a>
+                        <button
+                          onClick={() => handleEdit(resource)}
+                          className={styles.editButton}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => handleDelete(resource._id)}
+                          className={styles.deleteButton}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             ))}

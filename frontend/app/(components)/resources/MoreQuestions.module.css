@@ -3,23 +3,11 @@
   text-align: center;
 }
 
-.heading {
-  margin-bottom: 30px;
-}
-
-.description {
-  margin-bottom: 100px;
-}
-
 .container {
 }
 
 @media only screen and (max-width: 768px) {
   .section {
     padding: 30px 15px;
-  }
-
-  .heading {
-    font-size: 36px;
   }
 }

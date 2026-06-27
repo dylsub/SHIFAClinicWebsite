@@ -10,6 +10,7 @@ import BackgroundWhiteWrapper from "./(components)/reusables/BackgroundWhiteWrap
 import Contact from "./(components)/reusables/Contact";
 import BackgroundDarkGreyWrapper from "./(components)/reusables/BackgroundDarkGreyWrapper";
 import InfoPanel2 from "./(components)/reusables/InfoPanel2";
+import ClinicInfo from "./(components)/home/ClinicInfo";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
           }
           buttonText={"Who we are"}
           path={"/who-we-are"}
-          src={"home_about.png"}
+          src={"SHIFA1.jpeg"}
           headerText={"Uplifting the community with health services"}
         ></HomeAbout>
       </BackgroundWhiteWrapper>
@@ -37,11 +38,11 @@ export default function Home() {
             titleText="Expert Led"
             descripText="We are a team of professionals with backgrounds, certifications, and experience in the medical world."
             buttonText="Our Team"
-            colorCode="#FF0000"
+            colorCode="#FD6A6D"
             buttonPath="/who-we-are#team"
           ></InfoPanel2>
           <InfoPanel2
-            src="/HoldingHeart.png"
+            src="/PiggyBank.png"
             titleText="100% Free"
             descripText="We offer a wide range of medical services including primary care, dental, mental health, and specialty care."
             buttonText="Our Services"
@@ -49,23 +50,25 @@ export default function Home() {
             buttonPath="/services"
           ></InfoPanel2>
           <InfoPanel2
-            src="/PiggyBank.png"
+            src="/HoldingHeart.png"
             titleText="Volunteer Run"
             descripText="We are a community-driven organization that is committed to providing the best possible care to our patients."
             buttonText="Volunteer"
-            colorCode="#FF0000"
+            colorCode="#A1080B"
             buttonPath="/get-involved"
           ></InfoPanel2>
         </HomeServices>
       </BackgroundGreyWrapper>
+
+      <ClinicInfo></ClinicInfo>
 
       <BackgroundWhiteWrapper>
         <Testimonial
           quoteText={
             '"The SHIFA Clinic provides patients with hope and empowerment. It\'s been a pleasure being part of this community and serving others."'
           }
-          authorText="Jane Anderson"
-          roleText="Nurse Practitioner"
+          authorText="Atif Fakhruddin, MD"
+          roleText="Chief Executive Officer"
         ></Testimonial>
       </BackgroundWhiteWrapper>
 
@@ -81,7 +84,7 @@ export default function Home() {
           }
           buttonText={"Learn More"}
           path={"/get-involved"}
-          src={"join_our_team.png"}
+          src={"two_people.png"}
           headerText={"Get Involved"}
         ></HomeGetInvolved>
       </BackgroundWhiteWrapper>
@@ -92,7 +95,7 @@ export default function Home() {
           buttonText={"Submit"}
           path={"/contact"}
           src={"contact.png"}
-          headerText={"Feel free to contact us"}
+          headerText={"Contact us here"}
         ></Contact>
       </BackgroundDarkGreyWrapper>
     </div>

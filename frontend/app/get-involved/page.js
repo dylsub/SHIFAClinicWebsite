@@ -8,9 +8,9 @@ import Contact from "../(components)/reusables/Contact";
 import GetInvolvedFAQ from "../(components)/get-involved/FAQ/GetInvolvedFAQ";
 import BackgroundGreyWrapper from "../(components)/reusables/BackgroundGreyWrapper";
 import VolunteerTestimonial from "../(components)/get-involved/VolunteerTestimonial";
-import InfoGroup from "../(components)/reusables/InfoGroup";
-import InfoPanel from "../(components)/reusables/InfoPanel";
+import InfoPanel2 from "../(components)/reusables/InfoPanel2";
 import ImageBanner from "../(components)/reusables/ImageBanner";
+import ApplyNow from "../(components)/get-involved/ApplyNow";
 
 //test
 
@@ -26,35 +26,40 @@ const GetInvolved = () => {
         authorText={"-Prophet Muhammad"}
       ></HeroQuote>
 
-      <ImageBanner src="doctors.jpg"></ImageBanner>
+      <ImageBanner src="prophet.jpg"></ImageBanner>
 
       <BackgroundWhiteWrapper>
         <GetInvolvedFAQ></GetInvolvedFAQ>
       </BackgroundWhiteWrapper>
 
-      <BackgroundGreyWrapper>
+      {/* <BackgroundGreyWrapper>
         <VolunteerTestimonial>
-          <InfoGroup>
-            <InfoPanel
-              src="contact.png"
-              titleText="Jane Doe"
-              descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
-              colorCode="red"
-            ></InfoPanel>
-            <InfoPanel
-              src="contact.png"
-              titleText="Jane Doe"
-              descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
-              colorCode="red"
-            ></InfoPanel>
-            <InfoPanel
-              src="contact.png"
-              titleText="Jane Doe"
-              descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
-              colorCode="red"
-            ></InfoPanel>
-          </InfoGroup>
+          <InfoPanel2
+            src="contact.png"
+            titleText="Jane Doe"
+            descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
+            colorCode="#FF0000"
+            circularIcon
+          ></InfoPanel2>
+          <InfoPanel2
+            src="contact.png"
+            titleText="Jane Doe"
+            descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
+            colorCode="#FF0000"
+            circularIcon
+          ></InfoPanel2>
+          <InfoPanel2
+            src="contact.png"
+            titleText="Jane Doe"
+            descripText="“Volunteering with Shifa Clinic has been incredibly rewarding. Supporting patients, assisting nurses, and learning about the inner workings of healthcare has been so inspiring.”"
+            colorCode="#FF0000"
+            circularIcon
+          ></InfoPanel2>
         </VolunteerTestimonial>
+      </BackgroundGreyWrapper> */}
+
+      <BackgroundGreyWrapper>
+        <ApplyNow></ApplyNow>
       </BackgroundGreyWrapper>
 
       <BackgroundWhiteWrapper>
@@ -67,7 +72,7 @@ const GetInvolved = () => {
           buttonText={"Submit"}
           path={"/"}
           src={"contact.png"}
-          headerText={"Feel free to contact us"}
+          headerText={"Contact us here"}
         ></Contact>
       </BackgroundDarkGreyWrapper>
     </div>

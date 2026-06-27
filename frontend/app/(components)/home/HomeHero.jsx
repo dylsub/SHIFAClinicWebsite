@@ -5,11 +5,12 @@ import ButtonWhiteFilled from "../reusables/buttons/ButtonWhiteFilled";
 
 export default function HomeHero() {
   return (
-    <div className={`${styles.heroContainer} ${styles.home}`}>
+    <div id="hero" className={`${styles.heroContainer} ${styles.home}`}>
       <div className={`${styles.text_box} content_box`}>
         <div>
+          <p className={styles.clinicName}>ICN SHIFA Clinic</p>
           <h1 className={styles.heroHeader}>
-            Sacred healing institute for all
+            Sacred Healing Institute For All
           </h1>
           <div className={styles.button_box}>
             <ButtonWhiteTransparent path="/request-appointment">

@@ -32,11 +32,11 @@ const Grid = () => {
             title="Mission"
             text="ICN SHIFA Clinic aims to provide free quality healthcare to anyone without insurance or underinsured, regardless of race, religion, or political affiliation."
           />
-          <GridImage src="/doctors.jpg" alt="Doctors" />
+          <GridImage src="/SHIFA2.jpeg" alt="ICN SHIFA Picture" />
         </>
       ) : (
         <>
-          <GridImage src="/doctors.jpg" alt="Doctors" />
+          <GridImage src="/SHIFA2.jpeg" alt="ICNSHIFA Picture" />
           <GridText
             title="Mission"
             text="ICN SHIFA Clinic aims to provide free quality healthcare to anyone without insurance or underinsured, regardless of race, religion, or political affiliation."
@@ -47,7 +47,7 @@ const Grid = () => {
         title="Vision"
         text="ICN SHIFA Clinic has a vision for a facility that will offer comprehensive healthcare services under one roof, including medical, mental, dental, optical, and specialty care. We aim to create a system where patients without health insurance benefit from cost-effective, patient-focused services."
       />
-      <GridImage src="/doctors.jpg" alt="Doctors" />
+      <GridImage src="/SHIFA4.jpeg" alt="Clinic Picture" />
     </div>
   );
 };

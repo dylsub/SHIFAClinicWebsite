@@ -1,0 +1,152 @@
+.footer {
+  align-items: center;
+  background: #050505;
+  border-top: 1px solid #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 0 28px;
+  width: 100%;
+}
+
+.footerContent {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  display: grid;
+  gap: 56px;
+  grid-template-columns: 1fr 0.85fr 1.4fr;
+  padding-bottom: 44px;
+}
+
+.brandColumn,
+.infoColumn,
+.hoursColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText {
+  color: #fff;
+  font-family: var(--font-lustria);
+  font-size: 34px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.tagline,
+.address,
+.hoursBlock h4,
+.hoursBlock p,
+.footerBottom p,
+.link,
+.footerLinks a {
+  color: #d6d6d6;
+  font-family: var(--font-inter);
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sectionTitle {
+  color: #fff;
+  font-family: var(--font-lustria);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin: 0 0 18px;
+}
+
+.address {
+  font-family: inherit;
+  font-style: normal;
+  margin-bottom: 12px;
+}
+
+.link,
+.footerLinks a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover,
+.footerLinks a:hover {
+  color: #bdbdbd;
+}
+
+.hoursGrid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hoursBlock {
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid #fff;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.hoursBlock h4 {
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.time {
+  color: #fff !important;
+  font-weight: 400;
+  margin-top: 4px !important;
+}
+
+.footerBottom {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 24px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .footerContent {
+    gap: 36px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hoursColumn {
+    grid-column: 1 / -1;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .footer {
+    padding: 52px 0 26px;
+  }
+
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 34px;
+  }
+
+  .logoText {
+    font-size: 30px;
+  }
+
+  .hoursGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerBottom {
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

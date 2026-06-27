@@ -1,13 +1,16 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import styles from "./ServiceLeftPanel.module.css";
 
 const ServiceLeftPanel = ({
   title,
   paragraph,
   buttonText,
+  buttonPath = "#",
   backgroundColor,
+  src = "1080x1920 sample.jpg",
 }) => {
   const contentCardRef = useRef(null);
   const imageBoxRef = useRef(null);
@@ -57,12 +60,14 @@ const ServiceLeftPanel = ({
         <div className={styles.contentCard} ref={contentCardRef}>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.paragraph}>{paragraph}</p>
-          <button className={styles.button}>{buttonText}</button>
+          <Link className={styles.button} href={buttonPath}>
+            {buttonText}
+          </Link>
         </div>
       </div>
 
       <div className={styles.image_box} ref={imageBoxRef}>
-        <img src="1080x1920 sample.jpg" alt="Service image"></img>
+        <img src={src} alt="Service image"></img>
       </div>
     </div>
   );
