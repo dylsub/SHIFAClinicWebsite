@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {},
   webpack: (config, { dev }) => {
     if (dev) {
       // Avoid PackFileCacheStrategy on disk (often corrupts under OneDrive / cloud sync).
