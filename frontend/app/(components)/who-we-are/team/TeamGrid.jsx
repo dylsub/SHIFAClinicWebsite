@@ -1,5 +1,6 @@
 "use client";
 
+import { apiUrl } from "@/lib/apiUrl";
 import React, { useState, useEffect } from "react";
 import styles from "./Team.module.css";
 import Person from "./Person";
@@ -24,9 +25,7 @@ const TeamGrid = () => {
 
   const fetchVolunteers = async () => {
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/volunteers"
-      );
+      const response = await fetch(apiUrl("/api/volunteers"));
       if (response.ok) {
         const data = await response.json();
         setVolunteers(data);

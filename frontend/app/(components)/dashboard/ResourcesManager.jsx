@@ -1,5 +1,6 @@
 "use client";
 
+import { apiUrl } from "@/lib/apiUrl";
 import React, { useState, useEffect } from "react";
 import styles from "./ResourcesManager.module.css";
 import { getAuthToken } from "./AuthUtils";
@@ -32,7 +33,7 @@ const ResourcesManager = () => {
   const fetchResources = async () => {
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/resources",
+        apiUrl("/api/resources"),
         {
           headers: {
             "Content-Type": "application/json",
@@ -84,7 +85,7 @@ const ResourcesManager = () => {
 
     const token = getAuthToken();
     const response = await fetch(
-      process.env.NEXT_PUBLIC_API_URL + "/api/upload-image",
+      apiUrl("/api/upload-image"),
       {
         method: "POST",
         headers: {
@@ -116,7 +117,7 @@ const ResourcesManager = () => {
 
       const token = getAuthToken();
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/resources",
+        apiUrl("/api/resources"),
         {
           method: "POST",
           headers: {
@@ -159,7 +160,7 @@ const ResourcesManager = () => {
       try {
         const token = getAuthToken();
         const response = await fetch(
-          process.env.NEXT_PUBLIC_API_URL + `/api/resources/${resourceId}`,
+          apiUrl(`/api/resources/${resourceId}`),
           {
             method: "DELETE",
             headers: {
@@ -218,7 +219,7 @@ const ResourcesManager = () => {
 
       const token = getAuthToken();
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + `/api/resources/${resourceId}`,
+        apiUrl(`/api/resources/${resourceId}`),
         {
           method: "PUT",
           headers: {

@@ -1,5 +1,6 @@
 "use client";
 
+import { apiUrl } from "@/lib/apiUrl";
 import React, { useState, useEffect } from "react";
 import styles from "./StatisticsManager.module.css";
 import { getAuthToken } from "./AuthUtils";
@@ -21,7 +22,7 @@ const StatisticsManager = () => {
   const fetchStatistics = async () => {
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/statistics",
+        apiUrl("/api/statistics"),
         {
           headers: {
             "Content-Type": "application/json",
@@ -55,7 +56,7 @@ const StatisticsManager = () => {
     try {
       const token = getAuthToken();
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/statistics/update",
+        apiUrl("/api/statistics/update"),
         {
           method: "PUT",
           headers: {

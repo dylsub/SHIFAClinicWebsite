@@ -1,4 +1,6 @@
 "use client";
+
+import { apiUrl } from "@/lib/apiUrl";
 import React, { useState } from "react";
 import styles from "./LoginModal.module.css";
 
@@ -25,16 +27,13 @@ const LoginModal = ({ isOpen, onLoginSuccess }) => {
     setError("");
 
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/auth/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(credentials),
-        }
-      );
+      const response = await fetch(apiUrl("/api/auth/login"), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
 
       if (response.ok) {
         const data = await response.json();
@@ -72,7 +71,7 @@ const LoginModal = ({ isOpen, onLoginSuccess }) => {
     } catch (error) {
       console.error("Login request failed:", error);
       setError(
-        "Network error. Check that NEXT_PUBLIC_API_URL is set correctly and the backend is reachable."
+        "Network error. Please check your connection and try again."
       );
     } finally {
       setIsLoading(false);

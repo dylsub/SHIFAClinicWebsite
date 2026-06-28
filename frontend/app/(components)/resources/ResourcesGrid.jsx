@@ -1,5 +1,6 @@
 "use client";
 
+import { apiUrl } from "@/lib/apiUrl";
 import React, { useState, useEffect } from "react";
 import styles from "./ResourcesGrid.module.css";
 import ResourcesSectionIntro from "./ResourcesSectionIntro";
@@ -14,9 +15,7 @@ const ResourcesGrid = () => {
 
   const fetchResources = async () => {
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/resources"
-      );
+      const response = await fetch(apiUrl("/api/resources"));
       if (response.ok) {
         const data = await response.json();
         setResources(data);

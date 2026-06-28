@@ -1,5 +1,6 @@
 "use client";
 
+import { apiUrl } from "@/lib/apiUrl";
 import React, { useState, useEffect } from "react";
 import styles from "./VolunteersManager.module.css";
 import { getAuthToken } from "./AuthUtils";
@@ -43,7 +44,7 @@ const VolunteersManager = () => {
   const fetchVolunteers = async () => {
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/volunteers",
+        apiUrl("/api/volunteers"),
         {
           headers: {
             "Content-Type": "application/json",
@@ -95,7 +96,7 @@ const VolunteersManager = () => {
 
     const token = getAuthToken();
     const response = await fetch(
-      process.env.NEXT_PUBLIC_API_URL + "/api/upload-image",
+      apiUrl("/api/upload-image"),
       {
         method: "POST",
         headers: {
@@ -127,7 +128,7 @@ const VolunteersManager = () => {
 
       const token = getAuthToken();
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/volunteers",
+        apiUrl("/api/volunteers"),
         {
           method: "POST",
           headers: {
@@ -171,7 +172,7 @@ const VolunteersManager = () => {
       try {
         const token = getAuthToken();
         const response = await fetch(
-          process.env.NEXT_PUBLIC_API_URL + `/api/volunteers/${volunteerId}`,
+          apiUrl(`/api/volunteers/${volunteerId}`),
           {
             method: "DELETE",
             headers: {
@@ -232,7 +233,7 @@ const VolunteersManager = () => {
 
       const token = getAuthToken();
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + `/api/volunteers/${volunteerId}`,
+        apiUrl(`/api/volunteers/${volunteerId}`),
         {
           method: "PUT",
           headers: {

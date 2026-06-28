@@ -1,5 +1,6 @@
 "use client";
 
+import { apiUrl } from "@/lib/apiUrl";
 import React, { useState, useEffect } from "react";
 import StatisticsNumber from "./StatisticsNumber";
 import classes from "./Statistics.module.css";
@@ -17,9 +18,7 @@ const Statistics = () => {
 
   const fetchStatistics = async () => {
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/statistics"
-      );
+      const response = await fetch(apiUrl("/api/statistics"));
       if (response.ok) {
         const data = await response.json();
         // Assign colors to statistics in order
