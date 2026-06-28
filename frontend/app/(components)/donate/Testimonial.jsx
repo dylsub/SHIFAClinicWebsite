@@ -16,7 +16,7 @@ const Testimonial = ({ quoteText, authorText, roleText }) => {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             className={classes.image}
-            src="./people/UsmanKhan.png"
+            src="./People/UsmanKhan.png"
             alt="testimonial pic"
           ></img>
         }

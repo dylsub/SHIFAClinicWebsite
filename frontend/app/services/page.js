@@ -20,7 +20,7 @@ const Services = () => {
         buttonText="Need to see a Physician or a Psychiatrist?"
         buttonPath="/request-appointment"
         backgroundColor="red"
-        src="/shifa3.jpeg"
+        src="/SHIFA3.jpeg"
       ></ServiceLeftPanel>
 
       <ServiceRightPanel
