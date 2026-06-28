@@ -19,11 +19,15 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 // Rate limiting for login attempts
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // limit each IP to 5 requests per windowMs
-  message: "Too many login attempts, please try again later.",
+  windowMs: 15 * 60 * 100, // 15 minutes
+  max: 15, // limit each IP to 5 requests per windowMs
   standardHeaders: true,
   legacyHeaders: false,
+  handler: (req, res) => {
+    res.status(429).json({
+      message: "Too many login attempts, please try again later.",
+    });
+  },
 });
 
 // Middleware
@@ -66,18 +70,26 @@ app.post("/api/auth/login", loginLimiter, async (req, res) => {
     const { username, password } = req.body;
 
     // Get credentials from environment variables
-    const validUsername = process.env.ADMIN_USERNAME;
-    const validPassword = process.env.ADMIN_PASSWORD;
+    const validUsername = process.env.ADMIN_USERNAME?.trim();
+    const validPassword = process.env.ADMIN_PASSWORD?.trim();
 
     // Check if environment variables are set
     if (!validUsername || !validPassword) {
       console.error(
-        "Admin credentials not configured in environment variables"
+        "Admin credentials not configured in environment variables",
       );
       return res.status(500).json({ message: "Server configuration error" });
     }
 
-    if (username !== validUsername || password !== validPassword) {
+    if (!JWT_SECRET) {
+      console.error("JWT_SECRET is not configured in environment variables");
+      return res.status(500).json({ message: "Server configuration error" });
+    }
+
+    if (
+      username?.trim() !== validUsername ||
+      password?.trim() !== validPassword
+    ) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
@@ -122,7 +134,7 @@ app.post(
       console.error("Image upload error:", error);
       res.status(500).json({ message: "Failed to upload image" });
     }
-  }
+  },
 );
 
 // Protected routes - require authentication for write operations only
@@ -290,7 +302,7 @@ app.post("/api/statistics/update", async (req, res) => {
           updatedAt: new Date(),
         },
       },
-      { upsert: true } // Create if doesn't exist
+      { upsert: true }, // Create if doesn't exist
     );
 
     res.status(200).json({
@@ -324,7 +336,7 @@ app.put("/api/statistics/update", async (req, res) => {
           description,
           updatedAt: new Date(),
         },
-      }
+      },
     );
 
     if (result.matchedCount === 0) {
@@ -373,7 +385,7 @@ app.put("/api/volunteers/:id", async (req, res) => {
           imageSrc,
           updatedAt: new Date(),
         },
-      }
+      },
     );
 
     if (result.matchedCount === 0) {
@@ -413,7 +425,7 @@ app.put("/api/resources/:id", async (req, res) => {
           imageSrc,
           updatedAt: new Date(),
         },
-      }
+      },
     );
 
     if (result.matchedCount === 0) {

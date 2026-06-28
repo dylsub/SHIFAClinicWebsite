@@ -48,19 +48,32 @@ const LoginModal = ({ isOpen, onLoginSuccess }) => {
         );
         onLoginSuccess();
       } else {
-        const errorData = await response.json();
+        let errorMessage = "Invalid credentials";
+
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorMessage;
+        } catch {
+          errorMessage =
+            response.status === 429
+              ? "Too many login attempts. Please wait 15 minutes and try again."
+              : `Login failed (${response.status}). Please try again.`;
+        }
+
         setAttempts((prev) => prev + 1);
 
-        if (attempts >= 4) {
-          setError("Too many failed attempts. Please try again later.");
-          // Implement temporary lockout
+        if (response.status === 429 || attempts >= 4) {
+          setError(errorMessage);
           setTimeout(() => setAttempts(0), 300000); // 5 minutes
         } else {
-          setError(errorData.message || "Invalid credentials");
+          setError(errorMessage);
         }
       }
     } catch (error) {
-      setError("Network error. Please try again.");
+      console.error("Login request failed:", error);
+      setError(
+        "Network error. Check that NEXT_PUBLIC_API_URL is set correctly and the backend is reachable."
+      );
     } finally {
       setIsLoading(false);
     }
